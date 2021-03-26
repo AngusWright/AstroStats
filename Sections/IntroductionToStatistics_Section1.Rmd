@@ -1,0 +1,419 @@
+---
+title: "Introduction to Statistics for Astronomers and Physicists"
+author: "Angus H Wright"
+date: "`r Sys.Date()`"
+output:
+#  rmdformats::downcute:
+#    self_contained: true
+#    thumbnails: true
+#    lightbox: true
+#    gallery: false
+#    highlight: pygments
+  slidy_presentation:
+    toc_depth: 2
+    duration: 45
+    footer: '   Angus H. Wright: Intro to Statistics [RUB 2021]   (Section 0)'
+    fig_width: 7
+    fig_height: 5
+    fig_retina: 2
+    fig_caption: yes
+    df_print: paged
+    code_folding: hide
+    incremental: yes
+    highlight: pygments
+    theme: cosmo
+#  html_document:
+#    incremental: yes
+#    highlight: pygments
+classoption: a4paper
+subtitle: 'Section 0: Introduction, Lecture Outline, Course Format'
+#toc: yes
+---
+
+## Setup & Course Outline <!--{{{-->
+
+<!--Setup {{{-->
+```{r setup, include=FALSE}
+options(width=60)
+library(magicaxis)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy = FALSE)
+knitr::opts_chunk$set(class.output = "out")
+knitr::opts_chunk$set(out.width="50%")
+knitr::opts_chunk$set(fig.align="center")
+#knitr::opts_chunk$set(fig.asp=1)
+knitr::knit_engines$set(python = reticulate::eng_python)  
+par(mar=c(3,3,1,1))
+set.seed(666)
+```
+```{css, echo=FALSE}
+.python { 
+  background-color: 
+    RColorBrewer::brewer.pal(1,"Set2");
+} 
+.out { 
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+```
+<!--}}}-->
+
+This course will be taught in 4 parts, each spanning from 2-4 weeks
+
+**Section 1: Data Description, Analysis, and Modelling (Weeks 1-2)** 
+
+**Topics include:** 
+
+- Types of data 
+- Point & interval estimation 
+- Correlation & covariance
+- Fundamentals of data exploration/mining
+- Introduction to data visualisation 
+
+##Section 2: Probability & Decision Making (Weeks 3-5)
+
+**Topics include:** 
+
++ Decision theory
++ fundamentals of probability
++ statistical distributions and their origins
+
+##Section 3: Bayesian Statistics (Weeks 6-8
+
+**Topics include:** 
+
+* Frequentist & Bayesian statistics
+* Bayes theory
+* prior specification
+* hypothesis testing,  
+
+##Section 4: Parameter Simulation, Optimisation, and Analysis (Weeks 9-12)
+
+**Topics include:** 
+
+- 
+- 
+
+<!--}}}-->
+
+## Course Philosophy <!--{{{-->
+
+This course is designed to be a practical introduction to statistics for astronomers and physicists who are starting
+their research careers and have had little (or perhaps no) previous education in statistics and statistical data
+analysis. The course (and these lecture notes) are not designed to be a statistics reference text. Rather the material
+presented here is designed to guide students on a suitable path towards robust data analysis and research. 
+
+The course will present many aspects of data analysis that are widely relevant to modern astronomy and physics. We 
+will borrow heavily from standard statistical problems and thought experiments in an effort to convey important
+points, and elucidate common statistical and logical fallacies. Problems will almost always be explored using a
+mixture of tools simultaneously: plain English, math, computer code, graphs, and more.  
+
+<!--}}}-->
+
+## Rmarkdown <!--{{{-->
+
+Slides and lecture notes for this course are prepared in **Rmarkdown**, and provided to you after the lectures. 
+
+The utility of **Rmarkdown** is that it allows running execution of code chunks alongside markdown-style text, in a wide
+array of languages, including R, Python, bash, Rcpp, javascript, and more. This allows us to present examples in
+multiple languages easily within one document. For example, if I want to plot a function, I can do so in: 
+<table width=80%> <tr>
+<td rblock> <!--{{{-->
+``` {r, rblock-zero, fig.height=4, fig.width=6, out.width='90%', eval=FALSE}  
+#in R
+theta=seq(0,2,by=0.01)
+sinu=1+sin(2*pi*theta)
+magplot(theta,sinu,type='l')
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+``` {python, pyblock-zero, fig.height=4, fig.width=6, out.width="90%", eval=FALSE}
+#or in python
+import numpy as np
+import matplotlib.pyplot as plt
+theta=np.arange(0.,2.,0.01)
+sinu=1+np.sin(2*np.pi*theta)
+plt.plot(theta,sinu)
+plt.show()
+```
+</td> <!--}}}-->
+</tr><tr>
+<td rblock> <!--{{{-->
+``` {r, rblock-zero, fig.height=4, fig.width=6, out.width='90%',eval=TRUE,echo=FALSE} 
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+``` {python, pyblock-zero, fig.height=4, fig.width=6, out.width="90%", eval=TRUE, echo=FALSE}
+```
+</td> <!--}}}-->
+</tr></table>
+
+Information generated and stored within blocks is persistent, and code-blocks with different engines can also 
+cross-communicate. This means that, for example, we can: 
+<table width=80%> <tr>
+<td rblock> <!--{{{-->
+``` {r, rblock-one, out.width='90%', eval=FALSE}  
+#Create some data in R
+#E.g. random draws from f~N(0,1)
+x=rnorm(1e3) 
+y=rnorm(1e3) 
+#Default plot in R
+plot(x,y)
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+``` {python, pyblock-one, out.width="90%", eval=FALSE}
+#and access it directly in python
+plt.scatter(r.x,r.y)
+plt.show()
+```
+</td> <!--}}}-->
+</tr><tr>
+<td rblock> <!--{{{-->
+``` {r, rblock-one, out.width='90%',eval=TRUE,echo=FALSE} 
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+``` {python, pyblock-one, out.width="90%", eval=TRUE, echo=FALSE}
+```
+</td> <!--}}}-->
+</tr></table>
+
+<!--}}}-->
+
+## Modern Science and the Requirement of Programming <!--{{{-->
+
+Modern physics and astronomy requires an understanding of programming. From theoreticians writing models to
+experimentalists writing analysis pipelines, most physicists and astronomers will use read, write, or use a computer 
+program every day. 
+
+The ubiquitousness of programming in the modern physical sciences is intimately linked to the important role that 
+statistics plays in these fields. Modern science is increasingly reliant on large and/or complex datasets, which
+fundamentally must be analysed using modern statistical methods. A classic example is model optimisation (which we will 
+cover in detail in this course): let us take a relatively simple dataset that we know follows a generic beta
+distribution, and attempt to model this dataset using a function containing 2 parameters: 
+
+$$ Y = Beta(X, \alpha,\beta) + {\rm noise} \\
+0\leq X \leq 1 \\
+\alpha, \beta \in [0,\infty)
+$$
+
+```{r echo=FALSE, fig.height=4, fig.width=6, out.width='80%'} 
+x=runif(1e3)
+truth=c(3.2,7.7)
+y=dbeta(x=x,shape1=truth[1],shape2=truth[2])+rnorm(length(x),mean=0,sd=0.1)
+magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3')
+```
+One might be inclined to attempt to fit a model to these data by-hand, using trial and error: 
+
+```{r trial-and-error, fig.show='animate', ffmpeg.format='gif', dev='jpeg', aniopts='loop=FALSE', interval=2,echo=FALSE, fig.height=4, fig.width=6, out.width='80%'}
+model.x=seq(0,1,by=0.01)
+for (i in 1:20) { 
+  model.alpha=runif(1,min=0,max=10)
+  model.beta=runif(1,min=0,max=10)
+  model.y=dbeta(model.x,model.alpha,model.beta)
+  magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3',
+          main=paste("a=",round(digits=2,model.alpha),"; b=",round(digits=2,model.beta)))
+  lines(model.x,model.y,col='red')
+}
+model.alpha=2.8
+model.beta=6.7
+```
+
+Using this approach we can get a reasonable fit with $\alpha=`r model.alpha`,\beta=`r model.beta`$: 
+
+```{r echo=FALSE, fig.height=4, fig.width=6, out.width='80%'} 
+model.y=dbeta(model.x,model.alpha,model.beta)
+magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3',
+        main=paste("a=",round(digits=2,model.alpha),"; b=",round(digits=2,model.beta)))
+lines(model.x,model.y,col='red',lwd=2)
+```
+
+But is this solution near the truth? How close is good enough? And what are the uncertainties on the parameters? 
+These are all important in modern science, and they are precisely the sort of questions/problems that computers/programs
+are designed to tackle. With just one command, we can use R/python to reach a more accurate solution, in a fraction of
+the time.
+
+<table width=80%> <tr>
+<td rblock> <!--{{{-->
+```{r}
+#Estimate parameters using Nonlinear Least Squares (nls) in R 
+fit_R=nls(y~dbeta(x,alpha,beta), #The function to fit
+          data=list(x=x,y=y),    #The data 
+          start=list(alpha=2,beta=5), #The initial guess
+          algorithm='port',      #The algorithm 
+          lower=c(0,0))          #The lower bounds
+best_R=summary(fit_R)$parameters
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+``` {python, fig.height=4, fig.width=6, out.width='90%'}
+#Estimate parameters using scipy.optimize.curve_fit in python
+import scipy.optimize
+import scipy.stats
+best_py, cov_py = scipy.optimize.curve_fit(
+         scipy.stats.beta.pdf, #The function to fit
+         r.x, r.y,         #The data
+         p0=[2,5],         #The initial guess 
+         bounds=(0,np.inf),#The lower and upper bounds
+         method='trf')     #The fitting algorithm
+```
+</td> <!--}}}-->
+</tr><tr>
+<td rblock> <!--{{{-->
+```{r, echo=FALSE, fig.height=4, fig.width=6, out.width='90%'}
+model.y=dbeta(model.x,best_R[1],best_R[2])
+magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3',
+        main=paste("a=",round(digits=2,best_R[1]),"; b=",round(digits=2,best_R[2])))
+lines(model.x,model.y,col='red',lwd=3)
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+```{python, echo=FALSE, fig.height=4, fig.width=6, out.width='90%'} 
+plt.scatter(r.x,r.y)
+model_x=np.arange(0.,1.,0.01)
+plt.plot(model_x,scipy.stats.beta.pdf(model_x,best_py[0],best_py[1]),color='r')
+plt.title("a="+str(np.round(best_py[0],2))+"; b="+str(np.round(best_py[1],2)))
+```
+</td> <!--}}}-->
+</tr></table>
+
+Obviously these fits are superior to those which we can reach by-hand in terms of accuracy, effort, and runtime. But the most important benefit 
+is in terms of *uncertainty estimation*. Statistical computing is important for a wide range of reasons, but arguably the first and most important 
+reason is for the computation of measures of uncertainty. 
+
+<table width=80%> <tr>
+<td rblock> <!--{{{-->
+```{r}
+#Model statistics in R
+summary(fit_R)
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+```{python}
+#Model parameters and covariance in python
+print(best_py,cov_py) 
+```
+</td> <!--}}}-->
+</tr><tr>
+<td rblock> <!--{{{-->
+```{r,echo=FALSE,eval=TRUE, fig.height=4, fig.width=6, out.width='90%'}
+sigma = summary(fit_R)$sigma
+conf.int = outer(model.y, c(-1,1)*sigma, '+')
+magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3',
+        main=paste("a=",round(digits=2,best_R[1]),"±",round(digits=2,best_R[3]),"; ",
+                   "b=",round(digits=2,best_R[2]),"±",round(digits=2,best_R[4])))
+lines(model.x,model.y,col='red',lwd=2,lty=1)
+lines(model.x,conf.int[,1],col='red',lwd=2,lty=2)
+lines(model.x,conf.int[,2],col='red',lwd=2,lty=2)
+legend('topright',legend=c('Data','Best-fit Model','1-sigma uncertainty'),
+       pch=c(1,NA,NA),lty=c(NA,1,2),col=c("black","red","red"),lwd=2,inset=c(0.05,0.05))
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+```{python, echo=FALSE, fig.height=4, fig.width=8, out.width='90%'} 
+plt.scatter(r.x,r.y,label='Data')
+sigma_py=np.sqrt(cov_py)
+plt.plot(model_x,scipy.stats.beta.pdf(model_x,best_py[0],best_py[1]),color='r',label='Best-fit Model')
+plt.plot(model_x,scipy.stats.beta.pdf(model_x,best_py[0],best_py[1])-r.sigma,'--',color='r',label='1-sigma uncertainty')
+plt.plot(model_x,scipy.stats.beta.pdf(model_x,best_py[0],best_py[1])+r.sigma,'--',color='r')
+plt.title("a="+str(np.round(best_py[0],2))+"±"+str(np.round(sigma_py[0,0],2))+"; "+
+          "b="+str(np.round(best_py[1],2))+"±"+str(np.round(sigma_py[1,1],2)))
+plt.legend()
+```
+</td> <!--}}}-->
+</tr></table>
+
+## Do I need to know R or Python? <!--{{{-->
+
+Despite what the internet will tell you, today there is very little separating the two languages in terms of
+functionality. Both languages can be run as a subprocess of the other, both have well developed tools for data analysis 
+and machine learning, and both have a wealth of tutorials and guides to help new users enter the game. Overall, there is 
+one major consideration that will (and should) drive your choice of which language to learn first: what languages do your
+colleagues use? Any perceived benefit or detriment of the languages will invariably be overwhelmed by whether or not you
+are able to share and discuss code together with your colleagues. So, this is mostly a case where joining the herd is
+probably the sensible choice. 
+
+##What's the difference? 
+
+**R** was originally developed as a statistics and data analysis language, and so many data analysis
+tools are available natively within base **R**. Additional tools are available through the Comprehensive R Archive
+Network (CRAN), which contains over 10k packages that are all *required* to be fully documented. This means that if you 
+want to perform a particular flavour of statistical analysis, there is a good chance that well developed code already
+exists within R to do it (or at least to get you started). 
+
+**Python**'s strength lies within the its use as a general programming language beyond data analysis. In comparison, python
+is Personally I code primarily in R,
+however a significant R and Python are 
+
+In practice, the vast majority of examples in this course will be programmed in R. However, as you can see from the
+above, if you can understand one, then you can probably understand both. In this lecture we will go through some 
+examples of R and python code, so that you have an introduction to the important parts (and can follow along without 
+much trouble). 
+
+<!--}}}-->
+ 
+## Lecture 0: Introduction to Statistics <!--{{{-->
+
+```{r chunk-label, fig.show='animate', ffmpeg.format='gif', dev='jpeg', aniopts='loop=FALSE', interval=5}
+for (i in 1:10) plot(runif(1000), ylim = c(0, 1)) # for example
+```
+
+```{r}
+x = 5  # radius of a circle
+```
+
+For a circle with the radius `r x`,
+its area is `r pi * x^2`.
+
+<!--}}}-->
+
+## Why do we need statistics?  <!--{{{-->
+
+```{r tables-mtcars1}
+print(iris) 
+```
+
+```{r tables-mtcars,cap='A caption'}
+print(iris) 
+```
+
+
+<!--}}}-->
+
+## Slide with Bullets <!--{{{-->
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+```{r cols.print=2, rows.print=9} 
+cars
+```
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+```{r cols.print=2, rows.print=9} 
+cars
+```
+
+<!--}}}-->
+
+## Slide with R Output <!--{{{-->
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+<!--}}}-->
+
+## Slide with Plot <!--{{{-->
+
+```{r pressure}
+plot(pressure)
+```
+
+<!--}}}-->
