@@ -6,3 +6,6 @@
 */*.html 
 */*.pdf 
 */*.swp
+*/*.log
+*.mp4 
+Recordings/
