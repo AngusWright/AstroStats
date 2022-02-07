@@ -1,0 +1,150 @@
+% MNRAS Manuscript Template
+% Written by A.H.Wright 2016
+\documentclass[useams,useamsmath,usenatbib]{mnras}
+\pdfminorversion=5
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\graphicspath{{./images/}}
+
+\def\ie{\,{\rm i.e.}\,}
+\def\eg{\,{\rm e.g.}\,}
+\def\um{{\rm $\mu$m}\,}
+\def\sdss{{\sc sdss}}
+\def\viking{{\sc viking}}
+\def\hatlas{{\sc h-atlas}}
+\def\wise{{\em WISE}}
+\def\vista{{\sc vista}}
+\def\galex{{\em GALEX}}
+\def\bbf{}
+%
+% For Revisions: use \bbf to make revised text bold,
+%                and uncomment the below. For final
+%                submission, re-comment the line to
+%                remove the bold-ness.
+%\def\bbf{\bf}
+
+% Arxiver Figure selection: Declare Figures to show on Arxiver
+% ___Leave Commented out, just change the Figure Names___
+% __Just use Figure Names, Path is determined internally__
+%@arxiver{Figure1.png,Figure4.pdf,Figure5.eps}
+
+\begin{document}
+
+\onecolumn
+
+\title[AstroStatistics]{Introduction to Statistics for Astronomers and Physicists}
+
+%Authors {{{
+\author[A.H. Wright]
+{A.H.~Wright}
+%\date{Received XXXX; Accepted XXXX}
+%\pubyear{2016} \volume{000}
+%\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+%}}}
+\maketitle
+\label{firstpage}
+%\begin{abstract}%{{{
+%%This paper is going to be pretty awesome \citep{CITATION}.
+%\end{abstract}
+%%}}}
+
+\section{Course Summary}\label{sec: intro} %{{{
+We provide an introduction to practical statistics for Astronomers and Physicists, who may have had little (or zero)
+formal statistics education in their academic careers to date. The course is designed to develop a complex understanding
+of statistical methods applicable to modern scientific inquiry, while generally using astronomical datasets for
+exposition. The course modules are outlined below, and draws its content from a range of standard statistical texts. An
+example reference list is given below.  Throughout the course we discuss standard statistical biases and mistakes, their
+influence on the estimation of underlying models, and what students can do to fortify their science to common
+statistical errors. The course will be run in weekly lectures (2 hours in duration) and without dedicated exercise
+classes. Instead, in addition to lecture notes, the course will include hands-on examples to be completed during the
+lectures, including computational examples covering all aspects of the course, written in both R and python. 
+
+%\section{Course Modules}
+The course is split into 4 core modules, each which cover a broad topic in statistics and data analysis. 
+\paragraph*{Introduction to Probability: }
+For all aspects of modern science, an understanding of probability is required. We cover a range of topics in
+probability, from decision theory and the fundamentals of probability theory, to standard probabilistic distributions
+and their origin.  From this module, students will gain an insight into different statistical distributions that govern
+modern observational sciences, the interpretation of these distributions, and how one accurately summarises
+distributions of data in an unbiased manner. 
+\paragraph*{Data modelling: }
+When working in empirical science, modelling and understanding datasets is paramount. In this module we start by
+discussing the fundamentals of data modelling. We start by discussing theories of point and interval estimation, in the
+context of summary statics (e.g. expectation values, confidence intervals), and estimation of data correlation and
+covariance. Students will learn the fundamentals of data mining and analysis, in a way that is applicable to
+all physical sciences.  
+\paragraph*{Bayesian Statistics: }
+Bayes theorem lead to a revolution in statistics, via the concepts of prior and posterior evidence. In modern astronomy
+and physics, applications of bayesian statistics are widespread. We begin with a study of Bayes theorem, and the
+fundamental differences between frequentest and Bayesian analysis. We explore applications of Bayesian statistics,
+through well studied statistical problems (both within and outside of physics). 
+\paragraph*{Parameter Simulation, Optimisation, \& Inference: }
+We apply our understanding of Bayesian statistics to the common problems of parameter simulation, optimisation, and
+inference. Students will learn the fundamentals of Monte Carlo Simulation, Markov Chain Monte Carlo (MCMC) analysis, hypothesis testing,
+and quantifying goodness-of-fit. We discuss common errors in parameter inference, including standard physical and
+astrophysical biases that corrupt statistical analyses. 
+
+\paragraph*{Reference Texts}
+\begin{enumerate}
+\item[1.] Eadie, Drijard, James, Roos, \& Sadoulet, 1971, ``Statistical Methods in Experimental Physics'', ISBN:0-444-10117-9
+\item[2.] Wall \& Jenkins, 2014, ``Practical Statistics for Astronomers'', ISBN:978-0-521-73249-9
+\item[3.] Heumann \& Shalabh, 2016, ``Introduction to Statistics and Data Analysis'', ISBN: 978-3-319-46160-1
+\item[4.] Marin \& Robert, 2014, ``Bayesian Essentials with R'', ISBN: 978-1-4614-8687-9
+\item[5.] Schumacker \& Tomek, 2013, ``Understanding Statistics using R'', ISBN: 978-1-4614-6226-2
+\end{enumerate}
+
+%%Practical Statistics for Astronomy 
+%Decisions 
+%Probability 
+%Statistics and expectations
+%Correlation and association 
+%Hypothesis testing 
+%Data modelling and parameter estimation (basic) 
+%Data modelling and parameter estimation (advanced) 
+%Detection and Survey astronomy 
+%Sequential data \& 1D statistics 
+%Statistics of Large Scale Structures
+%
+%%Statistical Methods in Experimental Physics 
+%Basic Concepts in Probability 
+%Probability Distributions 
+%Decision Theory 
+%Theory of Estimators 
+%Point Estimates in Practice
+%Interval Estimation 
+%Tests of Hypotheses
+%Goodness-of-fit Tests
+%
+%%Introduction to Statistics and Data Analysis 
+%PART I: DESCRIPTIVE STATISTICS 
+%Introduction and Framework 
+%Frequency Measures and Graphical Representation of Data 
+%Measures of Central Tendency and Dispersion 
+%Association of two variables 
+%
+%PART II: PROBABILITY CALCULUS 
+%Combinatorics 
+%Elements of Probability Theory 
+%Random Variables 
+%Probability Distributions 
+%
+%PART III: INDUCTIVE STATISTICS 
+%Inference 
+%Hypothesis Testing
+%Linear Regression 
+%
+
+
+
+
+
+%}}}
+%\bibliographystyle{mnras}
+%\bibliography{library}
+%\appendix%{{{
+%\section{Appendix A}\label{sec: Appendix1} %{{{
+%
+%
+%%}}}
+\end{document}
