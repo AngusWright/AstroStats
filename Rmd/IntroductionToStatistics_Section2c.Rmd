@@ -4,8 +4,9 @@ author: "Dr Angus H Wright"
 date: "Updated `r Sys.Date()`"
 output:
   rmdformats::downcute:
+    keep_md: false
     self_contained: true
-    thumbnails: true
+    thumbnails: false
     lightbox: true
     gallery: false
     highlight: pygments
@@ -25,6 +26,8 @@ output:
   html_document:
     incremental: yes
     highlight: pygments
+header-includes:
+  - \usepackage{animate}
 classoption: a4paper
 subtitle: 'Section 2c:  Probability Distributions'
 ---

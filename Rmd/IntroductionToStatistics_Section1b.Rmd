@@ -2,26 +2,29 @@
 title: "Introduction to Statistics for Astronomers and Physicists"
 author: "Dr Angus H Wright"
 date: "`r Sys.Date()`"
+header-includes:
+  - \usepackage{animate}
 output:
   rmdformats::downcute:
+    keep_md: false
     self_contained: true
-    thumbnails: true
+    thumbnails: false
     lightbox: true
     gallery: false
     highlight: pygments
-#  slidy_presentation:
-#    toc_depth: 2
-#    duration: 45
-#    footer: '   Dr Angus H. Wright: Intro to Statistics [RUB 2021]   (Section 1b)'
-#    fig_width: 7
-#    fig_height: 5
-#    fig_retina: 2
-#    fig_caption: yes
-#    df_print: paged
-#    code_folding: hide
-#    incremental: true
-#    highlight: pygments
-#    theme: cosmo
+  slidy_presentation:
+    toc_depth: 2
+    duration: 45
+    footer: '   Dr Angus H. Wright: Intro to Statistics [RUB 2021]   (Section 1b)'
+    fig_width: 7
+    fig_height: 5
+    fig_retina: 2
+    fig_caption: yes
+    df_print: paged
+    code_folding: hide
+    incremental: true
+    highlight: pygments
+    theme: cosmo
   html_document:
     incremental: yes
     highlight: pygments
