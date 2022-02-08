@@ -3,10 +3,10 @@
 .Rhistory
 .RData
 .Ruserdata
-*/*.html 
-*/*.pdf 
-*/*.swp
-*/*.log
+*.html 
+*.pdf 
+*.swp
+*.log
 *.mp4 
 Recordings/
 *.aux
