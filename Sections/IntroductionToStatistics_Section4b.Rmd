@@ -3,12 +3,13 @@ title: "Introduction to Statistics for Astronomers and Physicists"
 author: "Dr Angus H Wright"
 date: "`r Sys.Date()`"
 output:
-#  rmdformats::downcute:
-#    self_contained: true
-#    thumbnails: true
-#    lightbox: true
-#    gallery: false
-#    highlight: pygments
+  rmdformats::downcute:
+    keep_md: true
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    highlight: pygments
 #  slidy_presentation:
 #    toc_depth: 2
 #    duration: 45
@@ -22,9 +23,9 @@ output:
 #    incremental: true
 #    highlight: pygments
 #    theme: cosmo
-  html_document:
-    incremental: yes
-    highlight: pygments
+#  html_document:
+#    incremental: yes
+#    highlight: pygments
 classoption: a4paper
 subtitle: 'Section 4b: Optimisation & Complex Modelling (I)'
 ---
