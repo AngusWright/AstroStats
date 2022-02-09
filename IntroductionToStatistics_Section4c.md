@@ -265,8 +265,8 @@ justify.
 
 We can display our two previous models as **directed acyclic graphs**:
 
-<img src="Images/DAG_1.png" alt="image label" width="600" />
-<img src="Images/DAG_2.png" alt="image label" width="600" />
+<img src="Rmd/Images/DAG_1.png" alt="image label" width="600" />
+<img src="Rmd/Images/DAG_2.png" alt="image label" width="600" />
 
 These show how the variable we observe (*ȳ*<sub>*i*</sub>) is related to
 the parameter of interest *θ*. In the first instance (i.e the separate
@@ -278,7 +278,7 @@ Let’s now instead assume that the values of *θ*<sub>*j*</sub> are drawn
 from a normal distribution. The properties of the normal distribution we
 will determine with two **hyper-parameters** (*μ*, *τ*).
 
-<img src="Images/DAG_3.png" alt="image label" width="600" />
+<img src="Rmd/Images/DAG_3.png" alt="image label" width="600" />
 
 Mathematically, we are defining the joint probability of all our
 *θ*<sub>*i*</sub> as the product of the probabilities of observing the
@@ -319,8 +319,8 @@ The smaller *τ*, the more related are the individual values of
 of *θ*<sub>*j*</sub> for the other experiments: the experiments “borrow
 strength” from one-another.
 
-<img src="Images/BHM_Expectation.png" alt="image label" width="400" />
-<img src="Images/BHM_sdev.png" alt="image label" width="400" />
+<img src="Rmd/Images/BHM_Expectation.png" alt="image label" width="400" />
+<img src="Rmd/Images/BHM_sdev.png" alt="image label" width="400" />
 
 <!--}}}-->
 
@@ -338,25 +338,25 @@ when you discover the unbridled joy of televised dog shows…
 
 # The Dog-show dataset
 
-<img src="Images/dogshow_4.gif" alt="image label" width="400" />
-<img src="Images/dogshow_1.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dogshow_4.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dogshow_1.gif" alt="image label" width="400" />
 
-<img src="Images/dogshow_3.gif" alt="image label" width="400" />
-<img src="Images/dogshow_2.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dogshow_3.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dogshow_2.gif" alt="image label" width="400" />
 
 After an extensive period of time researching dog shows, you see a trend
 emerging. Some dogs, regardless of the level of training, seem to
 perform poorly in dog shows. From your extensive viewing…
 
-<img src="Images/dogshow_5.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dogshow_5.gif" alt="image label" width="400" />
 
 …your background research into historical dogs…
 
-<img src="Images/dougshow_1.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dougshow_1.gif" alt="image label" width="400" />
 
 …and your detailed study of canine brain function during maturity…
 
-<img src="Images/dogshow_6.gif" alt="image label" width="400" />
+<img src="Rmd/Images/dogshow_6.gif" alt="image label" width="400" />
 
 …you come to the conclusion that the systematically poor performance of
 some breeds of dog in these dog shows is attributable to
@@ -413,7 +413,7 @@ is the list of model parameters.
 
 Using our graph, this model is:
 
-<img src="Images/dogshow_DAG_1.png" alt="image label" width="600" />
+<img src="Rmd/Images/dogshow_DAG_1.png" alt="image label" width="600" />
 
 But is this a sensible model? Do we think that this will adequately
 capture all the complexities of the dataset?
@@ -433,7 +433,7 @@ $$
 
 We’ve therefore modified our graph:
 
-<img src="Images/dogshow_DAG_2.png" alt="image label" width="600" />
+<img src="Rmd/Images/dogshow_DAG_2.png" alt="image label" width="600" />
 
 We now have a hierarchical model. Should we stop there?
 
@@ -444,7 +444,7 @@ reaction times of dogs in the show, based (currently) solely on the
 breed and a random draw from the population of possible reaction times.
 Consider the evidence though:
 
-<img src="Images/dogshow_5.gif" alt="image label" width="600" />
+<img src="Rmd/Images/dogshow_5.gif" alt="image label" width="600" />
 
 The performance here is clearly not driven by an innately slower
 reaction time, but by the fact that the dog was **distracted**. That
@@ -469,7 +469,7 @@ y\_{ij}\|\\alpha\_i,z\_{ij},\\phi \\sim N(\\alpha\_i+z\_{ij}\\tau,\\sigma\_y^2);
 $$
 Thus we reach our new model:
 
-<img src="Images/dogshow_DAG_3.png" alt="image label" width="600" />
+<img src="Rmd/Images/dogshow_DAG_3.png" alt="image label" width="600" />
 
 This model has the relevant parameters of most interest to us:
 
@@ -495,11 +495,11 @@ And final indicator variables:
 
 We started with an extremely simple model akin to:
 
-<img src="Images/DAG_1.png" alt="image label" width="600" />
+<img src="Rmd/Images/DAG_1.png" alt="image label" width="600" />
 
 and with a few small steps came to a model with considerable complexity:
 
-<img src="Images/dogshow_DAG_3.png" alt="image label" width="600" />
+<img src="Rmd/Images/dogshow_DAG_3.png" alt="image label" width="600" />
 
 This is a general lesson about BHMs. With the flexibility allowed by the
 framework, one can construct highly complex models with relative ease,
@@ -561,14 +561,14 @@ data: *x⃗* ↦ *y*. In essence, it is a form of regression that does not
 require us to specify a model. Examples include linear regression,
 random forests, and support vector machinery.
 
-<img src="Images/supervised_learning.png" alt="image label" width="600" />
+<img src="Rmd/Images/supervised_learning.png" alt="image label" width="600" />
 
 ## Unsupervised learning
 
 **Unsupervised learning** has no required output: there is no *y* to
 which we are trying to map. Examples include SOM, PCA, and ICA.
 
-<img src="Images/unsupervised_learning.png" alt="image label" width="600" />
+<img src="Rmd/Images/unsupervised_learning.png" alt="image label" width="600" />
 
 ## Reinforcement learning (Not discussed here)
 
@@ -577,7 +577,7 @@ invokes some method of generating data for use in achieving some
 pre-defined “goal”, via some reward (e.g. lower variance, fewer
 outliers, etc).
 
-<img src="Images/reinforcement_1.gif" alt="image label" width="600" />
+<img src="Rmd/Images/reinforcement_1.gif" alt="image label" width="600" />
 
 # Supervised Machine Learning: Artificial Neural Networks
 
@@ -594,16 +594,16 @@ Each neuron is a simple item:
 The output of a single neuron is a weighted sum of all the inputs, where
 the weights are given along each particular connection.
 
-<img src="Images/network_diagram_1.png" alt="image label" width="600" />
+<img src="Rmd/Images/network_diagram_1.png" alt="image label" width="600" />
 
 Within the neurons, the weights and data are combined, and passed
 through an “activation function” to get the output number:
 
-<img src="Images/network_diagram_2.png" alt="image label" width="600" />
+<img src="Rmd/Images/network_diagram_2.png" alt="image label" width="600" />
 
 We can then form a network of Neurons:
 
-<img src="Images/network_diagram_3.png" alt="image label" width="600" />
+<img src="Rmd/Images/network_diagram_3.png" alt="image label" width="600" />
 
 These diagrams are all well and good. But really, the best way to
 understand neural networks is to play with one:
@@ -618,7 +618,7 @@ My personal favourite flavour of unsupervised machine learning is the
 The SOM is a form of unsupervised *manifold* learning, in that it fits a
 2-dimensional manifold to an *N*-dimensional parameter space.
 
-<img src="Images/som_2.png" alt="image label" width="600" />
+<img src="Rmd/Images/som_2.png" alt="image label" width="600" />
 
 This allows the SOM to be used to great effect in both dimensionality
 reduction and classification. Let’s take a hypothetical *N*-dimensional
@@ -668,7 +668,7 @@ plot(som,shape='straight',heatkeywidth = 2)
 
 This is the 2D histogram of the nD surface that the SOM has mapped.
 
-<img src="Images/som_2.png" alt="image label" width="600" />
+<img src="Rmd/Images/som_2.png" alt="image label" width="600" />
 
 We can now visualise which parts of the SOM sit within which parts of
 the n-dimensional space by painting the SOM by the values of each
@@ -874,7 +874,7 @@ Machine learning algorithms are prone to over-fitting. This, more than
 anything else, can be seen in the catastrophic failure of extrapolations
 in machine learning methods.
 
-<img src="Images/extrapolation.png" alt="image label" width="600" />
+<img src="Rmd/Images/extrapolation.png" alt="image label" width="600" />
 
 ## Covariate Shift
 

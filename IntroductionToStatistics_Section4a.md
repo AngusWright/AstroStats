@@ -368,7 +368,7 @@ run.experiments(frac.true=0.01,pub.only=TRUE)
 ##                    0.8787879                    0.1212121
 ```
 
-<img src="Images/newtrue.png" alt="image label" width="600" />
+<img src="Rmd/Images/newtrue.png" alt="image label" width="600" />
 
 <!--}}}-->
 <!--}}}-->
@@ -398,7 +398,7 @@ run.experiments(p.thresh=0.001,pub.only=TRUE)
 
 # The Problem is Choice
 
-<img src="Images/architect.gif" alt="image label" width="700" />
+<img src="Rmd/Images/architect.gif" alt="image label" width="700" />
 
 At it’s simplest level, when provided an arbitrary dataset, our
 statistical analyses will involve two steps:
@@ -1016,7 +1016,7 @@ The problem?
 
 -   **The salmon was frozen at the time of study**
 
-<img src="Images/fMRI.png" alt="image label" width="700" />
+<img src="Rmd/Images/fMRI.png" alt="image label" width="700" />
 
 <!--}}}-->
 <!--}}}-->
@@ -1102,7 +1102,7 @@ used to infer systematic difference over the whole year (or longer).
 
 Can you see the problem with this argument?
 
-<img src="Images/sea_ice.png" alt="image label" width="700" />
+<img src="Rmd/Images/sea_ice.png" alt="image label" width="700" />
 
 <!--}}}-->
 <!--}}}-->
@@ -1215,7 +1215,7 @@ their results until they agree with some prior belief.
 Take, as an example, measurements of the coefficient of charge-parity
 violation:
 
-<img src="Images/CP_coef.png" alt="image label" width="400" />
+<img src="Rmd/Images/CP_coef.png" alt="image label" width="400" />
 
 The figure above was taken from Jeng (2005), and was originally printed
 in Franklin (1984): “Forging, cooking, trimming, and riding on the

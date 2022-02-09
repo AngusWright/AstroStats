@@ -266,7 +266,7 @@ We’ve already seen examples of nominal and continuous scale data (names
 and coin-tosses respectively). An example of ordinal scale data is
 rankings of “Mood”:
 
-<img src="Images/Mood_scale.png" alt="Ordinal Scale: Mood" width="1000" />
+<img src="Rmd/Images/Mood_scale.png" alt="Ordinal Scale: Mood" width="1000" />
 
 # Fundamentals: Frequency Measures
 

@@ -37,9 +37,9 @@ biases that corrupt statistical analyses. <!--}}}-->
 
 The examination is now registered on ecampus!
 
-<img src="Images/prufung.png" alt="image label" width="700" />
+<img src="Rmd/Images/prufung.png" alt="image label" width="700" />
 
-<img src="Images/moodle.png" alt="image label" width="700" />
+<img src="Rmd/Images/moodle.png" alt="image label" width="700" />
 
 Registration for the course exam is open from **now until next tuesday
 13.07**.

@@ -299,27 +299,27 @@ Holmberg performed the first simulations of colliding galaxies, 20 years
 prior to a famous work by Sebastian von Hoerner that established the
 field (and name) N-body Simulations.
 
-<img src="Images/vonHoerner60_title.png" alt="von Hoerner 1960" width="1000" />
+<img src="Rmd/Images/vonHoerner60_title.png" alt="von Hoerner 1960" width="1000" />
 
-<img alt="Holmberg 1941" src="Images/Holmberg41_title.png" width="1000" />
+<img alt="Holmberg 1941" src="Rmd/Images/Holmberg41_title.png" width="1000" />
 
 Holmberg’s work was exceptional for a number of reasons, but has become
 famous because of *how* it was completed. Holmberg simulated the
 collisions of rotating spiral galaxies:
 
-<img alt="Holmberg 1941" src="Images/Holmberg41.png" width="1000" />
+<img alt="Holmberg 1941" src="Rmd/Images/Holmberg41.png" width="1000" />
 
 And generated tidal disruption features that are now seen commonly in
 merging spiral galaxies:
 
-<img alt="merger simulation" src="Images/mergersim.png" width="1000" />
+<img alt="merger simulation" src="Rmd/Images/mergersim.png" width="1000" />
 
 The surprise? His work was computed entirely *by hand*. Holmberg used
 arrangements of lightbulbs to simulate groups of stars, and photometers
 to compute the gravitational pull of all mass-elements on each-other per
 unit time.
 
-<img alt="Holmberg Blub arrangement" src="Images/Holmberg_bulbs.png" width="1000" />
+<img alt="Holmberg Blub arrangement" src="Rmd/Images/Holmberg_bulbs.png" width="1000" />
 
 Of course nowadays we can run a simulation like this in seconds on any
 laptop (or smartphone, if you really want to!). This allows measurements

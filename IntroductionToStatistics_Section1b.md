@@ -973,7 +973,7 @@ the coefficient is less interpretable:
 
 <!--Image Template-{{{-->
 
-<img src="Images/Pearson_Correlation.png" alt="Pearson Correlation" width="1000" />
+<img src="Rmd/Images/Pearson_Correlation.png" alt="Pearson Correlation" width="1000" />
 <!--}}}-->
 
 <!--}}}-->
@@ -1097,7 +1097,7 @@ relationships. Sometimes this may be justified, **but often it is not**.
 
 <!--Image Template-{{{-->
 
-<img src="Images/Correlation_chart.png" alt="Correlation" width="1000" />
+<img src="Rmd/Images/Correlation_chart.png" alt="Correlation" width="1000" />
 <!--}}}-->
 
 Here we can see that the number of divorces in the US state of Maine is
