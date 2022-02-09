@@ -2,14 +2,14 @@
 Repository for Angus H Wright's Introduction to Statistics for Astronomers and Physicists Lecture Materials
 
 # Viewing the Lecture Notes 
-The lecture notes are provided in viewable-on-github format by clicking on the various "markdown" (.md) files in the
-"Md" directory directly above this description. Note, however, that much of the long-form LaTeX equations are not
-well-compiled in the github format. For this reason you may prefer to: 
-- view the PDF lecture notes in-browser (see the "View PDFs" subsection below); 
-- download the PDF lecture notes to your machine (see [the PDF folder](https://github.com/AngusWright/AstroStats/blob/master/PDF/)). 
+The lecture notes are provided in viewable-on-github HTML format using the links below or by directly clicking on the
+various "markdown" (.md) files in [the Md directory](https://github.com/AngusWright/AstroStats/blob/master/Md) directly
+above this description. Note, however, that much of the long-form LaTeX equations are not well-compiled in the github
+format. For this reason you may prefer to: 
+- view/download the PDF lecture notes on github (see the "View PDFs" subsection below); 
 - compile the lecture notes on your own machine (see the "Compiling the lectures" subsection below). 
 
-## View-on-GitHub Notes 
+## View-on-GitHub HTML Notes 
 For convenience, direct links to the view-on-github Lectures are provided here: 
 
 - [Lecture 0: Course Outline and a Crash Course in R and Python](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section0.md)
@@ -27,7 +27,7 @@ For convenience, direct links to the view-on-github Lectures are provided here:
 - [Lecture 4b: Optimisation and Complex Modelling I](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4b.md)
 - [Lecture 4c: Complex Modelling II and Machine Learning](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4c.md)
 
-## PDF Notes 
+## View-on-GitHub PDF Notes 
 For cases where the LaTeX has failed to show nicely on GitHub HTML, you may prefer to refer to the PDF versions of the Lectures: 
 
 - [Lecture 0: Course Outline and a Crash Course in R and Python](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section0.pdf)
