@@ -2,7 +2,9 @@
 Repository for Angus H Wright's Introduction to Statistics for Astronomers and Physicists Lecture Materials
 
 # Viewing the Lecture Notes 
-The lecture notes are provided in viewable-on-github format by clicking on the various "markdown" (.md) files in the "Md" directory directly above this description. Note, however, that much of the long-form LaTeX equations are not well-compiled in the github format. For this reason you may prefer to compile the lecture notes on your own machine (see below). For convenience, direct links to the Lectures are provided here: 
+The lecture notes are provided in viewable-on-github format by clicking on the various "markdown" (.md) files in the "Md" directory directly above this description. Note, however, that much of the long-form LaTeX equations are not well-compiled in the github format. For this reason you may prefer to compile the lecture notes on your own machine (see below), or download the PDF versions from [the PDF folder](https://github.com/AngusWright/AstroStats/blob/master/PDF/). 
+
+For convenience, direct links to the view-on-github Lectures are provided here: 
 
 - [Lecture 0: Course Outline and a Crash Course in R and Python](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section0.md)
 - [Lecture 1a: Data Description and Summarisation](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section1a.md)
