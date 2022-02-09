@@ -2,14 +2,23 @@
 Repository for Angus H Wright's Introduction to Statistics for Astronomers and Physicists Lecture Materials
 
 # Viewing the Lecture Notes 
-The lecture notes are provided in viewable-on-github HTML format using the links below or by directly clicking on the
+The lecture notes are provided in viewable-on-github markdown format using the links below or by directly clicking on the
 various "markdown" (.md) files in [the Md directory](https://github.com/AngusWright/AstroStats/blob/master/Md) directly
 above this description. Note, however, that much of the long-form LaTeX equations are not well-compiled in the github
 format. For this reason you may prefer to: 
 - view/download the PDF lecture notes on github (see the "View PDFs" subsection below); 
 - compile the lecture notes on your own machine (see the "Compiling the lectures" subsection below). 
 
-## View-on-GitHub HTML Notes 
+## Lecture 2d 
+Lecture 2d is an interactive data-mining exercise that can really only be used in the **slidy** format. It is designed as a 
+choose-your-own-adventure, where choices (in the form of hyperlinks to different slides) take you through different outcomes. 
+However, I have not included the Slidy and HTML-Page versions of the lecture notes in the github repository, because
+they are large and otherwise just duplicate the information contained in the other formats. For Lecture 2d especially,
+though, I have provided the Slidy slides for you to download directly [at this
+link](https://ruhr-uni-bochum.sciebo.de/s/hsXiuJ5iaoovyWo). Simply open the html in your browser, and click on the links
+to choose your path. Enjoy! 
+
+## View-on-GitHub Markdown Notes 
 For convenience, direct links to the view-on-github Lectures are provided here: 
 
 - [Lecture 0: Course Outline and a Crash Course in R and Python](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section0.md)
@@ -28,7 +37,7 @@ For convenience, direct links to the view-on-github Lectures are provided here:
 - [Lecture 4c: Complex Modelling II and Machine Learning](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4c.md)
 
 ## View-on-GitHub PDF Notes 
-For cases where the LaTeX has failed to show nicely on GitHub HTML, you may prefer to refer to the PDF versions of the Lectures: 
+For cases where the LaTeX has failed to show nicely on GitHub markdown, you may prefer to refer to the PDF versions of the Lectures: 
 
 - [Lecture 0: Course Outline and a Crash Course in R and Python](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section0.pdf)
 - [Lecture 1a: Data Description and Summarisation](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1a.pdf)
