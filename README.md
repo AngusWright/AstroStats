@@ -27,23 +27,23 @@ For convenience, direct links to the view-on-github Lectures are provided here:
 - [Lecture 4b: Optimisation and Complex Modelling I](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4b.md)
 - [Lecture 4c: Complex Modelling II and Machine Learning](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4c.md)
 
-## PDF-in-Browser Notes 
-For cases where the LaTeX has failed to show nicely on GitHub, you may prefer to use these direct links to the PDF-in-browser Lectures. This is a neat trick to view GitHub PDFs via the google-documents viewer [that I have shamelessly stolen from stack exchange](https://webapps.stackexchange.com/questions/48061/can-i-trick-github-into-displaying-the-pdf-in-the-browser-instead-of-downloading):
+## PDF Notes 
+For cases where the LaTeX has failed to show nicely on GitHub HTML, you may prefer to refer to the PDF versions of the Lectures: 
 
-- [Lecture 0: Course Outline and a Crash Course in R and Python](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section0.pdf)
-- [Lecture 1a: Data Description and Summarisation](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1a.pdf)
-- [Lecture 1b: Data Description, Analysis, and Modelling](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1b.pdf)
-- [Lecture 1c: Data Mining Exercise](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1c.pdf)
-- [Lecture 2a: Fundamentals of Probability I](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2a.pdf)
-- [Lecture 2b: Fundamentals of Probability II](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2b.pdf)
-- [Lecture 2c: Probability Distributions](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2c.pdf)
-- [Lecture 2d: Random Numbers, Simulation, and Sampling](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2d.pdf)
-- [Lecture 3a: Bayesian Statistics](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section3a.pdf)
-- [Lecture 3b: Priors and Introduction to Posterior Analysis](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section3b.pdf)
-- [Lecture 3c: Posterior Analysis II](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section3c.pdf)
-- [Lecture 4a: Significance of Evidence](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4a.pdf)
-- [Lecture 4b: Optimisation and Complex Modelling I](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4b.pdf)
-- [Lecture 4c: Complex Modelling II and Machine Learning](https://docs.google.com/viewer?url=https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4c.pdf)
+- [Lecture 0: Course Outline and a Crash Course in R and Python](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section0.pdf)
+- [Lecture 1a: Data Description and Summarisation](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1a.pdf)
+- [Lecture 1b: Data Description, Analysis, and Modelling](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1b.pdf)
+- [Lecture 1c: Data Mining Exercise](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section1c.pdf)
+- [Lecture 2a: Fundamentals of Probability I](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2a.pdf)
+- [Lecture 2b: Fundamentals of Probability II](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2b.pdf)
+- [Lecture 2c: Probability Distributions](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2c.pdf)
+- [Lecture 2d: Random Numbers, Simulation, and Sampling](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section2d.pdf)
+- [Lecture 3a: Bayesian Statistics](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section3a.pdf)
+- [Lecture 3b: Priors and Introduction to Posterior Analysis](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section3b.pdf)
+- [Lecture 3c: Posterior Analysis II](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section3c.pdf)
+- [Lecture 4a: Significance of Evidence](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4a.pdf)
+- [Lecture 4b: Optimisation and Complex Modelling I](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4b.pdf)
+- [Lecture 4c: Complex Modelling II and Machine Learning](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4c.pdf)
 
 # Compiling the Lectures 
 Additionally, the lectures can be downloaded and compiled into a range of formats using the knit.sh script in the Rmd
