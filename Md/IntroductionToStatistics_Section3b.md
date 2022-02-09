@@ -7,10 +7,6 @@ Dr Angus H Wright
 
 
 
-
-
-
-
 # Section 3b: Introduction <!--{{{-->
 
 <!--Setup {{{-->
@@ -50,6 +46,7 @@ from a Poisson distribution with unknown rate parameter:
 *X* ∼ Pois(*θ*). Now suppose that our prior belief about *θ* is that *θ*
 is **definitely** within the range 0 ≤ *θ* ≤ 1, but all values in that
 range are equally likely. Our prior on *θ* is therefore:
+
 $$
 p(\\theta)=
 \\begin{cases}
@@ -57,13 +54,9 @@ p(\\theta)=
 0 & \\textrm{otherwise}
 \\end{cases}
 $$
+
 In this case, the normalising constant in Bayes Theorem is:
-$$
-\\begin{align}
-p(x)& =\\int p(\\theta)p(x\|\\theta)\\textrm{d}\\theta \\\\
-& =\\int\_0^1 e^{-n\\theta}\\theta^{-\\sum x\_i} \\textrm{d}\\theta
-\\end{align}
-$$
+
 which can only be evaluated numerically!
 
 **Even simple priors can lead to awkward numerical problems**.
@@ -102,19 +95,6 @@ priors provide us with mathematical simplicity.
 
 Some prior-likelihood conjugate pairs are:
 
-$$ 
-\\begin{align}
-\\begin{array}{ccc}
-\\textrm{Likelihood} & \\textrm{Prior} & \\textrm{Posterior} \\\\
-\\hline
-x \\sim \\textrm{Bin}(n,\\theta) & \\textrm{Be}(p,q) & \\textrm{Be}(p+x,q+n-x) \\\\
-x\_1,\\dots,x\_n \\sim \\textrm{Po}(\\theta) & \\textrm{Ga}(p,q) & \\textrm{Ga}(p+\\sum\_{i=1}^n x\_i,q+n) \\\\
-x\_1,\\dots,x\_n \\sim \\textrm{N}(\\theta,\\tau^{-1}) & \\textrm{N}(b,c^{-1}) & \\textrm{N}(\\frac{cb+n\\tau\\bar{x}}{c+n\\tau},\\frac{1}{c+n\\tau}) \\\\
-x\_1,\\dots,x\_n \\sim \\textrm{Ga}(k,\\theta) & \\textrm{Ga}(p,q) & \\textrm{Ga}(p+nk,q+\\sum\_{i=1}^n x\_i) \\\\
-\\hline
-\\end{array}
-\\end{align}
-$$
 where *k* and *τ* are known.
 
 <!--}}}-->
@@ -137,20 +117,7 @@ $$
 \\therefore p(\\theta\|x)\\propto \\exp\\left\\{-\\frac{1}{2c^2}\\sum(b-\\theta)^2 \\right\\}\\times
 \\exp\\left\\{-\\frac{1}{2\\sigma^2}\\sum(x\_i-\\theta)^2 \\right\\}
 $$
-$$
-\\begin{align}
-&= \\exp\\left\\{-\\frac{b^2-2b\\theta+\\theta^2}{2c^2} - \\frac{\\sum x\_i^2 -2\\theta n\\bar{x} + n\\theta^2}{2\\sigma^2}\\right\\} \\\\
-&\\propto \\exp\\left\\{-\\frac{1}{2}\\left\[
-\\theta^2\\left(\\frac{1}{c^2}+\\frac{n}{\\sigma^2}\\right)-
-2\\theta\\left(\\frac{b}{c^2}-\\frac{n\\bar{x}}{\\sigma^2}\\right)
-\\right\]\\right\\}\\\\
-&\\propto \\exp\\left\\{-\\frac{1}{2}\\left\[
-\\frac{1}{c^2}+\\frac{n}{\\sigma^2}\\right\]\\left\[
-\\theta-\\frac{\\frac{b}{c^2}-\\frac{n\\bar{x}}{\\sigma^2}}
-{\\frac{1}{c^2}+\\frac{n}{\\sigma^2}}
-\\right\]^2\\right\\}\\\\
-\\end{align}
-$$
+
 $$
 \\therefore  \\theta\|x \\sim \\textrm{N}\\left(\\frac{\\frac{b}{c^2}-\\frac{n\\bar{x}}{\\sigma^2}}
 {\\frac{1}{c^2}+\\frac{n}{\\sigma^2}},
@@ -229,12 +196,6 @@ problems as well.
 
 If we specify a prior for *θ* of the form *p*(*θ*) ∝ 1, and then
 consider the parameter *ϕ* = *θ*<sup>2</sup>:
-$$
-\\begin{align}
-p(\\phi)&=p(\\theta^2)\\frac{\\textrm{d}\\theta}{\\textrm{d}\\phi}\\\\
-&\\propto \\frac{1}{\\sqrt{\\phi}}
-\\end{align}
-$$
 
 However, if we are ignorant about the possible values of *θ*, then
 surely we ought to be equally ignorant about the possible values of *ϕ*.
@@ -247,12 +208,7 @@ One particular point of view is that ignorance of priors ought to be
 consistent across 1 − 1 parameter transformations. This idea leads us to
 the concept of **Jeffery’s Prior**, which is based on the concept of
 Fisher Information:
-$$
-\\begin{align}
-I(\\theta)&=-\\mathbb{E}\\left\\{\\frac{\\textrm{d}^2}{\\textrm{d}\\theta^2}\\log\\left\[p(x\|\\theta)\\right\]\\right\\}\\\\
-&=\\mathbb{E}\\left\\{\\frac{\\textrm{d}}{\\textrm{d}\\theta}\\log\\left\[p(x\|\\theta)\\right\]\\right\\}^2.
-\\end{align}
-$$
+
 In the case of a vector parameter *θ*, *I*(*θ*) is the matrix that is
 formed as minus the expectation of the matrix of second-order partial
 derivatives of log \[*p*(*x*\|*θ*)\].
@@ -265,12 +221,7 @@ $$
 The consistency of the prior under transformations can be varified
 simply. Suppose *ϕ* = *g*(*θ*) is a 1 − 1 parameter transformation of
 *θ*. Then, by change of variables:
-$$
-\\begin{align}
-p(\\phi)&\\propto p\_0(\\theta)\\left\| \\frac{\\textrm{d}\\theta}{\\textrm{d}\\phi}\\right\|\\\\
-&=I(\\theta)^\\frac{1}{2}\\left\| \\frac{\\textrm{d}\\theta}{\\textrm{d}\\phi}\\right\|. 
-\\end{align}
-$$
+
 By definition:
 $$
 I(\\phi)=I(\\theta)\\left\| \\frac{\\textrm{d}\\theta}{\\textrm{d}\\phi}\\right\|
@@ -293,19 +244,6 @@ x\|\\theta \\sim \\textrm{Bin}(mn,\\theta)\\\\
 \\frac{-x}{\\theta^2}-\\frac{n-x}{(1-\\theta)^2}\\\\
 $$
 So:
-$$
-\\begin{align}
-\\mathbb{E}\\left(\\frac{\\partial^2}{\\partial\\theta^2}\\left\\{log\\left\[p(x\|\\theta)\\right\]\\right\\}\\right) &= 
-\\frac{-n\\theta}{\\theta^2}-\\frac{n-n\\theta}{(1-\\theta)^2}\\\\
-& = \\frac{-n}{\\theta} - \\frac{n}{1-\\theta} \\\\
-\\end{align}
-$$
-$$
-\\begin{align}
-I(\\theta)&=\\frac{n(1-\\theta)+n\\theta}{\\theta(1-\\theta)} \\\\
-&=\\frac{n}{\\theta(1-\\theta)} 
-\\end{align}
-$$
 
 $$
 \\therefore p(\\theta) \\propto \\theta^{-\\frac{1}{2}}(1-\\theta)^{-\\frac{1}{2}}
@@ -331,12 +269,7 @@ Going through each term one at a time:
 $$
 \\frac{\\partial^2}{\\partial\\mu^2}\\log\\left\[p(x\|\\theta)\\right\]=n\\sigma^2
 $$
-$$
-\\begin{align}
-\\frac{\\partial}{\\partial\\sigma}\\frac{\\partial}{\\partial\\mu}\\log\\left\[p(x\|\\theta)\\right\]&=\\frac{\\partial}{\\partial\\mu}\\frac{\\partial}{\\partial\\sigma}\\log\\left\[p(x\|\\theta)\\right\] \\\\ 
-&=\\frac{n(\\bar{x}-\\mu)}{\\sigma^4}\\\\
-\\end{align}
-$$
+
 $$
 \\frac{\\partial^2}{\\partial\\sigma^2}\\log\\left\[p(x\|\\theta)\\right\]=\\frac{-n}{2\\sigma^4}+\\frac{n(s+(\\bar{x}-\\mu)^2)}{2\\sigma^6}
 $$
@@ -402,13 +335,7 @@ $$
 p(\\theta)=\\sum\_{i=1}^k w\_i p\_i(\\theta)
 $$
 Such that:
-$$
-\\begin{align}
-p(\\theta\|x)&\\propto p(\\theta)p(x\|\\theta)\\\\
-&=\\sum\_{i=1}^k w\_i p\_i(\\theta)\\times p(x\|\\theta)\\\\
-&\\propto \\sum\_{i=1}^k w\_i^\\star p\_i(\\theta\|x)
-\\end{align}
-$$
+
 So the posterior is in the same family of conjugates, but with different
 relative weights.
 
@@ -470,58 +397,13 @@ during manufacturing, which is either cool (*θ*<sub>1</sub> = 0) or hot
 of satisfactorily making a machine given the environmental conditions
 are governed by the likelihood:
 
-$$ 
-\\begin{align}
-\\begin{array}{c\|c\|c\|}
-P(x=1\|\\theta\_1,\\theta\_2) & \\theta\_1 = 0 & \\theta\_1=1 \\\\
-\\hline
-\\theta\_2=0 & 0.6 & 0.8 \\\\
-\\hline
-\\theta\_2=1 & 0.7 & 0.6 \\\\
-\\hline
-\\end{array}
-\\end{align}
-$$
 The joint prior distribution of *θ*<sub>1</sub>, *θ*<sub>2</sub> is
 given by:
-$$ 
-\\begin{align}
-\\begin{array}{c\|c\|c\|}
-P(\\theta\_1,\\theta\_2) & \\theta\_1 = 0 & \\theta\_1=1 \\\\
-\\hline
-\\theta\_2=0 & 0.3 & 0.2 \\\\
-\\hline
-\\theta\_2=1 & 0.2 & 0.3 \\\\
-\\hline
-\\end{array}
-\\end{align}
-$$
+
 We can therefore calculate the numerator of Bayes theorem as:
-$$ 
-\\begin{align}
-\\begin{array}{c\|c\|c\|}
-P(x=1\|\\theta\_1,\\theta\_2)\\times P(\\theta\_1,\\theta\_2) & \\theta\_1 = 0 & \\theta\_1=1 \\\\
-\\hline
-\\theta\_2=0 & 0.18 & 0.16 \\\\
-\\hline
-\\theta\_2=1 & 0.14 & 0.18 \\\\
-\\hline
-\\end{array}
-\\end{align}
-$$
+
 And so the joint posterior distribution is:
-$$ 
-\\begin{align}
-\\begin{array}{c\|c\|c\|}
-P(\\theta\_1,\\theta\_2\|x) & \\theta\_1 = 0 & \\theta\_1=1 \\\\
-\\hline
-\\theta\_2=0 & \\frac{18}{66} & \\frac{16}{66} \\\\
-\\hline
-\\theta\_2=1 & \\frac{14}{66} & \\frac{18}{66} \\\\
-\\hline
-\\end{array}
-\\end{align}
-$$
+
 If we are only interested in the marginal distributions of the
 probability that it was hot/cool or dry/humid, we can simply sum along
 the axis of interest to get the **marginal distributions**:
@@ -588,17 +470,6 @@ distribution *p*(*θ*\|*x*) requires calculating:
 
 ## Quadratic Loss
 
-$$
-\\begin{align}
-\\rho(a,x)&=\\int L(\\theta,a)p(\\theta\|x)\\textrm{d}\\theta \\\\
-&=\\int(\\theta-a)^2p(\\theta\|x)\\textrm{d}\\theta \\\\
-&=\\int(\\theta-\\mathbb{E}(\\theta\|x)+\\mathbb{E}(\\theta\|x)-a)^2p(\\theta\|x)\\textrm{d}\\theta \\\\
-&=\\int(\\theta-\\mathbb{E}(\\theta\|x))^2p(\\theta\|x)\\textrm{d}\\theta-\\\\
-&\\;\\;\\;\\;\\; 2\\int(\\theta-\\mathbb{E}(\\theta\|x))(\\mathbb{E}(\\theta\|x)-a)p(\\theta\|x)\\textrm{d}\\theta+\\\\
-&\\;\\;\\;\\;\\; \\int(\\mathbb{E}(\\theta\|x)-a)^2p(\\theta\|x)\\textrm{d}\\theta\\\\
-&= \\textrm{Var}(\\theta\|x)+\\mathbb{E}(\\theta\|x)-a)^2
-\\end{align}
-$$
 As:
 Var(*x*) = 𝔼\[(*x*−*μ*)<sup>2</sup>\]
 
