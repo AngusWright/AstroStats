@@ -4,7 +4,9 @@
 .RData
 .Ruserdata
 *.html 
-*.pdf 
+AdvertSlide* 
+FullCourse* 
+CourseSummary/
 *.swp
 *.log
 *.mp4 
