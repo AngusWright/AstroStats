@@ -8,7 +8,7 @@ The lecture notes are provided in viewable-on-github format by clicking on the v
 Additionally, the lectures can be downloaded and compiled into a range of formats using the knit.sh script in the Rmd
 folder. The use of the knit.sh script assumes that you have a functional **R** installation with both the rmarkdown and
 rmdformats packages installed. **R** can be easily installed via conda. The process for installing packages in **R** is
-described in Lecture 0
+described in the Lecture 0 section "Installing and Loading Libraries" 
 [here](https://github.com/AngusWright/AstroStats/blob/master/IntroductionToStatistics_Section0.md#installing-and-loading-libraries-). 
 
 Available formats are: 
