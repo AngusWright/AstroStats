@@ -100,6 +100,7 @@ do
       github)
         echo "Output Format is ${fmt}"
         longfmt=rmarkdown::github_document
+        args=", output_options = list(pandoc_args = '--mathjax')"
         ;;
       pdf)
         echo "Output Format is ${fmt}"
@@ -120,7 +121,7 @@ do
     echo "Knitting Section ${section} to ${longfmt}" 
     R --slave --no-save > render_${section}_${fmt}.log 2>&1 <<- END
 			library(rmarkdown); 
-			rmarkdown::render("IntroductionToStatistics_Section${section}.Rmd","${longfmt}") 
+			rmarkdown::render("IntroductionToStatistics_Section${section}.Rmd","${longfmt}" $args) 
 		END
     #}}}
 
@@ -130,8 +131,10 @@ do
         mv IntroductionToStatistics_Section${section}.html ../HTML_page/IntroductionToStatistics_Section${section}_${fmt}.html
         ;;
       github)
-        mv IntroductionToStatistics_Section${section}.md ../IntroductionToStatistics_Section${section}.md
-        mv IntroductionToStatistics_Section${section}_files ../
+        mv IntroductionToStatistics_Section${section}.md ../Md/IntroductionToStatistics_Section${section}.md
+        rm -fr ../Md/IntroductionToStatistics_Section${section}_files
+        mv IntroductionToStatistics_Section${section}_files ../Md/
+        sed -i.bak 's@Images/@../Rmd/Images/@g' ../Md/IntroductionToStatistics_Section${section}.md
         ;;
       pdf)
         mv IntroductionToStatistics_Section${section}.pdf ../PDF/IntroductionToStatistics_Section${section}.pdf
