@@ -236,13 +236,6 @@ We can see the Jeffery’s prior in action using a few simple examples.
 
 ## A Binomial Sample
 
-$$
-x\|\\theta \\sim \\textrm{Bin}(mn,\\theta)\\\\
-\\therefore p(x\|\\theta)\\propto \\theta^x (1-\\theta)^{n-x} \\\\ 
-\\log\\left\[p(x\|\\theta)\\right\] = x\\log\\theta + (n-x)\\log(1-\\theta) \\\\
-\\frac{\\partial^2}{\\partial\\theta^2}\\left\\{log\\left\[p(x\|\\theta)\\right\]\\right\\} = 
-\\frac{-x}{\\theta^2}-\\frac{n-x}{(1-\\theta)^2}\\\\
-$$
 So:
 
 $$
@@ -407,12 +400,6 @@ And so the joint posterior distribution is:
 If we are only interested in the marginal distributions of the
 probability that it was hot/cool or dry/humid, we can simply sum along
 the axis of interest to get the **marginal distributions**:
-$$
-P(\\theta\_1=0\|x,\\theta\_2)=32/66\\\\
-P(\\theta\_1=1\|x,\\theta\_2)=34/66\\\\
-P(\\theta\_2=0\|x,\\theta\_1)=34/66\\\\
-P(\\theta\_2=1\|x,\\theta\_1)=32/66
-$$
 
 We can show the same methods for more complex distributions, however the
 main question of interest is how do we summarise complex posteriors

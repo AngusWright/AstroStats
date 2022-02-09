@@ -239,12 +239,12 @@ Here our draws are independent, and computing the probability of the
 observed outcome is straightforward (that is, the joint probability of
 observing a 2 and then an 8):
 
-$$ 
-\\begin{align}
+$$
+\\begin{aligned}
 P(2\\cap 8) &= P(2)\\times P(8) \\\\
 &= \\frac{1}{8}\\times \\frac{1}{8} \\\\
 &= \\frac{1}{64}
-\\end{align}
+\\end{aligned}
 $$
 
 However, how does this change if we choose not to replace the first ball
@@ -276,11 +276,11 @@ In this example we can compute the conditional proability logically:
 <img src="../Rmd/Images/UrnNoReplacement.png" alt="Urn without Replacement" width="600" />
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(2\\cap 8) &= P(2)\\times P(8\|2) \\\\
 &= \\frac{1}{8}\\times \\frac{1}{7} \\\\
 &= \\frac{1}{56}. 
-\\end{align}
+\\end{aligned}
 $$
 
 This example is a very trivial one, but consider a slightly different
@@ -291,8 +291,9 @@ calculate the probability of drawing two balls with a combined value
 greater than or equal to 10.
 
 The “win” event space is therefore:
+
 $$
-\\begin{align}
+\\begin{aligned}
 \\mathcal{E}=\\{ & 8+2,8+3,8+4,8+5,8+6,8+7,8+8,\\\\
                & 7+3,7+4,7+5,7+6,7+7,7+8,\\\\
                & 6+4,6+5,6+6,6+7,6+8,\\\\
@@ -300,8 +301,9 @@ $$
                & 4+6,4+7,4+8,\\\\
                & 3+7,3+8,\\\\
                & 2+8\\}. 
-\\end{align}
+\\end{aligned}
 $$
+
 There are 64 possible ways of drawing 2 balls from a bag of 8 with
 replacement, which means that we have a 7/16 chance of winning this
 game. However, suppose now that we **know** that our first draw is an 8.
@@ -396,7 +398,7 @@ of each additional person not sharing a birthday depends on the number
 of previous observations.
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(\\textrm{no shared birthday}) = &P(\\textrm{person 1 has a birthday})\\times \\\\
 &P(\\textrm{person 2 has a birthday different from person 1})\\times \\\\
 &P(\\textrm{person 3 has a birthday different from persons 1 and 2})\\times \\dots \\\\
@@ -405,7 +407,7 @@ P(\\textrm{no shared birthday}) = &P(\\textrm{person 1 has a birthday})\\times \
   & P(\\textrm{no shared birthday}\|\\textrm{2 other birthdays})\\times\\dots \\\\
 = & \\frac{365}{365}\\times\\frac{364}{365}\\times\\frac{363}{365}\\times\\frac{362}{365}\\times\\dots \\\\
 = & \\left(\\frac{1}{365}\\right)^n\\times{365}\\times{364}\\times{363}\\times\\dots 
-\\end{align}
+\\end{aligned}
 $$
 
 We can then calculate this probability simply:
@@ -478,11 +480,13 @@ To determine the coefficient of proportionality (*c*) we can use the
 above expressions:
 
 $$
-P(B\|A)=1-P(B^\\mathcal{c}\|A) \\\\
-P(B\|A)+P(B^\\mathcal{c}\|A)=1 \\\\
-P(B\|A)+P(B^\\mathcal{c}\|A)=cP(B\\cap A)+cP(B^\\mathcal{c}\\cap A) \\\\
-cP(B\\cap A)+cP(B^\\mathcal{c}\\cap A)=cP(A)=1 \\\\
-\\frac{P(B\\cap A)}{P(A)}+\\frac{P(B^\\mathcal{c}\\cap A)}{P(A)}=1 \\\\
+\\begin{aligned}
+P(B\|A)&=1-P(B^\\mathcal{c}\|A) \\\\
+P(B\|A)+P(B^\\mathcal{c}\|A)&=1 \\\\
+P(B\|A)+P(B^\\mathcal{c}\|A)&=cP(B\\cap A)+cP(B^\\mathcal{c}\\cap A) \\\\
+cP(B\\cap A)+cP(B^\\mathcal{c}\\cap A)&=cP(A)=1 \\\\
+\\frac{P(B\\cap A)}{P(A)}+\\frac{P(B^\\mathcal{c}\\cap A)}{P(A)}&=1 
+\\end{aligned}
 $$
 
 and so:
@@ -533,11 +537,11 @@ make. Given that the intersection of two probabilities is unchanged
 under ordering: *P*(*B* ∩ *A*) = *P*(*A* ∩ *B*), this means that:
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(B\|A)&=\\frac{P(B\\cap A)}{P(A)} \\\\
 P(A\|B)&=\\frac{P(A\\cap B)}{P(B)} \\\\
-\\therefore P(B\|A)&= \\frac{P(A\|B)P(B)}{P(A)} \\\\
-\\end{align}
+\\therefore P(B\|A)&= \\frac{P(A\|B)P(B)}{P(A)} 
+\\end{aligned}
 $$
 
 This turns out to be an extremely valuable relationship known as **Bayes
@@ -645,15 +649,15 @@ small).
 We can relate these quantities with our formula from earlier:
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(\\mathcal{I}\|\\mathcal{E}) &= \\frac{P(\\mathcal{E}\|\\mathcal{I})P(\\mathcal{I})}{P({\\mathcal{E})}} \\\\
 &=\\frac{P(\\mathcal{E}\|\\mathcal{I})P(\\mathcal{I})}{P(\\mathcal{E}\|\\mathcal{I})P(\\mathcal{I})+P(\\mathcal{E}\|\\mathcal{I^\\mathcal{c}})P(\\mathcal{I^\\mathcal{c}})}
-\\end{align}
+\\end{aligned}
 $$
 
 The assumed similarity between *P*(ℐ\|ℰ) and *P*(ℰ\|ℐ) is clearly
 violated if *P*(ℐ) is large, or if *P*(ℰ\|ℐ<sup>𝒸</sup>) is much smaller
-than P(\|).
+than *P*(ℰ\|ℐ).
 
 This may seem familiar to you from last week, when we discussed the DNA
 matching problem. In that example, we considered independence between
@@ -804,12 +808,12 @@ Let 𝒹 be the event that a true decay occurs, and 𝒫 be the event that the
 experiement produces a positive detection.
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(\\mathcal{d}\|\\mathcal{P})&=\\frac{P(\\mathcal{P}\|\\mathcal{d})P(\\mathcal{d})}{P(\\mathcal{P})} \\\\
 &=\\frac{P(\\mathcal{P}\|\\mathcal{d})P(\\mathcal{d})}{P(\\mathcal{P}\|\\mathcal{d})P(\\mathcal{d}) + P(\\mathcal{P}\|\\mathcal{d^c})P(\\mathcal{d^c})} \\\\
 &=\\frac{0.6\\times 0.4}{0.6\\times 0.4 + 0.1\\times 0.6} \\\\
 &=0.8 
-\\end{align}
+\\end{aligned}
 $$
 
 So your experiment only has to be approximately accurate to produce
@@ -830,12 +834,12 @@ though, has improved to 99.9% accuracy, and only 1% false-positive rate.
 Again we compute our probability that we actually detected the event:
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(\\mathcal{d}\|\\mathcal{P})&=\\frac{P(\\mathcal{P}\|\\mathcal{d})P(\\mathcal{d})}{P(\\mathcal{P})} \\\\
 &=\\frac{P(\\mathcal{P}\|\\mathcal{d})P(\\mathcal{d})}{P(\\mathcal{P}\|\\mathcal{d})P(\\mathcal{d}) + P(\\mathcal{P}\|\\mathcal{d^c})P(\\mathcal{d^c})} \\\\
 &=\\frac{0.999\\times 0.001}{0.999\\times 0.001 + 0.01\\times 0.999} \\\\
 &=0.09 
-\\end{align}
+\\end{aligned}
 $$
 
 So despite our experiment becoming much much more accurate, the

@@ -37,9 +37,9 @@ biases that corrupt statistical analyses. <!--}}}-->
 
 The examination is now registered on ecampus!
 
-<img src="Rmd/Images/prufung.png" alt="image label" width="700" />
+<img src="../Rmd/Images/prufung.png" alt="image label" width="700" />
 
-<img src="Rmd/Images/moodle.png" alt="image label" width="700" />
+<img src="../Rmd/Images/moodle.png" alt="image label" width="700" />
 
 Registration for the course exam is open from **now until next tuesday
 13.07**.
@@ -771,15 +771,6 @@ $T\|H\_1\\sim N\\left(1,\\frac{1}{N}\\right)$.
 
 Assume a priori that we have no prior preference over the models
 $P(H\_0)=P(H\_1)=\\frac{1}{2}$. Therefore the posterior odds ratio is:
-$$
-\\begin{align}
-\\frac{P(H\_0\|T)}{P(H\_1\|T)}&=  \\frac{P(H\_0)}{P(H\_1)} \\times \\frac{P(T\|H\_0)}{P(T\|H\_1)}\\\\
-&=\\frac{0.5}{0.5}\\times\\frac{
-\\left(\\frac{N}{2\\pi}\\right)^\\frac{1}{2}\\exp\\left(-0.5N\\bar{X}^2\\right)}{
-\\left(\\frac{N}{2\\pi}\\right)^\\frac{1}{2}\\exp\\left\[-0.5N(\\bar{X}-1)^2\\right\]}\\\\
-&=\\exp\\left\[-0.5N(2\\bar{X}-1)\\right\]
-\\end{align}
-$$
 
 Let’s now look at some simulated data:
 
@@ -823,19 +814,10 @@ Suppose we have a marginally more complex hypothesis test:
 *H*<sub>1</sub> : *θ* ≠ *θ*<sub>0</sub>.
 
 Again, let *T* = *T*(*X*<sub>1</sub>, …, *X*<sub>*n*</sub>) denote our
-appropriate test statistic. As before:
-$$
-\\begin{align}
-\\frac{P(H\_0\|T)}{P(H\_1\|T)}&=  \\frac{P(H\_0)}{P(H\_1)} \\times \\frac{P(T\|H\_0)}{P(T\|H\_1)}\\\\
-&=\\frac{P(H\_0)}{P(H\_1)} \\times\\frac{
-P(T\|H\_0,\\theta\_0)}{
-\\int P(T\|H\_1,\\theta)P\_1(\\theta)\\textrm{d}\\theta}
-\\end{align}
-$$
-where *P*<sub>1</sub>(*θ*) is a prior for *θ* under model
-*H*<sub>1</sub>. The Bayes factor in this case is therefore the ratio of
-the likelihood under *H*<sub>0</sub> to the *averaged* likelihood under
-*H*<sub>1</sub>.
+appropriate test statistic. As before: where *P*<sub>1</sub>(*θ*) is a
+prior for *θ* under model *H*<sub>1</sub>. The Bayes factor in this case
+is therefore the ratio of the likelihood under *H*<sub>0</sub> to the
+*averaged* likelihood under *H*<sub>1</sub>.
 
 Again, let’s look at some simulated data. Suppose again that we have
 *X*\|*θ* ∼ *N*(*θ*, 1), and *H*<sub>0</sub> : *θ* = 0 versus
@@ -849,25 +831,7 @@ $T\|\\theta\\sim N\\left(\\theta,\\frac{1}{N}\\right)$ and let us assume
 
 Once again, we assume that the two hypotheses are equally likely a
 priori: $P(H\_0)=P(H\_1)=\\frac{1}{2}$. We therefore find the posterior
-odds ratio:
-$$
-\\begin{align}
-\\frac{P(H\_0\|T)}{P(H\_1\|T)}
-&=\\frac{P(H\_0)}{P(H\_1)} \\times\\frac{
-P(T\|H\_0,\\theta\_0)}{
-\\int P(T\|H\_1,\\theta)P\_1(\\theta)\\textrm{d}\\theta} \\\\
-&=\\frac{0.5}{0.5}\\times\\frac{
-\\left(\\frac{N}{2\\pi}\\right)^\\frac{1}{2}\\exp\\left(-0.5N\\bar{X}^2\\right)}{
-\\int\\left(\\frac{N}{2\\pi}\\right)^\\frac{1}{2}\\exp\\left\[-0.5N(\\bar{X}-\\theta)^2\\right\]
-(2\\pi)^{\\frac{1}{2}}\\exp\\left\[-0.5(\\theta-1)^2\\right\]\\textrm{d}\\theta}\\\\
-&=\\frac{
-\\sqrt{2\\pi}\\exp\\left(-0.5N\\bar{X}^2\\right)}{
-\\int\\exp\\left\\{-0.5\\left\[\\left(\\theta-1\\right)^2+N\\left(\\theta-\\bar{X}\\right)^2\\right\]\\right\\}
-\\textrm{d}\\theta}\\\\
-&=\\sqrt{N+1}\\exp\\left\\{-0.5\\left\[\\frac{\\left(N\\bar{x}+1\\right)^2}{N+1}-1\\right\]\\right\\}
-\\end{align}
-$$
-Let us take our two sets of observations from previously:
+odds ratio: Let us take our two sets of observations from previously:
 
 ``` r
 x1<-rnorm(10,mean=1.2)

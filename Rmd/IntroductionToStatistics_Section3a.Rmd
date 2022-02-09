@@ -618,7 +618,6 @@ $$
 where $k=7$ (because there are 7 possible outcomes; $C_0,C_1,\dots,C_6$). 
 
 Using this prior: 
-$$
 \begin{align}
 P(C_3|A)=& \frac{P(A|C_3)P(C_3)}{\sum_{j=0}^{6}P(A|C_j)P(C_j)} \\
 =& \frac{\left(\frac{3}{6}\times\frac{2}{5}\times\frac{1}{4}\right)\times\frac{1}{7}}
@@ -630,7 +629,6 @@ P(C_3|A)=& \frac{P(A|C_3)P(C_3)}{\sum_{j=0}^{6}P(A|C_j)P(C_j)} \\
 \right]} \\
 &=\frac{1}{35}
 \end{align}
-$$
 
 So the data have updated our prior belief from $P(C_3)=\frac{1}{7}$ to 
 $P(C_3|A)=\frac{1}{35}$. Put in words, the event that there is only $3$ black 
@@ -693,16 +691,16 @@ calculation.
 
 Let's go back to our three scenarios one last time. My prior distributions were 
 all Beta distributions:
-$$
-\theta\sim\textrm{Be}(\alpha,\beta)\\
-p(\theta;\alpha,\beta)=\frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1},
-$$
+\begin{align}
+\theta&\sim\textrm{Be}(\alpha,\beta)\\
+p(\theta;\alpha,\beta)&=\frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1},
+\end{align}
 For the three different scenarios, my three prior distributions were:
-$$
-\theta_1\sim\textrm{Be}(\alpha=0.1,\beta=100)\\
-\theta_2\sim\textrm{Be}(\alpha=0.7,\beta=1)\\
-\theta_3\sim\textrm{Be}(\alpha=10,\beta=0.5)\\
-$$
+\begin{align}
+\theta_1&\sim\textrm{Be}(\alpha=0.1,\beta=100)\\
+\theta_2&\sim\textrm{Be}(\alpha=0.7,\beta=1)\\
+\theta_3&\sim\textrm{Be}(\alpha=10,\beta=0.5)\\
+\end{align}
 ```{r, fig.height=4, fig.width=6, out.width='80%', eval=TRUE} 
 #Set up the axes
 magplot(1,xlim=c(0,1),ylim=c(0,20),xlab=expression(p(theta)),ylab="PDF",
@@ -715,10 +713,10 @@ legend('top',legend=paste("Scenario",1:3),col=c("red3","green3","blue3"),lty=c(1
 
 The likelihood function that we were looking at for these scenarios were all the 
 same Binomial distribution: 
-$$
-X\sim\textrm{Bin}(n,\theta) \\
-p(X=x|\theta)={n\choose x}\theta^x(1-\theta)^{n-x}
-$$
+\begin{align}
+X&\sim\textrm{Bin}(n,\theta) \\
+p(X=x|\theta)&={n\choose x}\theta^x(1-\theta)^{n-x}
+\end{align}
 and the observation was $x=10$. 
 
 We can compute the posterior probability distributions for my three priors both 
@@ -729,21 +727,17 @@ $$
 p(x|\theta)={10\choose x}\theta^x(1-\theta)^{10-x}
 $$
 My priors are each of the form: 
-$$
 \begin{align}
 p(\theta;\alpha,\beta)&=\frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1}\\
 &\propto \theta^{\alpha-1}(1-\theta)^{\beta-1} 
 \end{align}
-$$
 
 Therefore, by Bayes Theorem: 
-$$
 \begin{align}
 p(\theta|x)&\propto p(x|\theta)p(\theta) \\
 &\propto\theta^x(1-\theta)^{n-x}\times\theta^{\alpha-1}(1-\theta)^{\beta-1}\\
 &=\theta^{x+\alpha-1}(1-\theta)^{n-x+\beta-1}
 \end{align}
-$$
 We know that $p(\theta|x)$ must be a probability distribution, and this last line 
 has the same functional form as a Beta distribution. Therefore it must be the
 case that:

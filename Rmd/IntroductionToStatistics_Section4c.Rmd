@@ -171,10 +171,10 @@ y_{ij}|\theta_j \sim N(\theta_j,\sigma^2),\;\; i=1,\dots,n_j;\;\; j=1,\dots,J
 $$
 The estimated effect of the coaching at each school is given by the mean $\bar{y}_j$, 
 with the standard error on the estimate $\sigma_j^2$. 
-$$
-\bar{y}_j = \frac{1}{n_j}\sim_{i=1}^{n_j} y_{ij} \\
-\sigma_j = \sqrt\frac{\sigma^2}{n_j}
-$$
+\begin{align}
+\bar{y}_j &= \frac{1}{n_j}\sim_{i=1}^{n_j} y_{ij} \\
+\sigma_j &= \sqrt\frac{\sigma^2}{n_j}
+\end{align}
 
 The likelihood for each $\theta_j$ can be expressed in terms of the sufficient 
 statistic: 
@@ -284,12 +284,10 @@ two **hyper-parameters** $(\mu, \tau)$.
 Mathematically, we are defining the joint probability of all our $\theta_i$ as 
 the product of the probabilities of observing the data, given that 
 each $\theta_i$ is drawn from a parent population $N(\mu,\tau)$. 
-$$
 \begin{align}
 f(\theta_1,\dots,\theta_J|\mu,\tau) &= \prod_{j=1}^{J} N(\theta_j|\mu,\tau^2) \\
 &=\int \prod_{j=1}^{J}\left[N\left(\theta_j|\mu,\tau^2\right)\right]f(\mu,\tau)\textrm{d}(\mu,\tau)
 \end{align}
-$$
 
 This is a **hierarchical model**, which can interpret the $\theta_j$'s as being
 randomly drawn from some shared parent distribution. Why is this useful?
@@ -380,11 +378,11 @@ We can start by making some very simple assumptions:
 
 That is: 
 $$
-y_{ij}\sim N(\mu,\sigma_y^2)\;\;\textrm{if}\;\;m=1 \\
+y_{ij}\sim N(\mu,\sigma_y^2)\;\;\textrm{if}\;\;m=1 
 $$
 and
 $$
-y_{ij}\sim N(\mu+\beta,\sigma_y^2)\;\;\textrm{if}\;\;m=2 \\
+y_{ij}\sim N(\mu+\beta,\sigma_y^2)\;\;\textrm{if}\;\;m=2 
 $$
 
 We can form this into a single model using an indicator variable $S_i$, which 
@@ -417,11 +415,11 @@ the same breed will have the same mean reaction time. Instead, let's say that
 all breeds of dog share a common _parent distribution_ of mean reaction times,
 from which they are randomly drawn. That is: 
 
-$$
-\alpha_i|\phi\sim N(\mu+S_i\beta,\sigma_\alpha^2); \\
-y_{ij}|\alpha_i,\phi \sim N(\alpha_i,\sigma_y^2);\\
-\phi=(\mu,\sigma_\alpha^2,\beta,\sigma_y^2,S_i)
-$$
+\begin{align}
+\alpha_i|\phi&\sim N(\mu+S_i\beta,\sigma_\alpha^2); \\
+y_{ij}|\alpha_i,\phi &\sim N(\alpha_i,\sigma_y^2);\\
+\phi&=(\mu,\sigma_\alpha^2,\beta,\sigma_y^2,S_i)
+\end{align}
 
 We've therefore modified our graph: 
 
@@ -447,16 +445,16 @@ distracted with some probability $\lambda$. If distracted, their reaction time
 score is pathologically slowed by some amount $\tau$. We can formulate this 
 using a single Binomial draw (i.e. a Bernoulli trial), which constructs an
 indicator variable $z_ij$ to apply the catastrophic delay:
-$$
-\alpha_i|\phi\sim N(\mu+S_i\beta,\sigma_\alpha^2); \\
-z_{ij}|\phi=
+\begin{align}
+\alpha_i|\phi&\sim N(\mu+S_i\beta,\sigma_\alpha^2); \\
+z_{ij}|\phi&=
 \begin{cases} 
 0 & \textrm{if}\;\; S_i =0 \\
 \textrm{Bin}(1,\lambda) & \textrm{otherwise} 
 \end{cases}\\
-y_{ij}|\alpha_i,z_{ij},\phi \sim N(\alpha_i+z_{ij}\tau,\sigma_y^2);\\
-\phi=(\mu,\sigma_\alpha^2,\beta,\sigma_y^2,S_i,\tau,\lambda)
-$$
+y_{ij}|\alpha_i,z_{ij},\phi &\sim N(\alpha_i+z_{ij}\tau,\sigma_y^2);\\
+\phi&=(\mu,\sigma_\alpha^2,\beta,\sigma_y^2,S_i,\tau,\lambda)
+\end{align}
 Thus we reach our new model: 
 
 <img src="Images/dogshow_DAG_3.png" alt="image label" width="600" />

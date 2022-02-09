@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-2022-02-08
+2022-02-09
 
 
 

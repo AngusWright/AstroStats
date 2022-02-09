@@ -144,20 +144,8 @@ Consider our Binomial coin toss with unknown bias *θ*:
 Suppose we intend to make *N* further observations in the future, and we
 let *z* be the number of successful throws out of the *N* trials.
 
-$$
-z\|\\theta\\sim\\textrm{Bin}(N,\\theta) \\\\
-\\therefore p(z\|\\theta)={N\\choose z} \\theta^z(1-\\theta)^{N-z}
-$$
 We can compute the predictive distribution of *z* given our observations
 using the posterior distribution:
-$$
-\\begin{align}
-p(z\|x)&=\\int p(z\|\\theta)p(\\theta\|x)\\textrm{d}\\theta\\\\
-&=\\int\_0^1 {N \\choose z}\\theta^z(1-\\theta)^{N-z} \\frac{\\theta^{p+x-1}(1-\\theta)^{q+n-x-1}}{\\textrm{Be}(p+q,q+n-x)}\\textrm{d}\\theta\\\\
-&= {N\\choose z}\\frac{1}{\\textrm{Be}(p+q,q+n-x)}\\int\_0^1\\theta^{p+x-1}(1-\\theta)^{q+n-x-1}\\textrm{d}\\theta \\\\ \\\\
-\\therefore p(z\|x)&= {N \\choose z} \\frac{\\textrm{Be}(z+p+q,q+2n-x-z)}{\\textrm{Be}(p+q,q+n-x)}.
-\\end{align}
-$$
 
 Remember back to our first exploration into Bayes Theorem with our three
 scenarios (Section 3a). We can now *predict* the outcomes of a
@@ -246,16 +234,10 @@ independent of the past. The probability of transition from state
 
 The *n*<sup>th</sup> step transition probability
 *P*<sup>*n*</sup>(*x*, *y*) of a Markov Chain moving from state *x* to
-state *y* *in precisely *n* steps* is given by:
-$$
-\\begin{align}
-P^n(x,y) &= P(X\_n=y\|X\_0=x) \\\\
-&= \\sum\_{x\_1}\\dots\\sum\_{x\_{n-1}} P(x,x\_1)P(x\_1,x\_2)\\dots P(x\_{n-1},y)
-\\end{align}
-$$
-More generally, the transition probability can be visualised, for a
-finite state space *Ω* as an \|*Ω*\| × \|*Ω*\| matrix of probabilities
-of transitioning from state *x* to state *y*:
+state *y* *in precisely *n* steps* is given by: More generally, the
+transition probability can be visualised, for a finite state space *Ω*
+as an \|*Ω*\| × \|*Ω*\| matrix of probabilities of transitioning from
+state *x* to state *y*:
 *P*(*x*, *y*) = *P*(*X*<sub>1</sub> = *y*\|*X*<sub>0</sub> = *x*);  *x*, *y* ∈ *Ω*.
 
 All entries in *P*(*x*, *y*) are therefore probabilities
@@ -347,17 +329,11 @@ for (i in 1:ncol(walkers)) {
 <img src="IntroductionToStatistics_Section3c_files/figure-gfm/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;" />
 
 Using this random walk, we can now explore the transition probability we
-discussed earlier:
-$$
-\\begin{align}
-P^n(x,y) &= P(X\_n=y\|X\_0=x) \\\\
-&= \\sum\_{x\_1}\\dots\\sum\_{x\_{n-1}} P(x,x\_1)P(x\_1,x\_2)\\dots P(x\_{n-1},y)
-\\end{align}
-$$
-Analytically, this probability requires us to sum over all possible
-values of *x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n* − 1</sub>.
-One question we might want to ask, though, is: what is the probability
-of returning to my starting point as a function of the number of steps?
+discussed earlier: Analytically, this probability requires us to sum
+over all possible values of
+*x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n* − 1</sub>. One question
+we might want to ask, though, is: what is the probability of returning
+to my starting point as a function of the number of steps?
 
 We can use our walker script will allow us to calculate this probability
 relatively trivially:
@@ -928,7 +904,7 @@ magplot(chain[-1,2],chain[-nrow(chain),2],pch=20,col='blue3',lwd=2,
 <img src="IntroductionToStatistics_Section3c_files/figure-gfm/unnamed-chunk-23-1.png" width="80%" style="display: block; margin: auto;" />
 
 However we can circumvent this by **thinning** the samples to every
-$n^{\\textrm{th}$ sample (but of course this necessitates a longer
+*n*<sup>th</sup> sample (but of course this necessitates a longer
 chain).
 
 ``` r
@@ -1005,14 +981,8 @@ All of these probabilities can be described using binomials:
 2.  *x* heads\|biased coin, *θ*<sub>2</sub> ∼ Bin(3, *θ*<sub>2</sub>)
 3.  *x* heads\|fair coin ∼ Bin(3, 0.5)
 
-So we can construct our likelihood from these probabilities:
-$$
-\\begin{align}
-P(X\|\\theta\_1,\\theta\_2) &= P(X\|n,0.5)(1-\\theta\_1)+P(X\|n,\\theta\_2)\\theta\_1 \\\\
-&=\\left\[\\textrm{Bin}(3,0.5)(1-\\theta\_1)+\\textrm{Bin}(3,\\theta\_2)\\theta\_1\\right\]
-\\end{align}
-$$
-for *θ*<sub>1</sub>, *θ*<sub>2</sub> ∈ \[0, 1\].
+So we can construct our likelihood from these probabilities: for
+*θ*<sub>1</sub>, *θ*<sub>2</sub> ∈ \[0, 1\].
 
 Which in **R** code is simply:
 

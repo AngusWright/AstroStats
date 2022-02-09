@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-Updated: 2022-02-08
+Updated: 2022-02-09
 
 
 
@@ -625,19 +625,6 @@ where *k* = 7 (because there are 7 possible outcomes;
 *C*<sub>0</sub>, *C*<sub>1</sub>, …, *C*<sub>6</sub>).
 
 Using this prior:
-$$
-\\begin{align}
-P(C\_3\|A)=& \\frac{P(A\|C\_3)P(C\_3)}{\\sum\_{j=0}^{6}P(A\|C\_j)P(C\_j)} \\\\
-=& \\frac{\\left(\\frac{3}{6}\\times\\frac{2}{5}\\times\\frac{1}{4}\\right)\\times\\frac{1}{7}}
-{\\frac{1}{7}\\times\\left\[0+0+0+
-\\left(\\frac36\\times\\frac25\\times\\frac14\\right)+
-\\left(\\frac46\\times\\frac35\\times\\frac24\\right)+
-\\left(\\frac56\\times\\frac45\\times\\frac34\\right)+
-1
-\\right\]} \\\\
-&=\\frac{1}{35}
-\\end{align}
-$$
 
 So the data have updated our prior belief from $P(C\_3)=\\frac{1}{7}$ to
 $P(C\_3\|A)=\\frac{1}{35}$. Put in words, the event that there is only 3
@@ -697,17 +684,8 @@ avoided, but generally speaking specialised techniques are required to
 simply solve the calculation.
 
 Let’s go back to our three scenarios one last time. My prior
-distributions were all Beta distributions:
-$$
-\\theta\\sim\\textrm{Be}(\\alpha,\\beta)\\\\
-p(\\theta;\\alpha,\\beta)=\\frac{\\Gamma(\\alpha) \\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta)}\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1},
-$$
-For the three different scenarios, my three prior distributions were:
-$$
-\\theta\_1\\sim\\textrm{Be}(\\alpha=0.1,\\beta=100)\\\\
-\\theta\_2\\sim\\textrm{Be}(\\alpha=0.7,\\beta=1)\\\\
-\\theta\_3\\sim\\textrm{Be}(\\alpha=10,\\beta=0.5)\\\\
-$$
+distributions were all Beta distributions: For the three different
+scenarios, my three prior distributions were:
 
 ``` r
 #Set up the axes
@@ -722,12 +700,7 @@ legend('top',legend=paste("Scenario",1:3),col=c("red3","green3","blue3"),lty=c(1
 <img src="IntroductionToStatistics_Section3a_files/figure-gfm/unnamed-chunk-12-1.png" width="80%" style="display: block; margin: auto;" />
 
 The likelihood function that we were looking at for these scenarios were
-all the same Binomial distribution:
-$$
-X\\sim\\textrm{Bin}(n,\\theta) \\\\
-p(X=x\|\\theta)={n\\choose x}\\theta^x(1-\\theta)^{n-x}
-$$
-and the observation was *x* = 10.
+all the same Binomial distribution: and the observation was *x* = 10.
 
 We can compute the posterior probability distributions for my three
 priors both analytically and empirically. Let’s start with the analytic
@@ -738,24 +711,10 @@ $$
 p(x\|\\theta)={10\\choose x}\\theta^x(1-\\theta)^{10-x}
 $$
 My priors are each of the form:
-$$
-\\begin{align}
-p(\\theta;\\alpha,\\beta)&=\\frac{\\Gamma(\\alpha) \\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta)}\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1}\\\\
-&\\propto \\theta^{\\alpha-1}(1-\\theta)^{\\beta-1} 
-\\end{align}
-$$
 
-Therefore, by Bayes Theorem:
-$$
-\\begin{align}
-p(\\theta\|x)&\\propto p(x\|\\theta)p(\\theta) \\\\
-&\\propto\\theta^x(1-\\theta)^{n-x}\\times\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1}\\\\
-&=\\theta^{x+\\alpha-1}(1-\\theta)^{n-x+\\beta-1}
-\\end{align}
-$$
-We know that *p*(*θ*\|*x*) must be a probability distribution, and this
-last line has the same functional form as a Beta distribution. Therefore
-it must be the case that:
+Therefore, by Bayes Theorem: We know that *p*(*θ*\|*x*) must be a
+probability distribution, and this last line has the same functional
+form as a Beta distribution. Therefore it must be the case that:
 *θ*\|*x* ∼ Be(*x* + *α*, *n* + *β* − *x*)
 
 So the effect of observing the data on my priors is to update the Beta

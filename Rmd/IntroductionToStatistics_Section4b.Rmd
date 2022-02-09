@@ -486,7 +486,6 @@ $T|H_1\sim N\left(1,\frac{1}{N}\right)$.
 
 Assume a priori that we have no prior preference over the models 
 $P(H_0)=P(H_1)=\frac{1}{2}$. Therefore the posterior odds ratio is: 
-$$
 \begin{align}
 \frac{P(H_0|T)}{P(H_1|T)}&=  \frac{P(H_0)}{P(H_1)} \times \frac{P(T|H_0)}{P(T|H_1)}\\
 &=\frac{0.5}{0.5}\times\frac{
@@ -494,7 +493,6 @@ $$
 \left(\frac{N}{2\pi}\right)^\frac{1}{2}\exp\left[-0.5N(\bar{X}-1)^2\right]}\\
 &=\exp\left[-0.5N(2\bar{X}-1)\right]
 \end{align}
-$$
 
 Let's now look at some simulated data: 
 ```{r, fig.height=4, fig.width=6, out.width='80%', eval=TRUE} 
@@ -525,14 +523,12 @@ $H_0: \theta=\theta_0$ versus $H_1: \theta\neq\theta_0$.
 
 Again, let $T=T(X_1,\dots,X_n)$ denote our appropriate test statistic. 
 As before: 
-$$
 \begin{align}
 \frac{P(H_0|T)}{P(H_1|T)}&=  \frac{P(H_0)}{P(H_1)} \times \frac{P(T|H_0)}{P(T|H_1)}\\
 &=\frac{P(H_0)}{P(H_1)} \times\frac{
 P(T|H_0,\theta_0)}{
 \int P(T|H_1,\theta)P_1(\theta)\textrm{d}\theta}
 \end{align}
-$$
 where $P_1(\theta)$ is a prior for $\theta$ under model $H_1$. The Bayes factor 
 in this case is therefore the ratio of the likelihood under $H_0$ to the 
 _averaged_ likelihood under $H_1$. 
@@ -547,7 +543,6 @@ and let us assume $\theta\sim N(1,1)$ under $H_1$.
 
 Once again, we assume that the two hypotheses are equally likely a priori: 
 $P(H_0)=P(H_1)=\frac{1}{2}$. We therefore find the posterior odds ratio: 
-$$
 \begin{align}
 \frac{P(H_0|T)}{P(H_1|T)}
 &=\frac{P(H_0)}{P(H_1)} \times\frac{
@@ -563,7 +558,6 @@ P(T|H_0,\theta_0)}{
 \textrm{d}\theta}\\
 &=\sqrt{N+1}\exp\left\{-0.5\left[\frac{\left(N\bar{x}+1\right)^2}{N+1}-1\right]\right\}
 \end{align}
-$$
 Let us take our two sets of observations from previously: 
 ```{r, fig.height=4, fig.width=6, out.width='80%', eval=TRUE} 
 x1<-rnorm(10,mean=1.2)

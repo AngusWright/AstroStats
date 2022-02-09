@@ -100,7 +100,7 @@ do
       github)
         echo "Output Format is ${fmt}"
         longfmt=rmarkdown::github_document
-        args=", output_options = list(pandoc_args = '--mathjax')"
+        args=", output_options = list(html_preview = FALSE, pandoc_args = '--mathjax')"
         ;;
       pdf)
         echo "Output Format is ${fmt}"

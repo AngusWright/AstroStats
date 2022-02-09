@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-2022-02-08
+2022-02-09
 
 
 
@@ -95,22 +95,7 @@ $$
 ### Proof
 
 We can prove that the mean minimises the mean square distance to all
-data by finding the minima of the function:
-$$
-\\begin{align}
-\\frac{\\delta}{\\delta \\mu}\\sum\_{i=1}^{n}(x\_i-\\mu)^2 &= -2\\sum\_{i=1}^{n}(x\_i-\\mu) \\\\
-&=0
-\\end{align}
-$$
-so:
-$$
-\\begin{align}
-\\sum\_{i=1}^{n}(x\_i-\\mu)&=0 \\\\
-\\sum\_{i=1}^{n}x\_i - \\sum\_{i=1}^{n}\\mu &= 0 \\\\
-\\therefore\\mu &= \\frac{1}{n}\\sum\_{i=1}^{n}{x\_i}\\\\
-&\\equiv \\bar{x}
-\\end{align}
-$$
+data by finding the minima of the function: so:
 
 <!--}}}-->
 
@@ -119,13 +104,6 @@ $$
 Recall that, for an arbitrary dataset of variables
 ${\\bf x} = {x\_1,x\_2,\\dots,x\_n}$, the sample standard deviation is
 defined as:
-
-$$
-\\begin{align}
-{\\rm std}({\\bf x})\\equiv s &= \\sqrt{\\frac{1}{n}\\sum\_{i=1}^{n}(x\_i-\\bar{x})^2} \\\\
-&= \\sqrt{{\\rm mean}(x\_i-\\bar{x})^2}.
-\\end{align}
-$$
 
 The unbiased estimator of the population standard deviation is:
 $$
@@ -159,23 +137,10 @@ assign *n* − *m* data points to have *y*<sub>0</sub> = 0, because thes
 contribute 0 to the standard deviation. We’ll then place the other *m*
 elements at exactly *k* standard deviations from 0;
 *y*<sub>1</sub> = *k**s*<sub>*y*</sub>,. For this very strange dataset,
-the standard deviation becomes:
-$$
-\\begin{align}
-s\_y&=\\sqrt{\\frac{1}{n}\\sum\_{i=1}^{m}y\_1^2 + \\sum\_{i=m+1}^{n} y\_0^2 } \\\\
-&=\\sqrt{\\frac{mk^2s\_y^2}{n}} \\\\
-&=\\sqrt{rk^2s\_y^2} 
-\\end{align}
-$$
-so:
-$$
-s\_y^2=rk^2s\_y^2 \\\\
-\\therefore r=\\frac{1}{k^2}
-$$
-As this was the most pathological dataset possible, we therefore
-conclude that *for any dataset*, the maximal fraction of data that can
-sit *k* standard deviations away from the mean is
-*r* = *k*<sup> − 2</sup>.
+the standard deviation becomes: so: As this was the most pathological
+dataset possible, we therefore conclude that *for any dataset*, the
+maximal fraction of data that can sit *k* standard deviations away from
+the mean is *r* = *k*<sup> − 2</sup>.
 
 > -   For any dataset, there must be at least one data point more than
 >     one standard deviation from the mean.
@@ -198,15 +163,9 @@ $$
 \\sum\_{i=1}^{n}x\_i^2 \\leq n\\times {\\rm max}(x\_i^2). 
 $$
 That is, the sum of all deviations must be less than or equal to *n*
-times the maximal squared deviation. Therefore:
-$$
-\\begin{align}
-n\\times s^2 &\\leq n\\times {\\rm max}(x\_i^2).\\\\ 
-s^2 &\\leq {\\rm max}(x\_i^2). 
-\\end{align}
-$$
-So there must be at least 1 data value that is greater than or equal to
-the standard deviation.
+times the maximal squared deviation. Therefore: So there must be at
+least 1 data value that is greater than or equal to the standard
+deviation.
 
 <!--}}}-->
 
@@ -242,7 +201,7 @@ ${\\bf x} = {x\_1,x\_2,\\dots,x\_n}$, the normalised median absolute
 deviation from median (nMAD) is defined as:
 
 $$
-{\\rm nMAD}(x) = 1.4826\\times{\\rm med}(\|x\_i-\\tilde{x}\_{0.5}\|).\_\\,
+{\\rm nMAD}(x) = 1.4826\\times{\\rm med}(\|x\_i-\\tilde{x}\_{0.5}\|).\_{\\,}
 $$
 
 ## Important Properties of the nMAD
@@ -507,7 +466,7 @@ Outliers are shown as crosses. Finally, the “notch” on the box shows the
 uncertainty on the median, which is computed using the IQR:
 
 $$
-\\Delta \\tilde{x}\_{0.5} = \\pm 1.58 \\frac{IQR}{\\sqrt{n}}\_\\,
+\\Delta \\tilde{x}\_{0.5} = \\pm 1.58 \\frac{IQR}{\\sqrt{n}}\_{\\,}
 $$
 
 <!--}}}-->
@@ -857,13 +816,6 @@ We’ve previously explored the concept of variance and standard
 deviation. For a single variable, recall that the variance was defined
 as:
 
-$$
-\\begin{align}
-\\tilde{s}^2 &= \\frac{1}{n}\\sum\_{i=1}^{n} (x\_i-\\bar{x})^2 \\\\
-&= {\\rm mean}\[x\_i-{\\rm mean}(x\_i)\]^2
-\\end{align}
-$$
-
 The **covariance** of two variables is then defined as the joint
 variance between each variable:
 
@@ -874,14 +826,6 @@ $$
 We will discuss the covariance formula more later in the course, but for
 now you can see that the definition formally makes sense if you compute
 the covariance of a variable with itself:
-
-$$
-\\begin{align}
-{\\rm cov}(X,X) &= {\\rm mean}\[(x\_i-{\\rm mean}(x\_i))\\times(x\_i-{\\rm mean}(x\_i))\] \\\\
-&= {\\rm mean}\[(x\_i-{\\rm mean}(x\_i))^2\] \\\\
-&\\equiv \\tilde{s}^2
-\\end{align}
-$$
 
 The covariance of two variables describes the degree of joint variation
 that exists between two variables. For our “faithful” dataset, we find
@@ -973,7 +917,7 @@ the coefficient is less interpretable:
 
 <!--Image Template-{{{-->
 
-<img src="Rmd/Images/Pearson_Correlation.png" alt="Pearson Correlation" width="1000" />
+<img src="../Rmd/Images/Pearson_Correlation.png" alt="Pearson Correlation" width="1000" />
 <!--}}}-->
 
 <!--}}}-->
@@ -1097,7 +1041,7 @@ relationships. Sometimes this may be justified, **but often it is not**.
 
 <!--Image Template-{{{-->
 
-<img src="Rmd/Images/Correlation_chart.png" alt="Correlation" width="1000" />
+<img src="../Rmd/Images/Correlation_chart.png" alt="Correlation" width="1000" />
 <!--}}}-->
 
 Here we can see that the number of divorces in the US state of Maine is

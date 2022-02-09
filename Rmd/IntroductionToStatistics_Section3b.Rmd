@@ -4,6 +4,8 @@ author: "Dr Angus H Wright"
 date: "`r Sys.Date()`"
 header-includes:
   - \usepackage{animate}
+  - \usepackage{placeins}
+always_allow_html: true
 output:
   rmdformats::downcute:
     keep_md: false
@@ -28,11 +30,11 @@ output:
   html_document:
     incremental: yes
     highlight: pygments
+  github_document: 
+    pandoc_args: [
+      "--mathjax" 
+      ]
 classoption: a4paper
-header-includes:
-- \usepackage{placeins}
-- \usepackage{table}
-- \usepackage{undertilde}
 subtitle: 'Section 3b: Priors and Introduction to Posterior Analysis'
 ---
 
@@ -91,6 +93,7 @@ from a Poisson distribution with unknown rate parameter:
 $X\sim\textrm{Pois}(\theta)$. Now suppose that our prior belief about $\theta$ 
 is that $\theta$ is **definitely** within the range $0\leq \theta \leq 1$, but 
 all values in that range are equally likely. Our prior on $\theta$ is therefore: 
+
 $$
 p(\theta)=
 \begin{cases}
@@ -98,13 +101,14 @@ p(\theta)=
 0 & \textrm{otherwise}
 \end{cases}
 $$
+
 In this case, the normalising constant in Bayes Theorem is: 
-$$
+
 \begin{align}
 p(x)& =\int p(\theta)p(x|\theta)\textrm{d}\theta \\
 & =\int_0^1 e^{-n\theta}\theta^{-\sum x_i} \textrm{d}\theta
 \end{align}
-$$
+
 which can only be evaluated numerically! 
 
 **Even simple priors can lead to awkward numerical problems**. 
@@ -145,7 +149,6 @@ us with mathematical simplicity.
 
 Some prior-likelihood conjugate pairs are: 
 
-$$ 
 \begin{align}
 \begin{array}{ccc}
 \textrm{Likelihood} & \textrm{Prior} & \textrm{Posterior} \\
@@ -157,7 +160,7 @@ x_1,\dots,x_n \sim \textrm{Ga}(k,\theta) & \textrm{Ga}(p,q) & \textrm{Ga}(p+nk,q
 \hline
 \end{array}
 \end{align}
-$$
+
 where $k$ and $\tau$ are known. 
 
 <!--}}}-->
@@ -179,7 +182,7 @@ $$
 \therefore p(\theta|x)\propto \exp\left\{-\frac{1}{2c^2}\sum(b-\theta)^2 \right\}\times
 \exp\left\{-\frac{1}{2\sigma^2}\sum(x_i-\theta)^2 \right\}
 $$
-$$
+
 \begin{align}
 &= \exp\left\{-\frac{b^2-2b\theta+\theta^2}{2c^2} - \frac{\sum x_i^2 -2\theta n\bar{x} + n\theta^2}{2\sigma^2}\right\} \\
 &\propto \exp\left\{-\frac{1}{2}\left[
@@ -192,7 +195,7 @@ $$
 {\frac{1}{c^2}+\frac{n}{\sigma^2}}
 \right]^2\right\}\\
 \end{align}
-$$
+
 $$
 \therefore  \theta|x \sim \textrm{N}\left(\frac{\frac{b}{c^2}-\frac{n\bar{x}}{\sigma^2}}
 {\frac{1}{c^2}+\frac{n}{\sigma^2}},
@@ -266,12 +269,12 @@ priors. But there is a more fundamental set of problems as well.
 
 If we specify a prior for $\theta$ of the form $p(\theta)\propto 1$, and then 
 consider the parameter $\phi=\theta^2$: 
-$$
+
 \begin{align}
 p(\phi)&=p(\theta^2)\frac{\textrm{d}\theta}{\textrm{d}\phi}\\
 &\propto \frac{1}{\sqrt{\phi}}
 \end{align}
-$$
+
 
 However, if we are ignorant about the possible values of $\theta$, then surely 
 we ought to be equally ignorant about the possible values of $\phi$. So we could 
@@ -283,12 +286,12 @@ translated across scales/transformations.
 One particular point of view is that ignorance of priors ought to be consistent 
 across $1-1$ parameter transformations. This idea leads us to the concept of 
 **Jeffery's Prior**, which is based on the concept of Fisher Information: 
-$$
+
 \begin{align}
 I(\theta)&=-\mathbb{E}\left\{\frac{\textrm{d}^2}{\textrm{d}\theta^2}\log\left[p(x|\theta)\right]\right\}\\
 &=\mathbb{E}\left\{\frac{\textrm{d}}{\textrm{d}\theta}\log\left[p(x|\theta)\right]\right\}^2.
 \end{align}
-$$
+
 In the case of a vector parameter $\theta$, $I(\theta)$ is the matrix that is
 formed as minus the expectation of the matrix of second-order partial
 derivatives of $\log\left[p(x|\theta)\right]$.
@@ -301,12 +304,12 @@ $$
 The consistency of the prior under transformations can be varified simply. 
 Suppose $\phi=g(\theta)$ is a $1-1$ parameter transformation of $\theta$. 
 Then, by change of variables: 
-$$
+
 \begin{align}
 p(\phi)&\propto p_0(\theta)\left| \frac{\textrm{d}\theta}{\textrm{d}\phi}\right|\\
 &=I(\theta)^\frac{1}{2}\left| \frac{\textrm{d}\theta}{\textrm{d}\phi}\right|. 
 \end{align}
-$$
+
 By definition: 
 $$
 I(\phi)=I(\theta)\left| \frac{\textrm{d}\theta}{\textrm{d}\phi}\right|
@@ -321,27 +324,24 @@ We can see the Jeffery's prior in action using a few simple examples.
 
 ## A Binomial Sample 
 
-$$
-x|\theta \sim \textrm{Bin}(mn,\theta)\\
-\therefore p(x|\theta)\propto \theta^x (1-\theta)^{n-x} \\ 
-\log\left[p(x|\theta)\right] = x\log\theta + (n-x)\log(1-\theta) \\
-\frac{\partial^2}{\partial\theta^2}\left\{log\left[p(x|\theta)\right]\right\} = 
-\frac{-x}{\theta^2}-\frac{n-x}{(1-\theta)^2}\\
-$$
+\begin{align}
+x|\theta &\sim \textrm{Bin}(mn,\theta)\\
+\therefore p(x|\theta)&\propto \theta^x (1-\theta)^{n-x} \\ 
+\log\left[p(x|\theta)\right] &= x\log\theta + (n-x)\log(1-\theta) \\
+\frac{\partial^2}{\partial\theta^2}\left\{log\left[p(x|\theta)\right]\right\} &= 
+\frac{-x}{\theta^2}-\frac{n-x}{(1-\theta)^2}
+\end{align}
 So: 
-$$
 \begin{align}
 \mathbb{E}\left(\frac{\partial^2}{\partial\theta^2}\left\{log\left[p(x|\theta)\right]\right\}\right) &= 
 \frac{-n\theta}{\theta^2}-\frac{n-n\theta}{(1-\theta)^2}\\
 & = \frac{-n}{\theta} - \frac{n}{1-\theta} \\
 \end{align}
-$$
-$$
+
 \begin{align}
 I(\theta)&=\frac{n(1-\theta)+n\theta}{\theta(1-\theta)} \\
 &=\frac{n}{\theta(1-\theta)} 
 \end{align}
-$$
 
 $$
 \therefore p(\theta) \propto \theta^{-\frac{1}{2}}(1-\theta)^{-\frac{1}{2}}
@@ -367,12 +367,12 @@ Going through each term one at a time:
 $$
 \frac{\partial^2}{\partial\mu^2}\log\left[p(x|\theta)\right]=n\sigma^2
 $$
-$$
+
 \begin{align}
 \frac{\partial}{\partial\sigma}\frac{\partial}{\partial\mu}\log\left[p(x|\theta)\right]&=\frac{\partial}{\partial\mu}\frac{\partial}{\partial\sigma}\log\left[p(x|\theta)\right] \\ 
 &=\frac{n(\bar{x}-\mu)}{\sigma^4}\\
 \end{align}
-$$
+
 $$
 \frac{\partial^2}{\partial\sigma^2}\log\left[p(x|\theta)\right]=\frac{-n}{2\sigma^4}+\frac{n(s+(\bar{x}-\mu)^2)}{2\sigma^6}
 $$
@@ -434,13 +434,13 @@ $$
 p(\theta)=\sum_{i=1}^k w_i p_i(\theta)
 $$
 Such that: 
-$$
+
 \begin{align}
 p(\theta|x)&\propto p(\theta)p(x|\theta)\\
 &=\sum_{i=1}^k w_i p_i(\theta)\times p(x|\theta)\\
 &\propto \sum_{i=1}^k w_i^\star p_i(\theta|x)
 \end{align}
-$$
+
 So the posterior is in the same family of conjugates, but with different 
 relative weights. 
 
@@ -498,7 +498,7 @@ is either cool ($\theta_1=0$) or hot ($\theta_1=1$), and the humidity, which is
 either dry ($\theta_2=0$) or humid ($\theta_2=1$). The probabilities of satisfactorily 
 making a machine given the environmental conditions are governed by the likelihood: 
 
-$$ 
+
 \begin{align}
 \begin{array}{c|c|c|}
 P(x=1|\theta_1,\theta_2) & \theta_1 = 0 & \theta_1=1 \\
@@ -509,9 +509,9 @@ P(x=1|\theta_1,\theta_2) & \theta_1 = 0 & \theta_1=1 \\
 \hline
 \end{array}
 \end{align}
-$$
+
 The joint prior distribution of $\theta_1, \theta_2$ is given by: 
-$$ 
+
 \begin{align}
 \begin{array}{c|c|c|}
 P(\theta_1,\theta_2) & \theta_1 = 0 & \theta_1=1 \\
@@ -522,9 +522,9 @@ P(\theta_1,\theta_2) & \theta_1 = 0 & \theta_1=1 \\
 \hline
 \end{array}
 \end{align}
-$$
+
 We can therefore calculate the numerator of Bayes theorem as: 
-$$ 
+
 \begin{align}
 \begin{array}{c|c|c|}
 P(x=1|\theta_1,\theta_2)\times P(\theta_1,\theta_2) & \theta_1 = 0 & \theta_1=1 \\
@@ -535,9 +535,9 @@ P(x=1|\theta_1,\theta_2)\times P(\theta_1,\theta_2) & \theta_1 = 0 & \theta_1=1 
 \hline
 \end{array}
 \end{align}
-$$
+
 And so the joint posterior distribution is:
-$$ 
+
 \begin{align}
 \begin{array}{c|c|c|}
 P(\theta_1,\theta_2|x) & \theta_1 = 0 & \theta_1=1 \\
@@ -548,16 +548,17 @@ P(\theta_1,\theta_2|x) & \theta_1 = 0 & \theta_1=1 \\
 \hline
 \end{array}
 \end{align}
-$$
+
 If we are only interested in the marginal distributions of the probability that 
 it was hot/cool or dry/humid, we can simply sum along the axis of interest to 
 get the **marginal distributions**: 
-$$
-P(\theta_1=0|x,\theta_2)=32/66\\
-P(\theta_1=1|x,\theta_2)=34/66\\
-P(\theta_2=0|x,\theta_1)=34/66\\
-P(\theta_2=1|x,\theta_1)=32/66
-$$
+
+\begin{align}
+P(\theta_1=0|x,\theta_2)&=32/66\\
+P(\theta_1=1|x,\theta_2)&=34/66\\
+P(\theta_2=0|x,\theta_1)&=34/66\\
+P(\theta_2=1|x,\theta_1)&=32/66
+\end{align}
 
 We can show the same methods for more complex distributions, however the main 
 question of interest is how do we summarise complex posteriors sensibly and 
@@ -615,7 +616,7 @@ $$
 
 ## Quadratic Loss 
 
-$$
+
 \begin{align}
 \rho(a,x)&=\int L(\theta,a)p(\theta|x)\textrm{d}\theta \\
 &=\int(\theta-a)^2p(\theta|x)\textrm{d}\theta \\
@@ -625,7 +626,7 @@ $$
 &\;\;\;\;\; \int(\mathbb{E}(\theta|x)-a)^2p(\theta|x)\textrm{d}\theta\\
 &= \textrm{Var}(\theta|x)+\mathbb{E}(\theta|x)-a)^2
 \end{align}
-$$
+
 As: 
 $$
 \textrm{Var}(x) = \mathbb{E}\left[(x-\mu)^2\right]

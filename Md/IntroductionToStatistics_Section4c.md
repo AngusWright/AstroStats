@@ -129,10 +129,6 @@ That is:
 The estimated effect of the coaching at each school is given by the mean
 *ȳ*<sub>*j*</sub>, with the standard error on the estimate
 *σ*<sub>*j*</sub><sup>2</sup>.
-$$
-\\bar{y}\_j = \\frac{1}{n\_j}\\sim\_{i=1}^{n\_j} y\_{ij} \\\\
-\\sigma\_j = \\sqrt\\frac{\\sigma^2}{n\_j}
-$$
 
 The likelihood for each *θ*<sub>*j*</sub> can be expressed in terms of
 the sufficient statistic:
@@ -265,8 +261,8 @@ justify.
 
 We can display our two previous models as **directed acyclic graphs**:
 
-<img src="Rmd/Images/DAG_1.png" alt="image label" width="600" />
-<img src="Rmd/Images/DAG_2.png" alt="image label" width="600" />
+<img src="../Rmd/Images/DAG_1.png" alt="image label" width="600" />
+<img src="../Rmd/Images/DAG_2.png" alt="image label" width="600" />
 
 These show how the variable we observe (*ȳ*<sub>*i*</sub>) is related to
 the parameter of interest *θ*. In the first instance (i.e the separate
@@ -278,18 +274,12 @@ Let’s now instead assume that the values of *θ*<sub>*j*</sub> are drawn
 from a normal distribution. The properties of the normal distribution we
 will determine with two **hyper-parameters** (*μ*, *τ*).
 
-<img src="Rmd/Images/DAG_3.png" alt="image label" width="600" />
+<img src="../Rmd/Images/DAG_3.png" alt="image label" width="600" />
 
 Mathematically, we are defining the joint probability of all our
 *θ*<sub>*i*</sub> as the product of the probabilities of observing the
 data, given that each *θ*<sub>*i*</sub> is drawn from a parent
 population *N*(*μ*, *τ*).
-$$
-\\begin{align}
-f(\\theta\_1,\\dots,\\theta\_J\|\\mu,\\tau) &= \\prod\_{j=1}^{J} N(\\theta\_j\|\\mu,\\tau^2) \\\\
-&=\\int \\prod\_{j=1}^{J}\\left\[N\\left(\\theta\_j\|\\mu,\\tau^2\\right)\\right\]f(\\mu,\\tau)\\textrm{d}(\\mu,\\tau)
-\\end{align}
-$$
 
 This is a **hierarchical model**, which can interpret the
 *θ*<sub>*j*</sub>’s as being randomly drawn from some shared parent
@@ -319,8 +309,8 @@ The smaller *τ*, the more related are the individual values of
 of *θ*<sub>*j*</sub> for the other experiments: the experiments “borrow
 strength” from one-another.
 
-<img src="Rmd/Images/BHM_Expectation.png" alt="image label" width="400" />
-<img src="Rmd/Images/BHM_sdev.png" alt="image label" width="400" />
+<img src="../Rmd/Images/BHM_Expectation.png" alt="image label" width="400" />
+<img src="../Rmd/Images/BHM_sdev.png" alt="image label" width="400" />
 
 <!--}}}-->
 
@@ -338,25 +328,25 @@ when you discover the unbridled joy of televised dog shows…
 
 # The Dog-show dataset
 
-<img src="Rmd/Images/dogshow_4.gif" alt="image label" width="400" />
-<img src="Rmd/Images/dogshow_1.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dogshow_4.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dogshow_1.gif" alt="image label" width="400" />
 
-<img src="Rmd/Images/dogshow_3.gif" alt="image label" width="400" />
-<img src="Rmd/Images/dogshow_2.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dogshow_3.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dogshow_2.gif" alt="image label" width="400" />
 
 After an extensive period of time researching dog shows, you see a trend
 emerging. Some dogs, regardless of the level of training, seem to
 perform poorly in dog shows. From your extensive viewing…
 
-<img src="Rmd/Images/dogshow_5.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dogshow_5.gif" alt="image label" width="400" />
 
 …your background research into historical dogs…
 
-<img src="Rmd/Images/dougshow_1.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dougshow_1.gif" alt="image label" width="400" />
 
 …and your detailed study of canine brain function during maturity…
 
-<img src="Rmd/Images/dogshow_6.gif" alt="image label" width="400" />
+<img src="../Rmd/Images/dogshow_6.gif" alt="image label" width="400" />
 
 …you come to the conclusion that the systematically poor performance of
 some breeds of dog in these dog shows is attributable to
@@ -388,13 +378,9 @@ We can start by making some very simple assumptions:
     *μ*<sub>2</sub> = *μ* + *β*.
 
 That is:
-$$
-y\_{ij}\\sim N(\\mu,\\sigma\_y^2)\\;\\;\\textrm{if}\\;\\;m=1 \\\\
-$$
+*y*<sub>*i**j*</sub> ∼ *N*(*μ*, *σ*<sub>*y*</sub><sup>2</sup>)  if  *m* = 1
 and
-$$
-y\_{ij}\\sim N(\\mu+\\beta,\\sigma\_y^2)\\;\\;\\textrm{if}\\;\\;m=2 \\\\
-$$
+*y*<sub>*i**j*</sub> ∼ *N*(*μ* + *β*, *σ*<sub>*y*</sub><sup>2</sup>)  if  *m* = 2
 
 We can form this into a single model using an indicator variable
 *S*<sub>*i*</sub>, which is:
@@ -413,7 +399,7 @@ is the list of model parameters.
 
 Using our graph, this model is:
 
-<img src="Rmd/Images/dogshow_DAG_1.png" alt="image label" width="600" />
+<img src="../Rmd/Images/dogshow_DAG_1.png" alt="image label" width="600" />
 
 But is this a sensible model? Do we think that this will adequately
 capture all the complexities of the dataset?
@@ -425,15 +411,9 @@ dogs of the same breed will have the same mean reaction time. Instead,
 let’s say that all breeds of dog share a common *parent distribution* of
 mean reaction times, from which they are randomly drawn. That is:
 
-$$
-\\alpha\_i\|\\phi\\sim N(\\mu+S\_i\\beta,\\sigma\_\\alpha^2); \\\\
-y\_{ij}\|\\alpha\_i,\\phi \\sim N(\\alpha\_i,\\sigma\_y^2);\\\\
-\\phi=(\\mu,\\sigma\_\\alpha^2,\\beta,\\sigma\_y^2,S\_i)
-$$
-
 We’ve therefore modified our graph:
 
-<img src="Rmd/Images/dogshow_DAG_2.png" alt="image label" width="600" />
+<img src="../Rmd/Images/dogshow_DAG_2.png" alt="image label" width="600" />
 
 We now have a hierarchical model. Should we stop there?
 
@@ -444,7 +424,7 @@ reaction times of dogs in the show, based (currently) solely on the
 breed and a random draw from the population of possible reaction times.
 Consider the evidence though:
 
-<img src="Rmd/Images/dogshow_5.gif" alt="image label" width="600" />
+<img src="../Rmd/Images/dogshow_5.gif" alt="image label" width="600" />
 
 The performance here is clearly not driven by an innately slower
 reaction time, but by the fact that the dog was **distracted**. That
@@ -456,20 +436,9 @@ they get distracted with some probability *λ*. If distracted, their
 reaction time score is pathologically slowed by some amount *τ*. We can
 formulate this using a single Binomial draw (i.e. a Bernoulli trial),
 which constructs an indicator variable *z*<sub>*i*</sub>*j* to apply the
-catastrophic delay:
-$$
-\\alpha\_i\|\\phi\\sim N(\\mu+S\_i\\beta,\\sigma\_\\alpha^2); \\\\
-z\_{ij}\|\\phi=
-\\begin{cases} 
-0 & \\textrm{if}\\;\\; S\_i =0 \\\\
-\\textrm{Bin}(1,\\lambda) & \\textrm{otherwise} 
-\\end{cases}\\\\
-y\_{ij}\|\\alpha\_i,z\_{ij},\\phi \\sim N(\\alpha\_i+z\_{ij}\\tau,\\sigma\_y^2);\\\\
-\\phi=(\\mu,\\sigma\_\\alpha^2,\\beta,\\sigma\_y^2,S\_i,\\tau,\\lambda)
-$$
-Thus we reach our new model:
+catastrophic delay: Thus we reach our new model:
 
-<img src="Rmd/Images/dogshow_DAG_3.png" alt="image label" width="600" />
+<img src="../Rmd/Images/dogshow_DAG_3.png" alt="image label" width="600" />
 
 This model has the relevant parameters of most interest to us:
 
@@ -495,11 +464,11 @@ And final indicator variables:
 
 We started with an extremely simple model akin to:
 
-<img src="Rmd/Images/DAG_1.png" alt="image label" width="600" />
+<img src="../Rmd/Images/DAG_1.png" alt="image label" width="600" />
 
 and with a few small steps came to a model with considerable complexity:
 
-<img src="Rmd/Images/dogshow_DAG_3.png" alt="image label" width="600" />
+<img src="../Rmd/Images/dogshow_DAG_3.png" alt="image label" width="600" />
 
 This is a general lesson about BHMs. With the flexibility allowed by the
 framework, one can construct highly complex models with relative ease,
@@ -561,14 +530,14 @@ data: *x⃗* ↦ *y*. In essence, it is a form of regression that does not
 require us to specify a model. Examples include linear regression,
 random forests, and support vector machinery.
 
-<img src="Rmd/Images/supervised_learning.png" alt="image label" width="600" />
+<img src="../Rmd/Images/supervised_learning.png" alt="image label" width="600" />
 
 ## Unsupervised learning
 
 **Unsupervised learning** has no required output: there is no *y* to
 which we are trying to map. Examples include SOM, PCA, and ICA.
 
-<img src="Rmd/Images/unsupervised_learning.png" alt="image label" width="600" />
+<img src="../Rmd/Images/unsupervised_learning.png" alt="image label" width="600" />
 
 ## Reinforcement learning (Not discussed here)
 
@@ -577,7 +546,7 @@ invokes some method of generating data for use in achieving some
 pre-defined “goal”, via some reward (e.g. lower variance, fewer
 outliers, etc).
 
-<img src="Rmd/Images/reinforcement_1.gif" alt="image label" width="600" />
+<img src="../Rmd/Images/reinforcement_1.gif" alt="image label" width="600" />
 
 # Supervised Machine Learning: Artificial Neural Networks
 
@@ -594,16 +563,16 @@ Each neuron is a simple item:
 The output of a single neuron is a weighted sum of all the inputs, where
 the weights are given along each particular connection.
 
-<img src="Rmd/Images/network_diagram_1.png" alt="image label" width="600" />
+<img src="../Rmd/Images/network_diagram_1.png" alt="image label" width="600" />
 
 Within the neurons, the weights and data are combined, and passed
 through an “activation function” to get the output number:
 
-<img src="Rmd/Images/network_diagram_2.png" alt="image label" width="600" />
+<img src="../Rmd/Images/network_diagram_2.png" alt="image label" width="600" />
 
 We can then form a network of Neurons:
 
-<img src="Rmd/Images/network_diagram_3.png" alt="image label" width="600" />
+<img src="../Rmd/Images/network_diagram_3.png" alt="image label" width="600" />
 
 These diagrams are all well and good. But really, the best way to
 understand neural networks is to play with one:
@@ -618,7 +587,7 @@ My personal favourite flavour of unsupervised machine learning is the
 The SOM is a form of unsupervised *manifold* learning, in that it fits a
 2-dimensional manifold to an *N*-dimensional parameter space.
 
-<img src="Rmd/Images/som_2.png" alt="image label" width="600" />
+<img src="../Rmd/Images/som_2.png" alt="image label" width="600" />
 
 This allows the SOM to be used to great effect in both dimensionality
 reduction and classification. Let’s take a hypothetical *N*-dimensional
@@ -657,7 +626,7 @@ som<-kohtrain(dat,train.expr=c("X","Y","Z"),som.dim=c(41,41),n.cores=4)
 ``` out
 ##     -> whitening the input data - Done 0 sec  
 ##     -> constructing som grid (41x41) - Done 0 sec  
-##     -> constructing SOM from full data vector - Done 9 sec
+##     -> constructing SOM from full data vector - Done 10 sec
 ```
 
 ``` r
@@ -668,7 +637,7 @@ plot(som,shape='straight',heatkeywidth = 2)
 
 This is the 2D histogram of the nD surface that the SOM has mapped.
 
-<img src="Rmd/Images/som_2.png" alt="image label" width="600" />
+<img src="../Rmd/Images/som_2.png" alt="image label" width="600" />
 
 We can now visualise which parts of the SOM sit within which parts of
 the n-dimensional space by painting the SOM by the values of each
@@ -715,8 +684,8 @@ table(paste(dat$group,group.som$clust.classif,sep='<->'))
 
 ``` out
 ## 
-## A<->1 B<->1 B<->2 
-## 10000     7  9993
+## A<->2 B<->1 
+## 10000 10000
 ```
 
 So we can see that the classification works perfectly! But this was a
@@ -820,14 +789,14 @@ print(confusionMatrix(factor(classif,levels=LETTERS[1:10]),
 ## Prediction   A   B   C   D   E   F   G   H   I   J
 ##          A   0   0   0   0   0   0 600   0   0   0
 ##          B   0   0   0   0   0   0   0 600   0   0
-##          C   0   0   0  87   6   0   0   0   0 600
-##          D   0   0   0   0 462   0   0   0   0   0
-##          E   0   0   0   0   0   0   0   0 600   0
-##          F   0   0   0   0   0   0   0   0   0   0
-##          G   0   0   0   0   0   0   0   0   0   0
-##          H   0   3   0   0   0 600   0   0   0   0
-##          I 357   2   0   0   1   0   0   0   0   0
-##          J 243 595 600 513 131   0   0   0   0   0
+##          C   0   0   0   0   0   0   0   0   0 261
+##          D   0   0   0   0   7   0   0   0   0 339
+##          E   0   0   0   0   0   0   0   0   1   0
+##          F   0   0   0   0   0   0   0   0 599   0
+##          G 588  37   2 357  89   0   0   0   0   0
+##          H  12 541 598 243 504   0   0   0   0   0
+##          I   0   0   0   0   0   0   0   0   0   0
+##          J   0  22   0   0   0 600   0   0   0   0
 ## 
 ## Overall Statistics
 ##                                     
@@ -842,24 +811,24 @@ print(confusionMatrix(factor(classif,levels=LETTERS[1:10]),
 ## 
 ## Statistics by Class:
 ## 
-##                      Class: A Class: B Class: C Class: D Class: E Class: F Class: G Class: H
-## Sensitivity            0.0000   0.0000   0.0000   0.0000   0.0000      0.0      0.0   0.0000
-## Specificity            0.8889   0.8889   0.8717   0.9144   0.8889      1.0      1.0   0.8883
-## Pos Pred Value         0.0000   0.0000   0.0000   0.0000   0.0000      NaN      NaN   0.0000
-## Neg Pred Value         0.8889   0.8889   0.8869   0.8917   0.8889      0.9      0.9   0.8888
-## Prevalence             0.1000   0.1000   0.1000   0.1000   0.1000      0.1      0.1   0.1000
-## Detection Rate         0.0000   0.0000   0.0000   0.0000   0.0000      0.0      0.0   0.0000
-## Detection Prevalence   0.1000   0.1000   0.1155   0.0770   0.1000      0.0      0.0   0.1005
-## Balanced Accuracy      0.4444   0.4444   0.4358   0.4572   0.4444      0.5      0.5   0.4442
+##                      Class: A Class: B Class: C Class: D  Class: E Class: F Class: G Class: H
+## Sensitivity            0.0000   0.0000   0.0000  0.00000 0.0000000  0.00000   0.0000   0.0000
+## Specificity            0.8889   0.8889   0.9517  0.93593 0.9998148  0.88907   0.8013   0.6485
+## Pos Pred Value         0.0000   0.0000   0.0000  0.00000 0.0000000  0.00000   0.0000   0.0000
+## Neg Pred Value         0.8889   0.8889   0.8955  0.89388 0.8999833  0.88891   0.8782   0.8537
+## Prevalence             0.1000   0.1000   0.1000  0.10000 0.1000000  0.10000   0.1000   0.1000
+## Detection Rate         0.0000   0.0000   0.0000  0.00000 0.0000000  0.00000   0.0000   0.0000
+## Detection Prevalence   0.1000   0.1000   0.0435  0.05767 0.0001667  0.09983   0.1788   0.3163
+## Balanced Accuracy      0.4444   0.4444   0.4758  0.46796 0.4999074  0.44454   0.4006   0.3243
 ##                      Class: I Class: J
-## Sensitivity            0.0000   0.0000
-## Specificity            0.9333   0.6144
-## Pos Pred Value         0.0000   0.0000
-## Neg Pred Value         0.8936   0.8469
-## Prevalence             0.1000   0.1000
-## Detection Rate         0.0000   0.0000
-## Detection Prevalence   0.0600   0.3470
-## Balanced Accuracy      0.4667   0.3072
+## Sensitivity               0.0   0.0000
+## Specificity               1.0   0.8848
+## Pos Pred Value            NaN   0.0000
+## Neg Pred Value            0.9   0.8884
+## Prevalence                0.1   0.1000
+## Detection Rate            0.0   0.0000
+## Detection Prevalence      0.0   0.1037
+## Balanced Accuracy         0.5   0.4424
 ```
 
 # **Important**: Biases in Machine Learning
@@ -874,7 +843,7 @@ Machine learning algorithms are prone to over-fitting. This, more than
 anything else, can be seen in the catastrophic failure of extrapolations
 in machine learning methods.
 
-<img src="Rmd/Images/extrapolation.png" alt="image label" width="600" />
+<img src="../Rmd/Images/extrapolation.png" alt="image label" width="600" />
 
 ## Covariate Shift
 

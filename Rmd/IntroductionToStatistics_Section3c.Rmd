@@ -175,20 +175,18 @@ the posterior $\theta|x\sim\textrm{Be}(p+x,q+n-x)$.
 Suppose we intend to make $N$ further observations in the future, and we let $z$ be the 
 number of successful throws out of the $N$ trials. 
 
-$$
-z|\theta\sim\textrm{Bin}(N,\theta) \\
-\therefore p(z|\theta)={N\choose z} \theta^z(1-\theta)^{N-z}
-$$
+\begin{align}
+z|\theta&\sim\textrm{Bin}(N,\theta) \\
+\therefore p(z|\theta)&={N\choose z} \theta^z(1-\theta)^{N-z}
+\end{align}
 We can compute the predictive distribution of $z$ given our observations using the 
 posterior distribution: 
-$$
 \begin{align}
 p(z|x)&=\int p(z|\theta)p(\theta|x)\textrm{d}\theta\\
 &=\int_0^1 {N \choose z}\theta^z(1-\theta)^{N-z} \frac{\theta^{p+x-1}(1-\theta)^{q+n-x-1}}{\textrm{Be}(p+q,q+n-x)}\textrm{d}\theta\\
 &= {N\choose z}\frac{1}{\textrm{Be}(p+q,q+n-x)}\int_0^1\theta^{p+x-1}(1-\theta)^{q+n-x-1}\textrm{d}\theta \\ \\
 \therefore p(z|x)&= {N \choose z} \frac{\textrm{Be}(z+p+q,q+2n-x-z)}{\textrm{Be}(p+q,q+n-x)}.
 \end{align}
-$$
 
 
 Remember back to our first exploration into Bayes Theorem with our three 
@@ -277,12 +275,10 @@ given by some **transition probability**.
 
 The $n^{\textrm{th}}$ step transition probability $P^n(x,y)$ of a Markov Chain 
 moving from state $x$ to state $y$ _in precisely $n$ steps_ is given by: 
-$$
 \begin{align}
 P^n(x,y) &= P(X_n=y|X_0=x) \\
 &= \sum_{x_1}\dots\sum_{x_{n-1}} P(x,x_1)P(x_1,x_2)\dots P(x_{n-1},y)
 \end{align}
-$$
 More generally, the transition probability can be visualised, for a finite 
 state space $\Omega$ as an $|\Omega|\times|\Omega|$ 
 matrix of probabilities of transitioning from state $x$ to state $y$: 
@@ -357,12 +353,10 @@ for (i in 1:ncol(walkers)) {
 
 Using this random walk, we can now explore the transition probability we 
 discussed earlier: 
-$$
 \begin{align}
 P^n(x,y) &= P(X_n=y|X_0=x) \\
 &= \sum_{x_1}\dots\sum_{x_{n-1}} P(x,x_1)P(x_1,x_2)\dots P(x_{n-1},y)
 \end{align}
-$$
 Analytically, this probability requires us to sum over all possible values of 
 $x_1, x_2, \dots, x_{n-1}$. 
 One question we might want to ask, though, is: what is the probability of
@@ -896,7 +890,7 @@ magplot(chain[-1,2],chain[-nrow(chain),2],pch=20,col='blue3',lwd=2,
         ylab=expression(theta[2]^"i+1"),xlab=expression(theta[2]^i),asp=1)
 ```
 
-However we can circumvent this by **thinning** the samples to every $n^{\textrm{th}$ 
+However we can circumvent this by **thinning** the samples to every $n^{\textrm{th}}$ 
 sample (but of course this necessitates a longer chain). 
 
 ```{r, fig.height=4, fig.width=6, out.width='80%', eval=TRUE,echo=TRUE}
@@ -984,12 +978,10 @@ All of these probabilities can be described using binomials:
 3) $x\;\textrm{heads}|\textrm{fair coin} \sim \textrm{Bin}(3,0.5)$
 
 So we can construct our likelihood from these probabilities: 
-$$
 \begin{align}
 P(X|\theta_1,\theta_2) &= P(X|n,0.5)(1-\theta_1)+P(X|n,\theta_2)\theta_1 \\
 &=\left[\textrm{Bin}(3,0.5)(1-\theta_1)+\textrm{Bin}(3,\theta_2)\theta_1\right]
 \end{align}
-$$
 for $\theta_1,\theta_2\in[0,1]$. 
 
 Which in **R** code is simply: 

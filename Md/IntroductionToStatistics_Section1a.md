@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-2022-02-08
+2022-02-09
 
 
 
@@ -141,10 +141,6 @@ $$ \\omega \\in \\Omega, \\quad\\rm{where}\\, \|\\omega\|=n $$
 
 *X* ∼ *N*(*μ*, *σ*)
 
-$$
-X : \\omega \\mapsto \\{ x\_1, x\_2, x\_3, \\dots, x\_n \\}\\quad{\\rm or} \\\\
-X(\\omega)=\\{ x\_1, x\_2, x\_3, \\dots, x\_n \\}
-$$
 </td>
 <!--}}}-->
 <td plaintext>
@@ -266,7 +262,7 @@ We’ve already seen examples of nominal and continuous scale data (names
 and coin-tosses respectively). An example of ordinal scale data is
 rankings of “Mood”:
 
-<img src="Rmd/Images/Mood_scale.png" alt="Ordinal Scale: Mood" width="1000" />
+<img src="../Rmd/Images/Mood_scale.png" alt="Ordinal Scale: Mood" width="1000" />
 
 # Fundamentals: Frequency Measures
 

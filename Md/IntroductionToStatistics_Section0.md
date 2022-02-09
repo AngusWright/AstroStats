@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-2022-02-08
+2022-02-09
 
 
 
@@ -299,27 +299,27 @@ Holmberg performed the first simulations of colliding galaxies, 20 years
 prior to a famous work by Sebastian von Hoerner that established the
 field (and name) N-body Simulations.
 
-<img src="Rmd/Images/vonHoerner60_title.png" alt="von Hoerner 1960" width="1000" />
+<img src="../Rmd/Images/vonHoerner60_title.png" alt="von Hoerner 1960" width="1000" />
 
-<img alt="Holmberg 1941" src="Rmd/Images/Holmberg41_title.png" width="1000" />
+<img alt="Holmberg 1941" src="../Rmd/Images/Holmberg41_title.png" width="1000" />
 
 Holmberg’s work was exceptional for a number of reasons, but has become
 famous because of *how* it was completed. Holmberg simulated the
 collisions of rotating spiral galaxies:
 
-<img alt="Holmberg 1941" src="Rmd/Images/Holmberg41.png" width="1000" />
+<img alt="Holmberg 1941" src="../Rmd/Images/Holmberg41.png" width="1000" />
 
 And generated tidal disruption features that are now seen commonly in
 merging spiral galaxies:
 
-<img alt="merger simulation" src="Rmd/Images/mergersim.png" width="1000" />
+<img alt="merger simulation" src="../Rmd/Images/mergersim.png" width="1000" />
 
 The surprise? His work was computed entirely *by hand*. Holmberg used
 arrangements of lightbulbs to simulate groups of stars, and photometers
 to compute the gravitational pull of all mass-elements on each-other per
 unit time.
 
-<img alt="Holmberg Blub arrangement" src="Rmd/Images/Holmberg_bulbs.png" width="1000" />
+<img alt="Holmberg Blub arrangement" src="../Rmd/Images/Holmberg_bulbs.png" width="1000" />
 
 Of course nowadays we can run a simulation like this in seconds on any
 laptop (or smartphone, if you really want to!). This allows measurements
@@ -338,12 +338,6 @@ classic example is model optimisation (which we will cover in detail in
 this course): let us take a relatively simple dataset that we know
 follows a generic beta distribution, and attempt to model this dataset
 using a function containing 2 parameters:
-
-$ 
-Y = Beta(X, \\alpha,\\beta) + {\\rm noise} \\\\
-0\\leq X \\leq 1 \\\\
-\\alpha, \\beta \\in \[0,\\infty)
-$
 
 <img src="IntroductionToStatistics_Section0_files/figure-gfm/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;" />
 One might be inclined to attempt to fit a model to these data by-hand,
@@ -867,12 +861,13 @@ base **R**. Another important functionality which we hid was the ability
 to generate data following various statistical distributions. This is
 core to many statistics applications that we will explore, and so we’ll
 revisit it now. In the section on “Modern Science and the Requirement of
-Programming”, we generated data that followed a Beta function: $ Y =
-Beta(X, ,) + {} $ (NB: we will look more into this and other functions
-later in the course). In **R** we can generate this data using the suite
-of Beta distribution functions, which allow the calculation of the
-density, distribution function, quantile function, and random generation
-from the function:
+Programming”, we generated data that followed a Beta function:
+$$ Y = Beta(X, \\alpha,\\beta) + {\\rm noise} $$
+(NB: we will look more into this and other functions later in the
+course). In **R** we can generate this data using the suite of Beta
+distribution functions, which allow the calculation of the density,
+distribution function, quantile function, and random generation from the
+function:
 
 ``` r
 #Documentation for the Beta functions in R
@@ -3035,8 +3030,8 @@ print(microbenchmark(
 
 ``` out
 ## Unit: milliseconds
-##       expr      min       lq    mean   median       uq      max neval
-##  datatable 8.937029 10.70033 11.5101 11.03757 11.38827 17.43237   100
+##       expr      min       lq     mean   median       uq      max neval
+##  datatable 9.770115 12.08323 13.13688 12.47401 12.97792 21.33715   100
 ```
 
 And now in python:
@@ -3062,7 +3057,7 @@ print('Pandas DataFrame (min, mean, max)\n',
 
 ``` out
 ## Pandas DataFrame (min, mean, max)
-##  14.278837999999183 15.887632079999998 19.773587000000425
+##  14.651011999999852 15.85325868000009 19.602206000000066
 ```
 
 This example is found to be true in wider benchmarking tests like those
@@ -3278,7 +3273,7 @@ matrix multiplication of eigenvectors and eigenvalues:
 mat<-matrix(c(6,2,2,3),nrow=2)
 #Calculate the eigenvalues and eigenvectors 
 eig<-eigen(mat)
-#Check the results: A = V.diag(λ).V^T 
+#Check the results: A = V.diag(lambda).V^T 
 eig$vectors %*% diag(eig$values) %*% t(eig$vectors)
 ```
 
@@ -3299,7 +3294,7 @@ eig$vectors %*% diag(eig$values) %*% t(eig$vectors)
 mat=np.array([6,2,2,3]).reshape(2,2)
 #Calculate the eigenvalues and eigenvectors 
 eigVals, eigVecs = np.linalg.eig(mat)
-#Check the results: A = V.diag(λ).V^T 
+#Check the results: A = V.diag(lambda).V^T 
 eigVecs.dot(np.diag(eigVals)).dot(eigVecs.T)
 ```
 
@@ -3377,7 +3372,7 @@ previously for our object “mat”:
 mat<-matrix(c(1,3,2,4),nrow=2)
 #Calculate the eigenvalues and eigenvectors 
 eig<-eigen(mat)
-#Check the results: A - V.diag(λ).V^-1 = 0 
+#Check the results: A - V.diag(lambda).V^-1 = 0 
 eig$vectors %*% diag(eig$values) %*% solve(eig$vectors)
 ```
 
@@ -3397,7 +3392,7 @@ eig$vectors %*% diag(eig$values) %*% solve(eig$vectors)
 mat=np.array([1,3,2,4]).reshape(2,2)
 #Calculate the eigenvalues and eigenvectors 
 eigVals, eigVecs = np.linalg.eig(mat)
-#Check the results: A - V.diag(λ).V^-1 = 0 
+#Check the results: A - V.diag(lambda).V^-1 = 0 
 eigVecs @ np.diag(eigVals) @ np.linalg.inv(eigVecs)
 ```
 
@@ -3447,7 +3442,7 @@ print(person1)
 ```
 
 ``` out
-## <__main__.Human object at 0x13006cd90>
+## <__main__.Human object at 0x1333b56a0>
 ```
 
 Here we created a class “Human” and used the class to create a variable
@@ -3699,7 +3694,7 @@ system.time(cat<-read.csv("fakedata.csv"))
 
 ``` out
 ##    user  system elapsed 
-##   4.288   0.384   4.522
+##   4.738   0.388   5.053
 ```
 
 ``` r
@@ -3709,7 +3704,7 @@ system.time(cat<-fread("fakedata.csv"))
 
 ``` out
 ##    user  system elapsed 
-##   0.313   0.020   0.342
+##   0.317   0.019   0.341
 ```
 
 </td>
@@ -3736,7 +3731,7 @@ print(numpyrun())
 ```
 
 ``` out
-## 2.881628754000001
+## 3.099912475
 ```
 
 ``` python
@@ -3744,7 +3739,7 @@ print(pandasrun())
 ```
 
 ``` out
-## 0.6217877469999991
+## 0.7311095049999992
 ```
 
 </td>

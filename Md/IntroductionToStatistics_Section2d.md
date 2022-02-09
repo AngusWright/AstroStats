@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-2022-02-08
+2022-02-09
 
 
 
@@ -122,7 +122,7 @@ qrandom(5)
 ```
 
 ``` out
-## [1] 174 161 223 174 218
+## [1]  32 188   1 189  18
 ```
 
 However, requiring an internet link to Australia for your project may
@@ -350,7 +350,7 @@ np.random.binomial(r.size,r.prob,size=3)
 ```
 
 ``` out
-## array([1, 0, 1])
+## array([0, 0, 1])
 ```
 
 </td>
@@ -399,7 +399,7 @@ np.random.uniform(r.limits[0],r.limits[1],size=3)
 ```
 
 ``` out
-## array([16.93677859, 30.03738585, 35.96146296])
+## array([12.04692687, 35.4234754 , 47.10067197])
 ```
 
 </td>
@@ -449,7 +449,7 @@ np.random.normal(r.mean,r.sd,size=3)
 ```
 
 ``` out
-## array([ 9.64991591,  7.75034441, 14.74995471])
+## array([14.35720539,  8.0130987 , 12.2339926 ])
 ```
 
 </td>
@@ -498,7 +498,7 @@ np.random.beta(r.shape[0],r.shape[1],size=3)
 ```
 
 ``` out
-## array([0.12524022, 0.26158584, 0.20699526])
+## array([0.21767415, 0.19439201, 0.24086045])
 ```
 
 </td>
@@ -547,7 +547,7 @@ np.random.gamma(r.shape,size=3)
 ```
 
 ``` out
-## array([10.13105045,  4.32636523,  9.19947084])
+## array([11.38875395,  5.89174237, 13.50407456])
 ```
 
 </td>
@@ -586,11 +586,6 @@ the probability integral transformation (or PIT).
 
 This means that we can use the inversion of *F*, *F*<sup> − 1</sup>, to
 generate samples directly from F given a uniform random variable:
-
-$$
-U\\sim U(0,1)\\\\
-F^{-1}(U)\\sim F
-$$
 
 It’s easiest to understand how this works in practice. Let’s construct
 an arbitrary piecewise function, and then generate random samples from
@@ -761,24 +756,12 @@ and
 Recall the definition of conditional probability:
 
 So
-$$
-\\begin{align}
-P(X\\leq x \| X\\,\\textrm{accepted}) &= \\frac{\\int\_{-\\infty}^x g(y)h(y)\\textrm{d}y}{\\int\_{-\\infty}^\\infty g(y)h(y)\\textrm{d}y}\\\\
-&= \\frac{\\int\_{-\\infty}^x f(y)\\textrm{d}y}{\\int\_{-\\infty}^\\infty f(y)\\textrm{d}y} \\\\
-\\end{align}
-$$
 
-So the accepted values have the PDF *f*. Furthermore:
-$$
-\\begin{align}
-P(X\\,\\textrm{accepted}) &= \\int\_{-\\infty}^{\\infty} g(y)h(y)\\textrm{d}y \\\\
-&=\\frac{1}{K}
-\\end{align}
-$$
-so the probability that a source will be accepted, and thereby the
-efficiency of the method, is determined by how well *f*(*x*) and
-*K**g*(*x*) agree. If a large value of *K* is required, then the
-acceptance probability will be low.
+So the accepted values have the PDF *f*. Furthermore: so the probability
+that a source will be accepted, and thereby the efficiency of the
+method, is determined by how well *f*(*x*) and *K**g*(*x*) agree. If a
+large value of *K* is required, then the acceptance probability will be
+low.
 
 <!--}}}-->
 
@@ -820,12 +803,6 @@ The volume of *Ω* is:
 *V* = ∫<sub>*Ω*</sub>d*x̃*.
 The Monte Carlo simulation approach then simulates random variables *X*
 over *Ω*, and approximates the integral as:
-$$
-\\begin{align}
-I&\\approx\\frac{V}{N}\\sum\_{i=1}^{N}{f(\\tilde{x})}\_{}\\\\
-&=V\\mathbb{E}\[f(\\tilde{x})\]
-\\end{align}
-$$
 
 In the case of our estimate of *π*, our function *f*(*x̃*) is defined as:
 $$
@@ -836,14 +813,8 @@ f(\\tilde{x})=
 \\end{cases}
 $$
 The Volume of our parameter space is
-*Ω* = *U*( − 1.5, 1.5), *U*(1.5, 1.5):
-$$
-\\begin{align}
-V&=\\int\_{-1.5}^{1.5}\\int\_{-1.5}^{1.5} \\textrm{d}x\\textrm{d}y \\\\
-&=9
-\\end{align}
-$$
-Which gives our integral estimate:
+*Ω* = *U*( − 1.5, 1.5), *U*(1.5, 1.5): Which gives our integral
+estimate:
 $$
 I\\approx\\frac{9}{N}\\sum\_{i=1}^{N}{f(\\tilde{x})}\_{}.
 $$

@@ -567,10 +567,10 @@ transformation (or PIT).
 This means that we can use the inversion of $F$, $F^{-1}$, to generate samples 
 directly from F given a uniform random variable: 
 
-$$
-U\sim U(0,1)\\
-F^{-1}(U)\sim F
-$$
+\begin{align}
+U&\sim U(0,1)\\
+F^{-1}(U)&\sim F
+\end{align}
  
 It's easiest to understand how this works in practice. 
 Let's construct an arbitrary piecewise function, and then generate random
@@ -748,20 +748,16 @@ Recall the definition of conditional probability:
 
 
 So
-$$
 \begin{align}
 P(X\leq x | X\,\textrm{accepted}) &= \frac{\int_{-\infty}^x g(y)h(y)\textrm{d}y}{\int_{-\infty}^\infty g(y)h(y)\textrm{d}y}\\
 &= \frac{\int_{-\infty}^x f(y)\textrm{d}y}{\int_{-\infty}^\infty f(y)\textrm{d}y} \\
 \end{align}
-$$ 
 
 So the accepted values have the PDF $f$. Furthermore: 
-$$
 \begin{align}
 P(X\,\textrm{accepted}) &= \int_{-\infty}^{\infty} g(y)h(y)\textrm{d}y \\
 &=\frac{1}{K}
 \end{align}
-$$
 so the probability that a source will be accepted, and thereby the efficiency of the 
 method, is determined by how well $f(x)$ and $Kg(x)$ agree. If a large value of $K$ 
 is required, then the acceptance probability will be low. 
@@ -849,12 +845,12 @@ V=\int_\Omega \textrm{d}\tilde{x}_{}.
 $$
 The Monte Carlo simulation approach then simulates random variables $X$ over $\Omega$, 
 and approximates the integral as: 
-$$
+
 \begin{align}
 I&\approx\frac{V}{N}\sum_{i=1}^{N}{f(\tilde{x})}_{}\\
 &=V\mathbb{E}[f(\tilde{x})]
 \end{align}
-$$
+
 
 In the case of our estimate of $\pi$, our function $f(\tilde{x})$ is defined 
 as: 
@@ -866,12 +862,10 @@ f(\tilde{x})=
 \end{cases}
 $$
 The Volume of our parameter space is $\Omega = {U(-1.5,1.5),U(1.5,1.5)}$: 
-$$
 \begin{align}
 V&=\int_{-1.5}^{1.5}\int_{-1.5}^{1.5} \textrm{d}x\textrm{d}y \\
 &=9
 \end{align}
-$$
 Which gives our integral estimate: 
 $$
 I\approx\frac{9}{N}\sum_{i=1}^{N}{f(\tilde{x})}_{}.

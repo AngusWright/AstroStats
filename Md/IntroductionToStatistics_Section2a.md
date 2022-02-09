@@ -252,24 +252,8 @@ Given the complementarity rule, if the event space contains no outcomes
 (that is, it is the empty set: ℰ = *Ω*<sup>𝒸</sup> = ∅), then the
 probability of the event is 0:
 
-$$
-\\begin{align}
-P(\\emptyset)&=1-P(\\Omega)\\\\
-&=0.
-\\end{align}
-$$
-
 So, what is the probability of observing a prime number when we roll a
 fair die:
-
-$$
-\\begin{align}
-P(\\mathcal{E}\\in\\{2,3,5\\})&=\\sum\_{A\_i\\in\\mathcal{E}} P(A\_i) \\\\
-&= P(2) + P(3) + P(5) \\\\
-&= \\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6} \\\\
-\\therefore P(\\mathcal{E}) &= 0.5 
-\\end{align}
-$$
 
 <!--}}}-->
 
@@ -285,15 +269,6 @@ sample space of the two-dice roll is the set of all possible **ordered
 combinations** or **permutations** of two draws from these values.
 
 We can construct this sample space by hand:
-
-$$
-\\begin{align}
-\\Omega = \\{ &1+1, 1+2, 1+3, 1+4, 1+5, 1+6, \\\\
-&2+1, 2+2, 2+3, 2+4, 2+5, 2+6, \\\\
-&\\vdots \\\\
-&6+1, 6+2, 6+3, 6+4, 6+5, 6+6\\}
-\\end{align}
-$$
 
 We can also construct the sample space in **R** using the `expand.grid`
 function, which produces all possible permutations of two vectors:
@@ -344,12 +319,6 @@ expand.grid(1:6,1:6)
 
 With two fair die, the probability of observing each of these outcomes
 is equal:
-$$ 
-\\begin{align}
-P(A\_i)&=\\frac{1}{\|\\Omega\|}\\\\
-&=\\frac{1}{36}
-\\end{align}
-$$
 
 However, our game specified that we wanted to calculate the *sum* of the
 dice, which changes the event space we are interested in. The summation
@@ -450,15 +419,6 @@ We want to ask the question: what is the probability that we observed
 
 *P*(chance match in database) = 1 − *P*(no chance match in the database)
 
-$$
-\\begin{align}
-P(\\textrm{no chance match in the database}) = &P(\\textrm{no chance match with person 1}) \\cap \\\\
-&P(\\textrm{no chance match with person 2}) \\cap \\\\
-&\\vdots \\\\
-&P(\\textrm{no chance match with person 20,000}) 
-\\end{align}
-$$
-
 The probability of incorrectly matching DNA to a random person is 0.01%:
 
 *P*(chance match with person *i*) = 0.0001
@@ -469,14 +429,6 @@ So
 
 Now we compute our joint probability. Chance matches are independent, so
 we multiply our probabilities together: :
-
-$$
-\\begin{align}
-P(\\textrm{no chance match in the database}) &= \\prod\_{i\\in 20\\,000} P(\\textrm{no chance match with person}\\,i)  \\\\
-&= 0.9999^{20000}\_{} \\\\
-&\\approx 0.1353
-\\end{align}
-$$
 
 So there is only a 13.5% probability of **not** finding at least 1 match
 purely by chance! Or rather, an 86.5% probability that the match was
@@ -500,11 +452,6 @@ The probability of observing 26 “Red” observations in a row is
 The problem is that we have considered the wrong probability here. Yes,
 the probability of observing 26 “Red” spins in a row is very small, *but
 so is observing 25 “Red” spins and then one “Black” spin!*
-
-$$
-P(\\{R,R,R,\\dots,R,R\\})=P(\\{R,R,R,\\dots,R,B\\}) \\\\
-P(R)^{25}\\times P(R)=P(R)^{25}\\times P(B)
-$$
 
 The logical error here is that we have implicitly assumed that “the
 universe” knows about the last 25 spins, and now wants to rectify its

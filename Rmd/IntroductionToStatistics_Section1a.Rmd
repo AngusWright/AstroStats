@@ -176,10 +176,10 @@ $$ \omega \in \Omega, \quad\rm{where}\, |\omega|=n $$
 
 $$ X \sim N(\mu,\sigma) $$ 
 
-$$
+\begin{align}
 X : \omega \mapsto \{ x_1, x_2, x_3, \dots, x_n \}\quad{\rm or} \\
 X(\omega)=\{ x_1, x_2, x_3, \dots, x_n \}
-$$
+\end{align}
 </td> <!--}}}-->
 <td plaintext> <!--{{{-->
 We have $n$ observations $\omega$ from the population $\Omega$ 

@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-Updated 2022-02-08
+Updated 2022-02-09
 
 
 
@@ -102,16 +102,16 @@ In practice we use infinitesimally small intervals to define the PDF.
 Some important properties of the PDF:
 
 > -   The PDF is non-negative, because the *P*(*u*) &lt; 0 would require
->     $\\int\_{u-\\epsilon^{b+\\epsilon} p(x)\\mathrm{d}x&lt;0$, which
->     is impossible.
+>     ∫<sub>*u* − *ϵ*</sub><sup>*u* + *ϵ*</sup>*p*(*x*)*d**x* &lt; 0
+>     , which is impossible.
 > -   The PDF must integrate to 1, which we can see if we make the
 >     interval \[*a*, *b*\] = \[ − ∞, ∞\]:
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(-\\infty\\leq X \\leq \\infty) &= \\int\_{-\\infty}^{\\infty} p(x)\\mathrm{d}x \\\\
 &= 1
-\\end{align}
+\\end{aligned}
 $$
 
 For example the PDF of train delays at a fictitious railway company that
@@ -167,13 +167,13 @@ value of each roll. Assume a fair six-sided die
 (*p*<sub>*i*</sub> = 1/6  ∀  *i* ∈ \[1, 6\]).
 
 $$
-\\begin{align}
+\\begin{aligned}
 \\mathbb{E}\[X\]&=\\sum\_{x\\in\\mathcal{\\Omega}} xP(X=x) \\\\
 &=1\\times \\frac{1}{6} + 2\\times \\frac{1}{6} + \\dots + 6\\times\\frac{1}{6} \\\\
 &=\\frac{1}{6}(1+2+\\dots+6)\\\\
 &=\\frac{1}{n}\\sum\_{i=1}^{n} x\_i \\\\
 &=\\bar{x}
-\\end{align}
+\\end{aligned}
 $$
 
 So the expectation value is just the arithmetic mean of the probability
@@ -182,31 +182,31 @@ distribution!
 We can then also calculate other statistics, like the variance:
 
 $$
-\\begin{align}
+\\begin{aligned}
 \\textrm{var}\[X\]&=\\mathbb{E}\[(X-\\mathbb{E}\[X\])^2\]\\\\
 &= \\mathbb{E}\\left\[ X^2 - 2X\\mathbb{E}\[X\] + (\\mathbb{E}\[X\])^2 \\right\]\\\\
 &= \\mathbb{E}\\left\[ X^2 \\right\] - 2\\mathbb{E}\[X\]\\mathbb{E}\[X\] + (\\mathbb{E}\[X\])^2 \\\\
 &= \\mathbb{E}\\left\[X^2\\right\]-(\\mathbb{E}\[X\])^2
-\\end{align}
+\\end{aligned}
 $$
+
 Now:
 $$
-\\begin{align}
+\\begin{aligned}
 \\textrm{var}\[X\]&=\\mathbb{E}\\left\[X^2\\right\]-(\\mathbb{E}\[X\])^2 \\\\
-&=\\frac{1}{n}\\sum\_{i=1}^{n} x^2\_i - \\left(\\frac{1}{n}\\sum\_{i=1}^{n} x\_i\\right)^2 \\\\
-&=
-\\end{align}
+&=\\frac{1}{n}\\sum\_{i=1}^{n} x^2\_i - \\left(\\frac{1}{n}\\sum\_{i=1}^{n} x\_i\\right)^2 
+\\end{aligned}
 $$
 
 Or the covariance:
 
 $$
-\\begin{align}
+\\begin{aligned}
 \\textrm{cov}\[X,Y\]&=\\mathbb{E}\\left\[(X-\\mathbb{E}\[X\])(Y-\\mathbb{E}\[Y\])\\right\] \\\\
 &= \\mathbb{E}\\left\[ XY + X\\mathbb{E}\[Y\] - \\mathbb{E}\[X\]Y + \\mathbb{E}\[X\]\\mathbb{E}\[Y\] \\right\]\\\\
 &= \\mathbb{E}\\left\[ XY \\right\] - 2\\mathbb{E}\[X\]\\mathbb{E}\[Y\] + \\mathbb{E}\[X\]\\mathbb{E}\[Y\] \\\\
 &= \\mathbb{E}\\left\[XY\\right\]-\\mathbb{E}\[X\]\\mathbb{E}\[Y\]
-\\end{align}
+\\end{aligned}
 $$
 
 Recall once again that, if *X* and *Y* are independent,
@@ -229,12 +229,14 @@ The Bernoulli random variable is defined as taking the value 1 with a
 probability *p*, and the value 0 with a probability 1 − *p*. Therefore
 the PMF of a Bernoulli Random Variable is:
 $$
-X\\sim \\textrm{Bern}(p) \\\\
-P(X=x)=
+\\begin{aligned}
+X&\\sim \\textrm{Bern}(p) \\\\
+P(X=x)&=
 \\begin{cases}
 1-p & \\textrm{if } x=0\\\\
 p & \\textrm{if } x=1\\\\
 \\end{cases}
+\\end{aligned}
 $$
 The related cumulative distribution function is therefore:
 $$
@@ -251,23 +253,23 @@ The Bernoulli Random Variable has the following useful properties:
 > -   Expectation: 𝔼\[*X*\] = *p*
 
 $$
-\\begin{align}
+\\begin{aligned}
 \\mathbb{E}\[X\] &= \\sum\_{x\\in\\mathcal{\\Omega}} xP(X=x) \\\\
 &=  0\\times(1-p) + 1\\times p \\\\
 &= p
-\\end{align}
+\\end{aligned}
 $$
 
 > -   Variance: var\[*X*\] = *p*(1 − *p*).
 
 $$
-\\begin{align}
+\\begin{aligned}
 \\textrm{var}\[X\] &= \\mathbb{E}\\left\[X^2\\right\]-(\\mathbb{E}\[X\])^2 \\\\
 &= \\sum\_{x\\in\\mathcal{\\Omega}} \\left\[x^2P(X=x^2)\\right\] - \\left\[\\sum\_{x\\in\\mathcal{\\Omega}} xP(X=x)\\right\]^2  \\\\
 &=  \\left\[0^2\\times(1-p) + 1^2\\times p\\right\] - p^2 \\\\
 &= p-p^2 \\\\
 &= p(1-p)
-\\end{align}
+\\end{aligned}
 $$
 
 If *p* = 0 or *p* = 1, then the Bernoulli random variable follows the
@@ -321,8 +323,10 @@ appearance doesn’t matter). Therefore, the probability of observing *k*
 successes from *n* trials with our coin is:
 
 $$
-k\\sim \\textrm{Bin}(n,p) \\\\ 
-P(k; n, p) = \\frac{n!}{k!(n-k)!}\\,p^k(1-p)^{n-k},
+\\begin{aligned}
+k&\\sim \\textrm{Bin}(n,p) \\\\ 
+P(k; n, p) &= \\frac{n!}{k!(n-k)!}\\,p^k(1-p)^{n-k},
+\\end{aligned}
 $$
 This is the PMF of the **binomial function**.
 
@@ -351,8 +355,10 @@ If we perform *N* independent realisations of an experiment with
 multinomial distribution PMF:
 
 $$
-n\_1,n\_2,\\dots,n\_k \\sim \\textrm{Multi}(N,p\_1,p\_2,\\dots,p\_k)\\\\
-P(n\_1, n\_2, \\dots,n\_k; N, p\_1,p\_2,\\dots,p\_k) = \\frac{N!}{n\_1!n\_2!\\dots n\_k!}\\,p\_1^{n\_1}p\_2^{n\_2}\\dots p\_k^{n\_k},
+\\begin{aligned}
+n\_1,n\_2,\\dots,n\_k &\\sim \\textrm{Multi}(N,p\_1,p\_2,\\dots,p\_k)\\\\
+P(n\_1, n\_2, \\dots,n\_k; N, p\_1,p\_2,\\dots,p\_k) &= \\frac{N!}{n\_1!n\_2!\\dots n\_k!}\\,p\_1^{n\_1}p\_2^{n\_2}\\dots p\_k^{n\_k},
+\\end{aligned}
 $$
 for non-negative integers
 *n*<sub>1</sub>, *n*<sub>2</sub>, …, *n*<sub>*k*</sub> and where
@@ -388,8 +394,10 @@ We can make two additional constraints:
 Given this experiment, the resulting observations will follow the
 **Poisson distribution**, which has the PMF:
 $$
-k\\sim \\textrm{Po}(\\lambda) \\\\
-P(k; \\lambda) = e^{-\\lambda}\\frac{\\lambda^k}{k!},
+\\begin{aligned}
+k&\\sim \\textrm{Po}(\\lambda) \\\\
+P(k; \\lambda) &= e^{-\\lambda}\\frac{\\lambda^k}{k!},
+\\end{aligned}
 $$
 where *λ* is the so-called \`intensity’ parameter which governs the
 shape of the distribution. We can calculate the expectation of the
@@ -397,7 +405,7 @@ Poisson distribution using our standard formula (but this is a bit more
 involved than previously…):
 
 $$
-\\begin{align}
+\\begin{aligned}
 \\mathbb{E}\[X\] &= \\sum\_{x\\in\\mathcal{\\Omega}} xP(X=x) \\\\
 &=  \\sum\_{x=1}^{\\infty} x\\frac{e^{-\\lambda}\\lambda^x}{x!} \\\\
 &=  \\sum\_{x=1}^{\\infty} \\frac{e^{-\\lambda}\\lambda^x}{(x-1)!} \\\\
@@ -406,8 +414,9 @@ $$
 &=  \\lambda e^{-\\lambda}\\sum\_{x=0}^{\\infty} \\frac{\\lambda^x}{x!} \\\\
 &=  \\lambda e^{-\\lambda}e^{\\lambda} \\\\
 &=  \\lambda
-\\end{align}
+\\end{aligned}
 $$
+
 So the *λ* parameter describes the **expectation** of the Poisson
 distribution!
 
@@ -479,13 +488,15 @@ simple. The **uniform distribution** is characterised by a lower bound
 density in between:
 
 $$
-X\\sim U(a,b) \\\\
-p(X=x)=
+\\begin{aligned}
+X&\\sim U(a,b) \\\\
+p(X=x)&=
 \\begin{cases}
 0 & \\textrm{if } x&lt;a \\\\
 \\frac{1}{b-a} & \\textrm{if } a\\leq x\\leq b \\\\
 0 & \\textrm{if } x&gt;b
 \\end{cases}
+\\end{aligned}
 $$
 
 <img src="IntroductionToStatistics_Section2c_files/figure-gfm/unnamed-chunk-8-1.png" width="90%" style="display: block; margin: auto;" />
@@ -504,12 +515,14 @@ schedule, how long can they expect to wait for a tram?
 The waiting times in this scenario is a random uniform variable:
 
 $$
-X\\sim U(0,5) \\\\
-p(X=x)=
+\\begin{aligned}
+X&\\sim U(0,5) \\\\
+p(X=x)&=
 \\begin{cases}
 \\frac{1}{5} & \\textrm{if } 0\\leq x\\leq 5 \\\\
 0 & \\textrm{otherwise}
 \\end{cases}
+\\end{aligned}
 $$
 The expectation of this distribution is $\\mathbb{E}\[X\]=\\frac{5}{2}$,
 so the expected waiting time is 2.5 minutes. Similarly, we can compute
@@ -551,8 +564,10 @@ likely familiar with, but it is useful for two reasons:
 
 The Beta distribution is defined as:
 $$
-X\\sim\\textrm{Be}(a,b)\\\\
-p(X=x;a,b)=\\frac{\\Gamma(a) \\Gamma(b)}{\\Gamma(a+b)}x^{a-1}(1-x)^{b-1},
+\\begin{aligned}
+X&\\sim\\textrm{Be}(a,b)\\\\
+p(X=x;a,b)&=\\frac{\\Gamma(a) \\Gamma(b)}{\\Gamma(a+b)}x^{a-1}(1-x)^{b-1},
+\\end{aligned}
 $$
 where *Γ* is the Gamma function, defined as:
 *Γ*(*n*) = (*n* − 1)!
@@ -580,8 +595,10 @@ relevant later in the course due to its use in conjugate analyses. The
 gamma distribution is defined by two parameters, the shape parameter *a*
 and the scale parameter *s*. The gamma distribution PDF is defined as:
 $$
-X\\sim \\textrm{Ga}(a,s) \\\\
-p(X=x; a, s) = \\frac{s^a x^{a -1}e^{-\\beta x}}{\\Gamma(\\alpha)}. 
+\\begin{aligned}
+X&\\sim \\textrm{Ga}(a,s) \\\\
+p(X=x; a, s) &= \\frac{s^a x^{a -1}e^{-\\beta x}}{\\Gamma(\\alpha)}. 
+\\end{aligned}
 $$
 As with the Beta distribution, the Gamma distribution is extremely
 flexible. In fact, the Gamma distribution encompasses (as special cases
@@ -613,8 +630,10 @@ statistics.
 A random variable *X* which follows a Gaussian distribution with mean
 *μ* and variance *σ*<sup>2</sup> has the PDF:
 $$
-X\\sim N(\\mu,\\sigma^2) \\\\
-p(X=x; \\mu,\\sigma^2) = \\frac{1}{\\sqrt{2 \\pi \\sigma^2}}e^{-\\frac{(x - \\mu)^2}{2 \\sigma^2}},
+\\begin{aligned}
+X&\\sim N(\\mu,\\sigma^2) \\\\
+p(X=x; \\mu,\\sigma^2) &= \\frac{1}{\\sqrt{2 \\pi \\sigma^2}}e^{-\\frac{(x - \\mu)^2}{2 \\sigma^2}},
+\\end{aligned}
 $$
 
 The cumulative distribution function of the Gaussian distribution is
@@ -628,16 +647,20 @@ numerical and computational methods.
 A useful special case of the Gaussian distribution is the so-called
 “standard” Gaussian: *X* ∼ *N*(0, 1):
 $$
-X\\sim N(0,1) \\\\
-p(X=x) = \\frac{1}{\\sqrt{2 \\pi}}e^{-\\frac{x^2}{2}},
+\\begin{aligned}
+X&\\sim N(0,1) \\\\
+p(X=x) &= \\frac{1}{\\sqrt{2 \\pi}}e^{-\\frac{x^2}{2}},
+\\end{aligned}
 $$
 
 It is possible to transform any gaussian variable into a standard
 gaussian variable using the so-called *Z*-transformation:
 $$
-X\\sim N(\\mu,\\sigma^2) \\\\
-Z=\\frac{X-\\mu}{\\sigma} \\\\ 
-\\therefore Z\\sim N(0,1)
+\\begin{aligned}
+X&\\sim N(\\mu,\\sigma^2) \\\\
+Z&=\\frac{X-\\mu}{\\sigma} \\\\ 
+\\therefore Z&\\sim N(0,1)
+\\end{aligned}
 $$
 
 This is useful for many reasons, particularly in modelling and
@@ -645,11 +668,11 @@ understanding biases, but here we will use the transformation to derive
 some useful properties of the gaussian distribution:
 
 $$
-\\begin{align}
+\\begin{aligned}
 P(X\\leq b) &= P\\left(\\frac{X-\\mu}{\\sigma} \\leq \\frac{b-\\mu}{\\sigma}\\right)  \\\\
 &= P\\left(Z \\leq \\frac{b-\\mu}{\\sigma}\\right) \\\\
 &= \\Phi(\\frac{b-\\mu}{\\sigma}).
-\\end{align}
+\\end{aligned}
 $$
 
 > -   The probability of a Gaussian random variable being less than some
@@ -660,10 +683,12 @@ $$
 By symmetry and integral constraints we can equally demonstrate that:
 
 $$
-P(X &gt; a) = 1 - \\Phi(\\frac{a-\\mu}{\\sigma}); \\\\
-P(a \\leq X \\leq b) = \\Phi(\\frac{b-\\mu}{\\sigma}) - \\Phi(\\frac{a-\\mu}{\\sigma}); \\\\
-\\Phi(-a) = 1-\\Phi(a); \\\\
-P(-a &lt; Z &lt; a) = 2\\Phi(a)-1. 
+\\begin{aligned}
+P(X &gt; a) &= 1 - \\Phi(\\frac{a-\\mu}{\\sigma}); \\\\
+P(a \\leq X \\leq b) &= \\Phi(\\frac{b-\\mu}{\\sigma}) - \\Phi(\\frac{a-\\mu}{\\sigma}); \\\\
+\\Phi(-a) &= 1-\\Phi(a); \\\\
+P(-a &lt; Z &lt; a) &= 2\\Phi(a)-1. 
+\\end{aligned}
 $$
 
 The Gaussian Distribution has properties:
@@ -698,26 +723,30 @@ The covariance matrix encodes the degree of mutual variance between the
 different gaussian components. In cases with zero covariance:
 
 $$
-X\\sim N\_2(\\mu,\\Sigma)\\\\
-\\mu=\\{-2,3\\} \\\\
-\\Sigma = 
+\\begin{aligned}
+X&\\sim N\_2(\\mu,\\Sigma)\\\\
+\\mu&=\\{-2,3\\} \\\\
+\\Sigma &= 
 \\begin{pmatrix}
 4  & 0 \\\\
 0  & 1 \\\\
 \\end{pmatrix}
+\\end{aligned}
 $$
 
 <img src="IntroductionToStatistics_Section2c_files/figure-gfm/unnamed-chunk-13-1.png" width="90%" style="display: block; margin: auto;" />
 
 Or the case of significant covariance:
 $$
-X\\sim N\_2(\\mu,\\Sigma)\\\\
-\\mu=\\{-2,3\\} \\\\
-\\Sigma = 
+\\begin{aligned}
+X&\\sim N\_2(\\mu,\\Sigma)\\\\
+\\mu&=\\{-2,3\\} \\\\
+\\Sigma &= 
 \\begin{pmatrix}
 4  & 2 \\\\
 2  & 1 \\\\
 \\end{pmatrix}
+\\end{aligned}
 $$
 
 <img src="IntroductionToStatistics_Section2c_files/figure-gfm/unnamed-chunk-14-1.png" width="90%" style="display: block; margin: auto;" />
@@ -907,14 +936,14 @@ What distribution would the values of the first significant digit of the
 numbers take? e.g. if the numbers are all written in scientific
 notation:
 $$
-\\begin{align}
+\\begin{aligned}
 1.3&\\times10^{1}\\\\
 7.6&\\times10^{-2}\\\\
 5.1&\\times10^{2}\\\\
  &\\vdots \\\\
 9.0&\\times10^{-1}\\\\
 2.3&\\times10^{3}\\\\
-\\end{align}
+\\end{aligned}
 $$
 What will the histogram of the numbers in front of the “.” look like?
 
