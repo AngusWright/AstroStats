@@ -716,14 +716,17 @@ $$
 
 To work this out, we need to know *P*(*G*<sub>3</sub>\|*C*<sub>1</sub>),
 *P*(*G*<sub>3</sub>\|*C*<sub>2</sub>), and
-*P*(*G*<sub>3</sub>\|*C*<sub>3</sub>).
+*P*(*G*<sub>3</sub>\|*C*<sub>3</sub>). That is, the probability that the
+host chose to show us the goat behind door 3, given the three possible
+locations of the car:
 
-> -   *P*(*G*<sub>3</sub>\|*C*<sub>3</sub>) = 0, because the host
->     chooses from doors with goats behind them.
-> -   $P(G\_3\|C\_1)=\\frac{1}{2}$, because the host chooses randomly
->     from doors with goats behind them that are not door one.
+> -   *P*(*G*<sub>3</sub>\|*C*<sub>3</sub>) = 0, because there cannot be
+>     both a goat and a car behind door 3.
+> -   $P(G\_3\|C\_1)=\\frac{1}{2}$, because the host can choose randomly
+>     from the two doors with goats behind them.
 > -   *P*(*G*<sub>3</sub>\|*C*<sub>2</sub>) = 1, because there is only
->     one door that (a) has a goat behind it and (b) isn’t door one.
+>     one door that (a) has a goat behind it and (b) isn’t the door we
+>     picked.
 
 We can substitute these values into the formula, and we find:
 

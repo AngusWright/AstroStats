@@ -671,11 +671,12 @@ $$
 P(C_1|G_3)= \frac{P(G_3|C_1)P(C_1)}{P(G_3|C_1)P(C_1)+P(G_3|C_2)P(C_2)+P(G_3|C_3)P(C_3)}
 $$
 
-To work this out, we need to know $P(G_3|C_1)$, $P(G_3|C_2)$, and $P(G_3|C_3)$. 
+To work this out, we need to know $P(G_3|C_1)$, $P(G_3|C_2)$, and $P(G_3|C_3)$. That is, the probability that the 
+host chose to show us the goat behind door 3, given the three possible locations of the car: 
 
-> + $P(G_3|C_3)=0$, because the host chooses from doors with goats behind them. 
-> + $P(G_3|C_1)=\frac{1}{2}$, because the host chooses randomly from doors with goats behind them that are not door one. 
-> + $P(G_3|C_2)=1$, because there is only one door that (a) has a goat behind it and (b) isn’t door one. 
+> + $P(G_3|C_3)=0$, because there cannot be both a goat and a car behind door 3.
+> + $P(G_3|C_1)=\frac{1}{2}$, because the host can choose randomly from the two doors with goats behind them. 
+> + $P(G_3|C_2)=1$, because there is only one door that (a) has a goat behind it and (b) isn’t the door we picked. 
 
 We can substitute these values into the formula, and we find: 
 
