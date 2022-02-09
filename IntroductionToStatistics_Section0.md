@@ -339,11 +339,11 @@ this course): let us take a relatively simple dataset that we know
 follows a generic beta distribution, and attempt to model this dataset
 using a function containing 2 parameters:
 
-$$ 
+$ 
 Y = Beta(X, \\alpha,\\beta) + {\\rm noise} \\\\
 0\\leq X \\leq 1 \\\\
 \\alpha, \\beta \\in \[0,\\infty)
-$$
+$
 
 <img src="IntroductionToStatistics_Section0_files/figure-gfm/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;" />
 One might be inclined to attempt to fit a model to these data by-hand,
