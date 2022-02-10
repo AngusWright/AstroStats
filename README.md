@@ -1,5 +1,6 @@
 # AstroStats
-Repository for Angus H Wright's Introduction to Statistics for Astronomers and Physicists Lecture Materials
+Repository for Angus H Wright's **Introduction to Statistics for Astronomers and Physicists** Lecture Materials. 
+Includes 13 Lectures and one Summary Ringvorlesung. 
 
 # Viewing the Lecture Notes 
 The lecture notes are provided in viewable-on-github markdown format using the links below or by directly clicking on the
@@ -35,6 +36,7 @@ For convenience, direct links to the view-on-github Lectures are provided here:
 - [Lecture 4a: Significance of Evidence](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4a.md)
 - [Lecture 4b: Optimisation and Complex Modelling I](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4b.md)
 - [Lecture 4c: Complex Modelling II and Machine Learning](https://github.com/AngusWright/AstroStats/blob/master/Md/IntroductionToStatistics_Section4c.md)
+- [Ringvorlesung: Astrostatistics](https://github.com/AngusWright/AstroStats/blob/master/Md/Ringvorlesung.md)
 
 ## View-on-GitHub PDF Notes 
 For cases where the LaTeX has failed to show nicely on GitHub markdown, you may prefer to refer to the PDF versions of the Lectures: 
@@ -53,6 +55,7 @@ For cases where the LaTeX has failed to show nicely on GitHub markdown, you may 
 - [Lecture 4a: Significance of Evidence](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4a.pdf)
 - [Lecture 4b: Optimisation and Complex Modelling I](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4b.pdf)
 - [Lecture 4c: Complex Modelling II and Machine Learning](https://github.com/AngusWright/AstroStats/blob/master/PDF/IntroductionToStatistics_Section4c.pdf)
+- [Ringvorlesung: Astrostatistics](https://github.com/AngusWright/AstroStats/blob/master/PDF/Ringvorlesung.pdf)
 
 # Compiling the Lectures 
 Additionally, the lectures can be downloaded and compiled into a range of formats using the knit.sh script in the Rmd
