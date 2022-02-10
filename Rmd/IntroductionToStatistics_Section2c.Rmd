@@ -645,12 +645,12 @@ The Beta distribution has the properties:
 
 Similar to the Beta distribution, the **gamma distribution** will become relevant 
 later in the course due to its use in conjugate analyses. The gamma distribution 
-is defined by two parameters, the shape parameter $a$ and the scale parameter $s$.
-The gamma distribution PDF is defined as: 
+is defined by two parameters, the shape parameter $\alpha$ and the inverse scale parameter $\beta=1/s$,
+also called the rate parameter.  The gamma distribution PDF is defined as: 
 $$
 \begin{aligned}
-X&\sim \textrm{Ga}(a,s) \\
-p(X=x; a, s) &= \frac{s^a x^{a -1}e^{-\beta x}}{\Gamma(\alpha)}. 
+X&\sim \textrm{Ga}(\alpha,\beta) \\
+p(X=x; \alpha, \beta) &= \frac{\beta^\alpha x^{\alpha -1}e^{-\beta x}}{\Gamma(\alpha)}. 
 \end{aligned}
 $$
 As with the Beta distribution, the Gamma distribution is extremely flexible. In 
@@ -659,35 +659,35 @@ combinations) many interesting distributions that you will likely already be
 familiar with, such as the exponential distribution and the $\chi^2$-distribution 
 (the latter of which we will discuss in a few slides time!). 
 
-The variability of the Gamma distribution as a function of shape parameter $a$ and scale 
-parameter $s$ are shown below: 
+The variability of the Gamma distribution as a function of shape parameter $\alpha$ and rate
+parameter $\beta$ are shown below: 
 
 ```{r,  fig.height=4, fig.width=6, out.width='90%',eval=TRUE,echo=FALSE}
 magcurve(dgamma(x,1,1),from=0,to=10,col=seqinr::col2alpha('red2',0.5),lwd=4,
         ylim=c(0,2),xlab='x',ylab='PDF',
-        main="Gamma Distribution with identical shape and scale params")
+        main="Gamma Distribution with identical shape and rate params")
 curve(dgamma(x,5,5),from=0,to=10,col=seqinr::col2alpha('green3',0.5),lwd=4,add=T)
 curve(dgamma(x,15,15),from=0,to=10,col=seqinr::col2alpha('blue2',0.5),lwd=4,add=T)
-legend('topright',legend=c(expression(paste("X~Ga(a=1,s=1)")),expression(paste("X~Ga(a=5,s=5)")),
-                           expression(paste("X~Be(a=15,s=15)"))),lty=1,
+legend('topright',legend=c(expression(paste("X~Ga(",alpha,"=1,",beta,"=1)")),expression(paste("X~Ga(",alpha,"=5,",beta,"=5)")),
+                           expression(paste("X~Ga(",alpha,"=15,",beta,"=15)"))),lty=1,
        col=c('red2','green3','blue2'),lwd=2,inset=0.1,bty='n')
 ```
 
 ```{r,  fig.height=4, fig.width=6, out.width='90%',eval=TRUE,echo=FALSE}
 magcurve(dgamma(x,1,5),from=0,to=10,col=seqinr::col2alpha('red2',0.5),lwd=4,
-        ylim=c(0,2),xlab='x',ylab='PDF',main="Gamma Distribution with different shape and scale params")
+        ylim=c(0,2),xlab='x',ylab='PDF',main="Gamma Distribution with different shape and rate params")
 curve(dgamma(x,5,1),from=0,to=10,col=seqinr::col2alpha('green3',0.5),lwd=4,add=T)
 curve(dgamma(x,15,3),from=0,to=10,col=seqinr::col2alpha('blue2',0.5),lwd=4,add=T)
 curve(dgamma(x,20,10),from=0,to=10,col=seqinr::col2alpha('orange2',0.5),lwd=4,add=T)
-legend('topright',legend=c(expression(paste("X~Ga(a=1,s=5)")),expression(paste("X~Ga(a=5,s=1)")),
-                           expression(paste("X~Ga(a=15,s=3)")),expression(paste("X~Ga(a=20,s=10)"))),lty=1,
+legend('topright',legend=c(expression(paste("X~Ga(",alpha,"=1,",beta,"=5)")),expression(paste("X~Ga(",alpha,"=5,",beta,"=1)")),
+                           expression(paste("X~Ga(",alpha,"=15,",beta,"=3)")),expression(paste("X~Ga(",alpha,"=20,",beta,"=10)"))),lty=1,
        col=c('red2','green3','blue2','orange2'),lwd=2,inset=0.1,bty='n')
 ```
 
 The Gamma Distribution has properties: 
 
-> + Expectation $\mathbb{E}[X]=\frac{a}{s}$
-> + Variance $\textrm{var}[X]=\frac{a}{s^2}$
+> + Expectation $\mathbb{E}[X]=\frac{\alpha}{\beta}$
+> + Variance $\textrm{var}[X]=\frac{\alpha}{\beta^2}$
 
 <!--}}}-->
 

@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-Updated 2022-02-09
+Updated 2022-02-10
 
 
 
@@ -592,12 +592,13 @@ The Beta distribution has the properties:
 
 Similar to the Beta distribution, the **gamma distribution** will become
 relevant later in the course due to its use in conjugate analyses. The
-gamma distribution is defined by two parameters, the shape parameter *a*
-and the scale parameter *s*. The gamma distribution PDF is defined as:
+gamma distribution is defined by two parameters, the shape parameter *α*
+and the inverse scale parameter *β* = 1/*s*, also called the rate
+parameter. The gamma distribution PDF is defined as:
 $$
 \\begin{aligned}
-X&\\sim \\textrm{Ga}(a,s) \\\\
-p(X=x; a, s) &= \\frac{s^a x^{a -1}e^{-\\beta x}}{\\Gamma(\\alpha)}. 
+X&\\sim \\textrm{Ga}(\\alpha,\\beta) \\\\
+p(X=x; \\alpha, \\beta) &= \\frac{\\beta^\\alpha x^{\\alpha -1}e^{-\\beta x}}{\\Gamma(\\alpha)}. 
 \\end{aligned}
 $$
 As with the Beta distribution, the Gamma distribution is extremely
@@ -608,7 +609,7 @@ distribution and the *χ*<sup>2</sup>-distribution (the latter of which
 we will discuss in a few slides time!).
 
 The variability of the Gamma distribution as a function of shape
-parameter *a* and scale parameter *s* are shown below:
+parameter *α* and rate parameter *β* are shown below:
 
 <img src="IntroductionToStatistics_Section2c_files/figure-gfm/unnamed-chunk-11-1.png" width="90%" style="display: block; margin: auto;" />
 
@@ -616,8 +617,8 @@ parameter *a* and scale parameter *s* are shown below:
 
 The Gamma Distribution has properties:
 
-> -   Expectation $\\mathbb{E}\[X\]=\\frac{a}{s}$
-> -   Variance $\\textrm{var}\[X\]=\\frac{a}{s^2}$
+> -   Expectation $\\mathbb{E}\[X\]=\\frac{\\alpha}{\\beta}$
+> -   Variance $\\textrm{var}\[X\]=\\frac{\\alpha}{\\beta^2}$
 
 <!--}}}-->
 
