@@ -3,7 +3,7 @@
 .Rhistory
 .RData
 .Ruserdata
-*.html 
+Rmd/*.html 
 Advert_Slide* 
 FullCourse* 
 CourseSummary/
