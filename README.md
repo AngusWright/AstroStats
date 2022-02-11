@@ -26,8 +26,8 @@ best to view them via my website](https://anguswright.github.io/). A direct link
 ## Download HTML Notes and Slides 
 To get the most out of the lectures, you really should view them in the intended HTML formats. This circumvents the cases where the LaTeX has failed to show nicely on GitHub
 markdown and allows you to view the animations/media of the lecture notes that you can't see in the PDF versions. If you don't want to read them online [via my
-website](https://anguswright.github.io/), you can download them directly in the [HTML\_pages](https://github.com/AngusWright/AstroStats/blob/master/HTML_pages/) and 
-[HTML\_slides](https://github.com/AngusWright/AstroStats/blob/master/HTML_slides/) folders above. 
+website](https://anguswright.github.io/), you can download them directly in the [HTML_pages](https://github.com/AngusWright/AstroStats/blob/master/HTML_pages/) and 
+[HTML_slides](https://github.com/AngusWright/AstroStats/blob/master/HTML_slides/) folders above. 
 
 Direct links to the HTML page versions are here:
 
