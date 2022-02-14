@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Statistics for Astronomers and Physicists"
 author: "Dr Angus H Wright"
-date: "`r Sys.Date()`"
+date: "Updated: `r Sys.Date()`"
 header-includes:
   - \usepackage{animate}
 always_allow_html: true
@@ -268,7 +268,7 @@ However, how does this change if we choose not to replace the first ball that we
 
 # Conditional Probability <!--{{{-->
 
-This is where the concept of **conditional probability** becomes relavent. Given a sample space $\Omega$ 
+This is where the concept of **conditional probability** becomes relevant. Given a sample space $\Omega$ 
 of outcomes and a collection of events, the conditional probability of B, conditioned on A, is the probability 
 that B occurs given that A has definitely occurred
 
@@ -279,10 +279,10 @@ $$
 With our urn example, if we do not replace the $2$ after our first draw, this has fundamentally altered the 
 possible outcomes of the next draw, and therefore changed the probabilities involved. For our second draw, what now want
 to know is the probability of observing an $8$ _given that_ we just observed a $2$. 
-Said differently, the second draw computes the the probability of observing an $8$ _conditioned upon_ our 
+Said differently, the second draw computes the probability of observing an $8$ _conditioned upon_ our 
 prior observation of a $2$. 
 
-In this example we can compute the conditional proability logically: 
+In this example we can compute the conditional probability logically: 
 
 <img src="Images/UrnNoReplacement.png" alt="Urn without Replacement" width="600" />
 
@@ -607,9 +607,9 @@ Reasoning logically with conditional probabilities is difficult.
 One prominent logical fallacy that happens with statistics is known as the prosecutors fallacy. This is the implicit assumption 
 that conditional probabilities are reversible. 
 
-A prosecutor at court presents evidence $\mathcal{E}$. They argue that the defendent is guilty because the probability
+A prosecutor at court presents evidence $\mathcal{E}$. They argue that the defendant is guilty because the probability
 of finding the evidence given innocence $P(\mathcal{E}|\mathcal{I})$ is small. But this is totally irrelevant. The real
-question is what is the probability that the defendent is innocent given the evidence: $P(\mathcal{I}|\mathcal{E})$. 
+question is what is the probability that the defendant is innocent given the evidence: $P(\mathcal{I}|\mathcal{E})$. 
 
 The distinction is relevant, because the conditionalisation can have vastly different outcomes (one can be very large
 while the other is very small). 
@@ -715,12 +715,12 @@ now the host _knowingly_ discarded $98$ wrong doors. Does your intuition tell yo
 
 <!--}}}-->
 
-# Anomoly detection <!--{{{-->
+# Anomaly detection <!--{{{-->
 
 The last discussion that we will have in this section on conditional probability is regarding the difficulty of anomaly
 detection: that is, why it's difficult to reliably detect rare events. 
 
-There are many cases in Astronomy and Physics where anomoly detection is interesting/desireable. Discovering new and
+There are many cases in Astronomy and Physics where anomaly detection is interesting/desirable. Discovering new and
 rare phenomena is an obvious example, be they exotic particles in a detector or exotic transients in the universe. 
 
 When discussing accuracy of detection it is worth understanding the different types of result: 
@@ -744,7 +744,7 @@ witness a true decay _and_ the experiment produces a positive detection?
 print(data.frame('Compare'=c('Positive Detection','Negative Detection'), 'True Decay'=c(0.6, 0.4), 'No Decay'=c(0.1, 0.9)))
 ```
 
-Let $\mathcal{d}$ be the event that a true decay occurs, and $\mathcal{P}$ be the event that the experiement produces a 
+Let $\mathcal{d}$ be the event that a true decay occurs, and $\mathcal{P}$ be the event that the experiment produces a 
 positive detection. 
 
 $$
@@ -760,7 +760,7 @@ So your experiment only has to be approximately accurate to produce reliable det
 
 ## A rare event
 
-Let's now consider a similar scenario, except the probability of our decay occuring in nature is very small:
+Let's now consider a similar scenario, except the probability of our decay occurring in nature is very small:
 $P(\mathcal{d})=0.001$. The experiment, though, has improved to $99.9\%$ accuracy, and only $1\%$ false-positive rate. 
 
 ```{r, fig.height=4, fig.width=6, out.width='80%', eval=TRUE, echo=FALSE}
