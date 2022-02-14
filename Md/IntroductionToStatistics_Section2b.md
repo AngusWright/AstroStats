@@ -1,7 +1,7 @@
 Introduction to Statistics for Astronomers and Physicists
 ================
 Dr Angus H Wright
-2022-02-09
+Updated: 2022-02-14
 
 
 
@@ -257,7 +257,7 @@ that we draw?
 # Conditional Probability <!--{{{-->
 
 This is where the concept of **conditional probability** becomes
-relavent. Given a sample space *Ω* of outcomes and a collection of
+relevant. Given a sample space *Ω* of outcomes and a collection of
 events, the conditional probability of B, conditioned on A, is the
 probability that B occurs given that A has definitely occurred
 
@@ -267,11 +267,11 @@ With our urn example, if we do not replace the 2 after our first draw,
 this has fundamentally altered the possible outcomes of the next draw,
 and therefore changed the probabilities involved. For our second draw,
 what now want to know is the probability of observing an 8 *given that*
-we just observed a 2. Said differently, the second draw computes the the
+we just observed a 2. Said differently, the second draw computes the
 probability of observing an 8 *conditioned upon* our prior observation
 of a 2.
 
-In this example we can compute the conditional proability logically:
+In this example we can compute the conditional probability logically:
 
 <img src="../Rmd/Images/UrnNoReplacement.png" alt="Urn without Replacement" width="600" />
 
@@ -636,10 +636,10 @@ One prominent logical fallacy that happens with statistics is known as
 the prosecutors fallacy. This is the implicit assumption that
 conditional probabilities are reversible.
 
-A prosecutor at court presents evidence ℰ. They argue that the defendent
+A prosecutor at court presents evidence ℰ. They argue that the defendant
 is guilty because the probability of finding the evidence given
 innocence *P*(ℰ\|ℐ) is small. But this is totally irrelevant. The real
-question is what is the probability that the defendent is innocent given
+question is what is the probability that the defendant is innocent given
 the evidence: *P*(ℐ\|ℰ).
 
 The distinction is relevant, because the conditionalisation can have
@@ -763,14 +763,14 @@ Does your intuition tell you that it makes more sense to switch now?
 
 <!--}}}-->
 
-# Anomoly detection <!--{{{-->
+# Anomaly detection <!--{{{-->
 
 The last discussion that we will have in this section on conditional
 probability is regarding the difficulty of anomaly detection: that is,
 why it’s difficult to reliably detect rare events.
 
-There are many cases in Astronomy and Physics where anomoly detection is
-interesting/desireable. Discovering new and rare phenomena is an obvious
+There are many cases in Astronomy and Physics where anomaly detection is
+interesting/desirable. Discovering new and rare phenomena is an obvious
 example, be they exotic particles in a detector or exotic transients in
 the universe.
 
@@ -808,7 +808,7 @@ a positive detection?
 ```
 
 Let 𝒹 be the event that a true decay occurs, and 𝒫 be the event that the
-experiement produces a positive detection.
+experiment produces a positive detection.
 
 $$
 \\begin{aligned}
@@ -825,7 +825,7 @@ reliable detections when the event it common.
 ## A rare event
 
 Let’s now consider a similar scenario, except the probability of our
-decay occuring in nature is very small: *P*(𝒹) = 0.001. The experiment,
+decay occurring in nature is very small: *P*(𝒹) = 0.001. The experiment,
 though, has improved to 99.9% accuracy, and only 1% false-positive rate.
 
 ``` out
