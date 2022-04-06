@@ -28,11 +28,13 @@ output:
   html_document:
     incremental: yes
     highlight: pygments
+  smaller: true
 classoption: a4paper
 subtitle: 'Section 0: Course Format and Outline, and a Crash Course in R and Python'
 ---
 
-# Welcome and Introduction <!--{{{-->
+# Welcome <!--{{{-->
+<center>
 <!--Setup {{{-->
 ```{r setup, include=FALSE}
 rrepos <- getOption("repos")
@@ -71,21 +73,25 @@ set.seed(666)
 Welcome to the Introduction to Statistics for Astronomers and Physicists course
 for the Summer Semester 2022.
 
-## Course Philosophy <!--{{{-->
+# Course Philosophy <!--{{{-->
 
-This course is designed to be a practical introduction to statistics for
-astronomers and physicists who are starting their research careers and have had
-little (or perhaps no) previous education in statistics and statistical data
-analysis. The course (and these lecture notes) are not designed to be a
-statistics reference text. Rather the material presented here is designed to
-guide students on a suitable path towards robust data analysis and research.
+What is this course?
 
-The course will present many aspects of data analysis that are widely relevant
-to modern astronomy and physics. We will borrow heavily from standard
-statistical problems and thought experiments in an effort to convey important
-points, and demonstrate common statistical and logical fallacies. Problems will
-almost always be explored using a mixture of tools simultaneously: plain
-English, math, computer code, graphs, and more.
+> - A practical introduction to statistics for astronomers and physicists 
+> - Designed for those with little-to-no previous statistics education 
+> - The course (and lecture notes) are _not_ a statistics reference text 
+
+How will we do this? 
+
+> - The course will borrow heavily from standard statistical problems and thought experiments 
+> - We will discuss common statistical and logical fallacies 
+> - Problems will use a mixture of tools simultaneously: 
+>   - plain English
+>   - math
+>   - computer code
+>   - graphs
+>   - diagrams 
+>   - and more.
 
 <!--}}}-->
 
@@ -95,7 +101,13 @@ English, math, computer code, graphs, and more.
 
 This course will be taught in 4 parts, each spanning from 2-4 weeks  
 
-**Section 1: Data Description, Analysis, and Modelling (Weeks 1-2)** 
+- **Section 1**: Data Description, Analysis, and Modelling (Weeks 1-2)
+- **Section 2**: Probability & Decision Making (Weeks 3-5)
+- **Section 3**: Bayesian Statistics (Weeks 6-8)
+- **Section 4**: Parameter Simulation, Optimisation, and Analysis (Weeks 9-12)
+
+# **Section 1**: Data Description, Analysis, and Modelling (Weeks 1-2)
+<center>
 
 When working in empirical science, modelling and understanding datasets is
 paramount. In this module we start by discussing the fundamentals of data
@@ -105,16 +117,18 @@ and estimation of data correlation and covariance. Students will learn the
 fundamentals of data mining and analysis, in a way that is applicable to all
 physical sciences.
 
+</center>
+
 Topics include:
 
-+ Types of data 
-+ Point & interval estimation 
-+ Correlation & covariance
-+ Fundamentals of data exploration/mining
-+ Introduction to data visualisation 
+> + Types of data 
+> + Point & interval estimation 
+> + Correlation & covariance
+> + Fundamentals of data exploration/mining
+> + Introduction to data visualisation 
 
-
-**Section 2: Probability & Decision Making (Weeks 3-5)**
+# **Section 2**: Probability & Decision Making (Weeks 3-5)
+<center>
 
 For all aspects of modern science, an understanding of probability is required.
 We cover a range of topics in probability, from decision theory and the
@@ -124,14 +138,16 @@ statistical distributions that govern modern observational sciences, the
 interpretation of these distributions, and how one accurately models
 distributions of data in an unbiased manner.
 
+</center>
+
 Topics include:
 
-+ Decision theory
-+ Fundamentals of probability
-+ Statistical distributions and their origins
+> + Decision theory
+> + Fundamentals of probability
+> + Statistical distributions and their origins
 
-
-**Section 3: Bayesian Statistics (Weeks 6-8)**
+# **Section 3**: Bayesian Statistics (Weeks 6-8)
+<center>
 
 Bayes theorem led to a revolution in statistics, via the concepts of prior and
 posterior evidence. In modern astronomy and physics, applications of Bayesian
@@ -140,15 +156,17 @@ fundamental differences between frequentest and Bayesian analysis. We explore
 applications of Bayesian statistics, through well studied statistical problems
 (both within and outside of physics).
 
+</center>
+
 Topics include: 
 
-+ Frequentist & Bayesian statistics
-+ Bayes theory
-+ Prior specification
-+ Hypothesis testing   
+> + Frequentist & Bayesian statistics
+> + Bayes theory
+> + Prior specification
+> + Hypothesis testing   
 
-
-**Section 4: Parameter Simulation, Optimisation, and Analysis (Weeks 9-12)**  
+# **Section 4**: Parameter Simulation, Optimisation, and Analysis (Weeks 9-12)
+<center>
 
 We apply our understanding of Bayesian statistics to the common problems of
 parameter simulation, optimisation, and inference. Students will learn the
@@ -157,12 +175,14 @@ analysis, hypothesis testing, and quantifying goodness-of-fit. We discuss common
 errors in parameter inference, including standard physical and astrophysical
 biases that corrupt statistical analyses.
 
+</center>
+
 Topics include:  
   
-+ Monte Carlo Simulation
-+ Markov-Chain Monte Carlo 
-+ Fitting high dimensional data
-+ Machine Learning 
+> + Monte Carlo Simulation
+> + Markov-Chain Monte Carlo 
+> + Fitting high dimensional data
+> + Machine Learning 
 
 <!--}}}-->
 
@@ -171,12 +191,7 @@ Topics include:
 Slides and lecture notes for this course are prepared in **Rmarkdown**, and
 provided to you after the lectures.
 
-The utility of **Rmarkdown** is that it allows running execution of code chunks
-alongside markdown-style text, in a wide array of languages, including `R`,
-`python`, bash, Rcpp, javascript, and more. This allows us to present examples
-in multiple languages easily within one document. For example, if I want to plot
-a function, I can do so:
-
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -213,10 +228,12 @@ plt.show()
 </td> <!--}}}-->
 </tr></tbody></table>
 
+# Rmarkdown <!--{{{-->
 
 Information generated and stored within blocks is persistent, and code-blocks
-with different engines can also cross-communicate. This means that, for example,
-we can:
+with different engines can also cross-communicate. 
+
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -255,30 +272,18 @@ plt.show()
 
 # Slido <!--{{{-->
 
-In addition to the lecture notes and slides, all students can post on-the-fly
-questions about the materials via slido. To access slido, you simply scan the QR
-code with your smartphone camera or join at slido.com using the event ID listed
-in the window.
+To promote interaction, we will use **Slido**. 
 
-Once you are connected to the event, you simply post your questions whenever you
-like. You should all try to **ask as many questions as you like**! The reasons
-that this will work best when you ask as many questions as possible are:
-
-+ Questions can be asked anonymously, so you can ask freely and without anxiety. 
-+ All questions are good questions!! 
-+ Once a question is registered, everyone is able to add support by clicking the
-"thumbs up".
-  - Think of this as being a way of saying "Oh! I want to know the answer to
-  that too!".
-  - Questions are ranked by popularity, so vote for questions you want to have
-  answered too!
-  - I'll try to answer all questions, but the most popular questions will float
-  to the top and get answered quickly!
-+ **Most importantly**: I will be able to use questions that were asked and/or
-were popular to update the lecture notes
-  - Course notes will better cover things you don't understand
-  - Course will be more relevant to you 
-  - The course will improve over time! 
+> + Questions can be asked anonymously
+> + All questions are good questions!! 
+> + Once a question is registered, support by clicking the "thumbs up".
+>  - Thumb means: "Oh! I want to know the answer to that too!".
+>  - Questions are ranked by popularity
+>  - I'll try to answer all questions, but the most popular questions first 
+> + **Most importantly**: I will use the questions to improve the lecture 
+>  - Course notes will better cover things you don't understand
+>  - Course will be more relevant to you 
+>  - The course will improve over time! 
 
 So ask whenever and about whatever you think is relevant/interesting/unclear.
 The more the better!
@@ -286,27 +291,19 @@ The more the better!
 <!--}}}-->
 
 # Learning Objectives <!--{{{--> 
-Each lecture begins and ends with the list of the "Learning Objectives" for that 
-class. This is useful for your study, and hopefully also useful for you to keep 
-a clear picture in your mind of what you will learn in each week of the course. 
-
-The exception is this lecture: the contents of this introductory lecture are not 
-examinable, rather they are designed to help with your understanding throughout 
-the course. 
-
 An example of the Learning Objectives for a later lecture are given here: 
 
 > **Learning Objectives**: Summarising relationships in 2D 
 > 
 > Understand graphical methods of exploring observations in two or more variables, such as: 
 > 
-> + **Scatter plots**
-> + **KDEs**
+> > - **Scatter plots**
+> > - **KDEs**
 > 
 > Understand the concepts of: 
 > 
-> + **covariance** 
-> + **correlation** 
+> > - **covariance** 
+> > - **correlation** 
 > 
 > Be able to describe the construction of a **covariance/correlation matrix**
 > 
@@ -324,77 +321,51 @@ An example of the Learning Objectives for a later lecture are given here:
 The lecture notes for the course, as well as the slides, are available via the 
 website of the lecturer: [https://anguswright.github.io](https://anguswright.github.io) 
 
-The lecture notes are available in HTML format, and are directly viewable in the 
-browser by clicking on the relevant link. If you would like to follow-along with 
-the lectures, you can also find "long-form" slides on the website (which are 
-different from the presentation slides that I show in the actual lectures). 
+<center>
+![Lecture Materials](Images/LectureNotes.png){width=1000px}
 
 <!--}}}-->
+
 # Statistics and Computing <!--{{{-->
+<center>
 
-This is a lecture course on Statistics and Statistical methods; so why do we
-care about computer code?!
+This is a lecture course on Statistics and Statistical methods. 
 
-It is of course possible to discuss statistics entirely on-paper. However using
-computer code allows us to explore practical statistics in real time, rather
-than limiting ourselves purely to equations and diagrams (**Full disclosure**:
-We will use these a lot in this course too!).
-
-Additionally (and probably more importantly) the goal of this course is for you
-to learn how to apply statistics to the problems that you will encounter over
-the course of your academic careers; and to do so _properly_. Therefore, an
-entirely on-paper statistics course isn't likely to be overly useful. My goal is
-for you to be able to leave this course with the skills to actually apply these
-concepts in real-life applications without difficulty.
+* So why do we care about computer code?!
 
 <!--}}}-->
 
 # Why do we need programming? <!--{{{-->
 
-Modern physics and astronomy requires an understanding of programming. From
-theoreticians writing models to experimentalists writing analysis pipelines,
-most physicists and astronomers will use read, write, or use a computer program
-every day.
+Modern physics and astronomy requires an understanding of programming. 
 
-An excellent example of this is the N-body simulation. In 1941, Erik Holmberg
-performed the first simulations of colliding galaxies, 20 years prior to a
-famous work by Sebastian von Hoerner that established the field (and name)
-N-body Simulations.
-
+<center>
 <!--<img src="Images/vonHoerner60_title.png" alt="von Hoerner 1960" width="1000" />-->
-![von Hoerner 1960](Images/vonHoerner60_title.png)
+![von Hoerner 1960](Images/vonHoerner60_title.png){width=1000px}
+
+# Why do we need programming? 
+<center>
 
 <!--<img alt="Holmberg 1941" src="Images/Holmberg41_title.png" width="1000" />-->
-![Holmberg 1941](Images/Holmberg41_title.png)
+![Holmberg 1941](Images/Holmberg41_title.png){width=1000px}
 
-
-Holmberg's work was exceptional for a number of reasons, but has become famous
-because of _how_ it was completed. Holmberg simulated the collisions of rotating
-spiral galaxies:
+# Why do we need programming? 
+<center>
 
 <!--<img alt="Holmberg 1941" src="Images/Holmberg41.png" width="1000" />-->
-![Holmberg 1941](Images/Holmberg41.png)
+![Holmberg 1941](Images/Holmberg41.png){width=1000px}
 
-And generated tidal disruption features that are now seen commonly in merging
-spiral galaxies:
+# Why do we need programming? 
+<center>
 
-<!--<img alt="merger simulation" src="Images/mergersim.png" width="1000" />-->
-![merger simulation](Images/mergersim.png)
-
-
-The surprise? His work was computed entirely _by hand_. Holmberg used
-arrangements of lightbulbs to simulate groups of stars, and photometers to
-compute the gravitational pull of all mass-elements on each-other per unit time.
+The surprise? His work was computed entirely _by hand_. 
 
 <!--<img alt="Holmberg Blub arrangement" src="Images/Holmberg_bulbs.png" width="1000" />-->
-![Holmberg Blub arrangement](Images/Holmberg_bulbs.png)
+![Holmberg Blub arrangement](Images/Holmberg_bulbs.png){width=1000px}
 
-Of course nowadays we can run a simulation like this in seconds on any laptop
-(or smartphone, if you really want to!). This allows measurements to be more
-accurate, more detailed, and more reproducible. All of these are fundamental to
-modern natural science.
+# Reproducing Holmberg in 2022 
+<center>
 
-# Reproducing Holmberg in 2021 <!--{{{-->
 ```{r funcs, echo=FALSE} 
 vtot<-function(gr) {
   v<-velocity(gr)
@@ -574,8 +545,6 @@ holmberg.anticlockwise <- create_empty(N.part*N.gal) %>%
 ```
 
 <center>
-<!--<img alt="Holmberg 1941" src="Images/Holmberg41.png" width="1000" />-->
-![Holmberg 1941](Images/Holmberg41.png)
 
 <table style="width: 90%">
     <colgroup>
@@ -589,18 +558,18 @@ rm("minmax")
 minmax.clock<-arr.plot(holmberg.clockwise)
 ```
 </td> <!--}}}-->
-<td anticlock> <!--{{{-->
-``` {r, fig.height=5, fig.width=6, out.width='90%', eval=TRUE,echo=FALSE,warning=FALSE}  
-rm("minmax")
-minmax.anticlock<-arr.plot(holmberg.anticlockwise)
-```
-</td> <!--}}}-->
-</tr><tr>
 <td clockanim> <!--{{{-->
 ```{r nbody-anim-clock, fig.show='animate', ffmpeg.format='gif', dev='jpeg', aniopts='loop=FALSE', interval=0.3,echo=FALSE, fig.height=5, fig.width=6, out.width='90%', fig.asp=1,warning=FALSE}
 rm("minmax")
 minmax<-minmax.clock
 sim<-holmberg.clockwise %>% evolve(N.step,arr.plot)
+```
+</td> <!--}}}-->
+</tr><tr>
+<td anticlock> <!--{{{-->
+``` {r, fig.height=5, fig.width=6, out.width='90%', eval=TRUE,echo=FALSE,warning=FALSE}  
+rm("minmax")
+minmax.anticlock<-arr.plot(holmberg.anticlockwise)
 ```
 </td> <!--}}}-->
 <td anticlockanim> <!--{{{-->
@@ -613,9 +582,13 @@ sim<-holmberg.anticlockwise %>% evolve(N.step,arr.plot)
 </tr></tbody></table>
 </center>
 
+---
+
 <center>
 <!--<img alt="Holmberg 1941" src="Images/Holmberg41.png" width="1000" />-->
-![Holmberg 1941](Images/Holmberg41.png)
+![Holmberg 1941](Images/Holmberg41.png){width=1000px}
+
+---
 
 <table style="width: 90%">
     <colgroup>
@@ -642,12 +615,16 @@ arr.plot(graph)
 </tr></tbody></table>
 </center>
 
-# But "Scalability" is the main benefit
+---
 
-```{r nbody big, echo=FALSE} 
+<center> <font size="12" color="black">  But scalability is the main benefit </font> </center>
+
+--- 
+
+```{r nbody big, echo=FALSE, out.width='80%'} 
 cex<-0.2
 box<-100
-N.step<-1
+N.step<-100
 N.part<-1e3
 N.gal<-2
 radius<-1
@@ -702,15 +679,22 @@ sim<-holmberg.big %>% evolve(N.step,arr.plot)
 
 # Modern Science and the Requirement of Programming <!--{{{-->
 
-The ubiquitousness of programming in the modern physical sciences is 
-linked to the important role that statistics plays in these fields. Modern
-science is increasingly reliant on large and/or complex datasets, which
-fundamentally must be analysed using modern statistical methods. A classic
-example is model optimisation (which we will cover in detail in this course):
-let us take a relatively simple dataset that we know follows a generic beta
-distribution, and attempt to model this dataset using a function containing 2
-parameters:
+The need for programming in the modern physical sciences is 
+linked to the importance of statistics. 
 
+> - Modern science is increasingly reliant on large and/or complex datasets
+> - These can only be analysed with modern statistical methods 
+
+Take a simple optimisation problem, as an example: 
+
+<center>
+<table style="width: 90%">
+    <colgroup>
+       <col span="1" style="width: 45%;">
+       <col span="1" style="width: 45%;">
+    </colgroup>
+    <tbody> <tr>
+<td rblock> <!--{{{-->
 \begin{equation} 
 \begin{gathered}
 Y = {\rm Beta}(X, \alpha,\beta) + {\rm noise} \\
@@ -718,17 +702,26 @@ Y = {\rm Beta}(X, \alpha,\beta) + {\rm noise} \\
 \alpha, \beta \in [0,\infty)
 \end{gathered}
 \end{equation}
-
-```{r echo=FALSE, fig.height=4, fig.width=6, out.width='80%'} 
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+```{r echo=FALSE, fig.height=4, fig.width=6, out.width='100%'} 
 x=runif(1e3)
+opar<-par(mar=c(3,3,0,0))
 truth=c(3.2,7.7)
 y=dbeta(x=x,shape1=truth[1],shape2=truth[2])+rnorm(length(x),mean=0,sd=0.1)
 magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3')
+par(opar)
 ```
+</td> <!--}}}-->
+</tr></tbody></table>
+
+# A simple optimisation
+
 One might be inclined to attempt to fit a model to these data by-hand, using
 trial and error:
 
-```{r trial-and-error, fig.show='animate', ffmpeg.format='gif', dev='jpeg', aniopts='loop=FALSE', interval=2,echo=FALSE, fig.height=4, fig.width=6, out.width='80%'}
+<center>
+```{r trial-and-error, fig.show='animate', ffmpeg.format='gif', dev='jpeg', aniopts='loop=FALSE', interval=2,echo=FALSE, fig.height=4, fig.width=6, out.width='90%'}
 model.x=seq(0,1,by=0.01)
 for (i in 1:20) { 
   model.alpha=runif(1,min=0,max=10)
@@ -742,7 +735,11 @@ model.alpha=2.8
 model.beta=6.7
 ```
 
+# A simple optimisation
+
 Using this approach we can get a reasonable fit with $\alpha=`r model.alpha`,\beta=`r model.beta`$: 
+
+<center>
 
 ```{r echo=FALSE, fig.height=4, fig.width=6, out.width='80%'} 
 model.y=dbeta(model.x,model.alpha,model.beta)
@@ -750,12 +747,12 @@ magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue
         main=paste("a=",round(digits=2,model.alpha),"; b=",round(digits=2,model.beta)))
 lines(model.x,model.y,col='red',lwd=2)
 ```
+</center>
 
 But is this solution near the truth? How close is good enough? And what are the
-uncertainties on the parameters? These are all important in modern science, and
-they are precisely the sort of questions/problems that computers/programs are
-designed to tackle. With just one command, we can use `R`/`python` to reach a more
-accurate solution, in a fraction of the time.
+uncertainties on the parameters? 
+
+# True optimisation
 
 ```{r}
 #Estimate parameters using Nonlinear Least Squares (nls) in R 
@@ -777,21 +774,41 @@ best_py, cov_py = scipy.optimize.curve_fit(
          bounds=(0,np.inf),#The lower and upper bounds
          method='trf')     #The fitting algorithm
 ```
+
+# True optimisation
+
+<center>
+<table style="width: 90%">
+    <colgroup>
+       <col span="1" style="width: 45%;">
+       <col span="1" style="width: 45%;">
+    </colgroup>
+    <tbody> <tr>
+<td rblock> <!--{{{-->
 ```{r, echo=FALSE, fig.height=4, fig.width=6, out.width='90%'}
 model.y=dbeta(model.x,best_R[1],best_R[2])
 magplot(x,y,ylab=expression(paste('Beta'(alpha,beta))),xlab='x',pch=20,col='blue3',
         main=paste("a=",round(digits=2,best_R[1]),"; b=",round(digits=2,best_R[2])))
 lines(model.x,model.y,col='red',lwd=3)
 ```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
 ```{python, echo=FALSE, fig.height=4, fig.width=6, out.width='90%'} 
 plt.scatter(r.x,r.y)
 model_x=np.arange(0.,1.,0.01)
 plt.plot(model_x,scipy.stats.beta.pdf(model_x,best_py[0],best_py[1]),color='r')
 plt.title("a="+str(np.round(best_py[0],2))+"; b="+str(np.round(best_py[1],2)))
 ```
+</td> <!--}}}-->
+</tr></tbody></table>
+
 
 Obviously these fits are superior to those which we can reach by-hand in terms
-of accuracy, effort, and runtime. But the most important benefit is in terms of
+of accuracy, effort, and runtime. 
+
+# True optimisation
+
+But the most important benefit is in terms of
 *uncertainty estimation*. Statistical computing is important for a wide range of
 reasons, but arguably the first and most important reason is for the computation
 of measures of uncertainty.
@@ -800,6 +817,18 @@ of measures of uncertainty.
 #Model statistics in R
 summary(fit_R)
 ```
+
+# True optimisation
+
+<center>
+<table style="width: 90%">
+    <colgroup>
+       <col span="1" style="width: 45%;">
+       <col span="1" style="width: 45%;">
+    </colgroup>
+    <tbody> <tr>
+<td rblock> <!--{{{-->
+<center> Best-fit model in `R` </center>
 ```{r,echo=FALSE,eval=TRUE, fig.height=4, fig.width=6, out.width='90%'}
 sigma = summary(fit_R)$sigma
 conf.int = outer(model.y, c(-1,1)*sigma, '+')
@@ -812,13 +841,9 @@ lines(model.x,conf.int[,2],col='red',lwd=2,lty=2)
 legend('topright',legend=c('Data','Best-fit Model','1-sigma uncertainty'),
        pch=c(1,NA,NA),lty=c(NA,1,2),col=c("black","red","red"),lwd=2,inset=c(0.05,0.05))
 ```  
-
-And the equivalent in `python`: 
-
-```{python}
-#Model parameters and covariance in python
-print(best_py,cov_py) 
-```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+<center> Best-fit model in `python` </center>
 ```{python, echo=FALSE, fig.height=4, fig.width=8, out.width='90%'} 
 plt.scatter(r.x,r.y,label='Data')
 sigma_py=np.sqrt(cov_py)
@@ -829,45 +854,19 @@ plt.title("a="+str(np.round(best_py[0],2))+"±"+str(np.round(sigma_py[0,0],2))+"
           "b="+str(np.round(best_py[1],2))+"±"+str(np.round(sigma_py[1,1],2)))
 plt.legend()
 ```
+</td> <!--}}}-->
+</tr></tbody></table>
 
 <!--}}}-->
 
 # Do I need to know `R` or `python`? <!--{{{-->
 
-Despite what the internet will tell you, today there is very little separating
-the two languages in terms of functionality. Both languages can be run as a
-subprocess of the other, both have well developed tools for data analysis and
-machine learning, and both have a wealth of tutorials and guides to help new
-users enter the game.
-
-+ <p style="color:blue"> Overall, there is one major consideration that will
-(and should) drive your choice of which language to learn first: </p>
+<center>
+Overall, there is one major consideration that will
+(and should) drive your choice of which language to learn first: 
 
 - <center> <font size="12" color="black">  What languages do your colleagues use
 most? </font> </center>
-
-<!--}}}-->
-
-# What are `python2` and `python3`? <!--{{{-->
-
-Like all things, `python` has different versions. But even beyond basic
-version changes of the language, occasionally the _language itself_ is altered in 
-some non-trivial way. One such major change to the `python` language caused a 
-major update: `python2` was updated and became `python3`. That is:
-`python3` code is not compatible with the `python2` interpreter, 
-nor vice-versa.
-
-In addition to such major changes, there are also many (still major, but not _that_ major) 
-changes to the code. These create subversions within `python2` and `python3`, 
-such as `python2.7`, or `python3.5`, or `python3.9`. 
-
-**Importantly:**
-The developers of `python` officially removed support for all `python2` versions 
-a few years ago. As such, there is _no reason_ that someone starting to use `python` in 
-2022 should ever use `python2`. There are very important updates from `python2` 
-to `python3` that we will discuss later.  
-
-For the remainder of this course, whenever I say `python` I will mean `python3`. 
 
 <!--}}}-->
 
@@ -878,60 +877,42 @@ overwhelmed by whether or not you are able to share and discuss code together
 with your colleagues. So, this is mostly a case where joining the herd is
 probably the sensible choice.
 
-## What's the difference between `R` and `Python`?  
+# What's the difference between `R` and `Python`?  
 
-### `R`
-`R` was originally developed as a statistics and data analysis language, and
-so many data analysis tools are available natively within base `R`. Additional
-tools are available through the Comprehensive R Archive Network (CRAN), which
-contains over 10k packages that are all *required* to be fully documented. This
-means that if you want to perform a particular flavour of statistical analysis,
-there is a good chance that well developed code already exists within `R` to
-do it (or at least to get you started).
+`R`: 
 
-### `python` 
+> - developed as a statistics and data analysis language
+> - many data analysis tools are available natively 
+> - Additional tools are available through the Comprehensive R Archive Network (CRAN)
+>   - over 10k packages that are all *required* to be fully documented
 
-`python`'s strength lies within the its use as a general programming language
-beyond data analysis. Packages are available to install via `conda`, and are
-generally reliable despite (often) a lack of documentation.
+`python`: 
 
-### What do I use?
+> - is a general programming language 
+> - packages are available to install via `pip` and `conda`
+> - is popular, and popular packages are therefore crowd-vetted 
 
-Personally I code primarily in `R`. This is useful for this course, as much of
-the analysis tools that we will use are available in base `R`. Nonetheless, as
-I said above, it is entirely possible to redo much of this analysis in
-`python`. Typically the only draw-back to doing so is that the code is longer
-(most complex models in `R` can be specified in few lines).
+# What will we use here?
 
-### What will you see in this course?
+> - I code primarily in `R` 
+> - Nonetheless, everything here can be done equally easily in `python`
 
-In practice, the vast majority of examples in this course will be programmed in
-`R`. 
+The vast majority of examples in this course will be programmed in `R`.
 
-_**However**_, I am happy to rewrite examples in `python` that you think
+**However**, I am happy to rewrite examples in `python` that you think
 would be particularly useful! 
 
-So please let me know which of the examples/problems that we explore during the
-course that you would like to see written in `python`, and I will add them to
-the course notes.
+<br />
+<br />
+<br />
 
-Finally, as you will likely see in the following sections, if you can understand
-one, then you can probably understand both. In this lecture we will go through
-some examples of `R` and `python` code, so that you have an introduction to
-the important parts (and can follow along without much trouble).
+<center> 
+Tell me what problems you would like rewriten!
+</center>
 
 <!--}}}-->
  
 # A Crash Course in `R` and `python` <!--{{{-->
-<!--Intro{{{-->
-For the remainder of this chapter, we will be going through a crash course in
-`R`/`python` basics. There are _many_ online tools that you can use to teach
-yourself both of these languages. In this course, you will be seeing a fair bit
-of `R` (in particular) but also `python`. If you are already familiar with
-`python`, then this section may be useful as a "Rosetta stone" of sorts. If
-you are unfamiliar with either language, then this section will hopefully give
-an introduction to the syntax/methods for using `R` and/or `python`.
-
 A few important NBs: 
 
  + Much of the information here focuses on _simplicity_ rather than
@@ -943,37 +924,54 @@ A few important NBs:
 
  + You can always learn more advanced operations in `R` and `python` via
    [this very useful website](https://www.google.com).
+   
+<br />
+<br />
 
-Additionally, I am _certainly_ not a `python` expert. I have tried to
-construct the below comparisons/conversions between `R` and `python` in the
-fairest possible manner. If you think that there is a simpler/more
-efficient/more elegant implementation of any `python` snippets below (or if
-something I've written is just plain wrong!) then please let me know and I will
-update the notes accordingly!
+I am _certainly_ not a `python` expert. 
+
+# A Crash Course in `R` and `python` <!--{{{-->
 
 The following slides cover:
 
+> - Installing and loading libraries/packages
 > - Variable assignment 
 > - Variable types 
 > - Data types 
 > - Code structure 
 > - Data indexing 
-> - Installing and loading libraries/packages
 > - Reading and Writing data
 > - Plotting 
 <!--}}}-->
 
+# FAQ: What are `python2` and `python3`? <!--{{{-->
+
+Like all things, `python` has different versions. 
+
+When the language itself changes in some significant way, the primary version 
+number is updated: `python2` becomes `python3`. 
+
+- `python3` code is not compatible with the `python2` interpreter, 
+nor vice-versa.
+
+Still major (but not _that_ major) changes happen too, and these cause the secondary 
+version number to change: `python3.5` becomes `python3.6`. 
+
+**Importantly:** The developers of `python` officially removed support for all `python2` versions 
+a few years ago. 
+
+There is _no reason_ that you, in 2022, should be using `python2`. 
+
+For the remainder of this course, whenever I say `python` I will mean `python3`. 
+
+<!--}}}-->
+
 # Installing and loading Libraries <!--{{{-->
 
-The first important step in using `R` and `python` efficiently is to
-understand how to install and load libraries/packages. These are tools which
-have been written by a third party and made available for all users to access
-and use. Both `R` and `python` have a plethora of available packages. It is
-very rare to need to code up a statistical method yourself, as it has most
-likely already been written (with speed tricks and important checks/balances).
 Packages in `R` are installed from _within_ the `R` session, whereas
 `python` packages are installed from the command line with a separate function
-"pip":
+`pip`:
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -995,8 +993,10 @@ pip install numpy
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
 To load these packages into `R` and `python` something we've already seen a few times: 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1016,19 +1016,10 @@ import numpy as np
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
-The "as np" section of the import in `python` is not required, but it makes
-using the package in `python` a lot simpler. This is because `python` tends
-to push users towards "object-oriented" programming style, whereas `R` lends
-itself naturally to a more "functional" programming style. We'll discuss what
-this means later.
-
-In `R`, packages are available primarily through CRAN. Some packages are
-available through the separate "Bioconductor" entity, and these must be
-installed differently (but similarly easily). The "remotes" package that we just
-installed and subsequently loaded, however, allows us to directly install
-packages that are on, e.g., github. `python` has similar
-functionality within pip: 
+To install packages from github: 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1052,20 +1043,15 @@ pip install git+https://github.com/django/django.git
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
 <!--}}}--> 
 
 # Code Structure and Control Functions <!--{{{-->
 
-An important difference between the `python` and `R` languages is the format
-of the code itself. `python` imposes strict formatting requirements on the
-code, whereby blocks of code are linked together via leading whitespaces (i.e.
-indentation). `R` imposes no formatting restriction on codeblocks, instead
-using brackets. This means that `R` can seem overly verbose with brackets at
-times. As a demonstration, here is the formatting required for a standard set of
-control functions that are used in `R` and python: if, for, and while
-statements.
+The `python` and `R` languages differ in the structure of their code: 
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1112,10 +1098,11 @@ while condition:
 ```
 </td> <!--}}}-->
 </tr></tbody></table>  
+</center>
 
-As you can see, the code here looks largely the same for both languages. The key
-point to understand is that the formatting in the `R` code block is there by
-choice, not necessity. This is clearest with nested loops:
+# Code Structure and Control Functions in `R`
+
+The difference in "valid formatting" is clearest with nested loops:
 
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #Valid Nested for loops in R 
@@ -1127,14 +1114,17 @@ for (col in 1:ncol(mat)) {
   }
 }
 mat
+```
 
+# Code Structure and Control Functions in `R`
+
+``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #Without the brackets works...
 mat<-matrix(0,3,3)
 for (col in 1:ncol(mat)) 
   for (row in 1:col) 
     mat[row,col]<-2
 mat
-
 #... but only for one line at a time
 mat<-matrix(0,3,3)
 for (col in 1:ncol(mat)) 
@@ -1142,7 +1132,11 @@ for (col in 1:ncol(mat))
     silly<-"mistake"
     mat[row,col]<-3
 mat
+```
 
+# Code Structure and Control Functions in `R`
+
+``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #To hammer the point: 
 #This works too (but please don't)
 mat<-matrix(0,3,3)
@@ -1156,6 +1150,8 @@ for (row in 1:col) { mat[row,col]<-4
 }} 
 mat
 ```
+
+# Code Structure and Control Functions in `python`
 
 Conversely `python` has only one valid format for nested loops: 
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE, error=TRUE}
@@ -1172,40 +1168,35 @@ mat
 
 # Built-in Functions <!--{{{-->
 
-One major difference between `R` and `python` regards functions that are
-built into the base language. In `R`, many statistical and mathematical
-operations are available within the base language, because of its
-history/development from the statistics language "S". As a result, one can do a
-great many powerful things in base `R` (i.e. without the need to look for,
-install, and load additional packages). In `python`, the majority of the base
+> - In `R`, many statistical and mathematical operations are available within
+the base language
+> - In `python`, the majority of the base
 `R` functionality can be inherited from three of the most widely used (by
 physicists and astronomers at least) packages in `python`: `numpy`, `scipy`, and
-`astropy`. As a result, most scientific `python` programs will start by
-importing one or all of these packages.
+`astropy`. 
+>   - most scientific `python` programs will start by importing one or all of
+these packages.
 
-We've already seen this in practice here, where (for example) we've utilised the
-`numpy` vectorisation,  linear algebra functions, and `scipy` model optimisation in
-order to reproduce behaviour that was available in base `R`. Another important
-functionality which we hid was the ability to generate data following various
-statistical distributions. This is core to many statistics applications that we
-will explore, and so we'll revisit it now.
-In the section on "Modern Science and the Requirement of Programming", we
-generated data that followed a Beta function: 
+Recall our "random function that we named ${\rm Beta}$: 
+
 $$ Y = {\rm Beta}(X, \alpha,\beta) + {\rm noise} $$
-(NB: we will look more into this and other functions later in the
-course). In `R` we can generate this data using the suite of Beta distribution
-functions, which allow the calculation of the density, distribution function,
-quantile function, and random generation from the function. For example if 
-we want to evaluate the value of a particular beta function (like the one from 
-earlier) at some $x$ value: 
+
+This is a standard statistical distribution called "the Beta function", which 
+is described by the "shape" parameters $\alpha$ and $\beta$. We will discuss 
+this distribution more in a few weeks time. 
+
+# Built-in Functions Example: ${\rm Beta}$
+
+In `R`, the ${\rm Beta}$ family of distributions are native. 
+For example if we want to evaluate the value of a particular beta function (like
+the one from earlier) at some $x$ value:
 
 ```{r eval=TRUE} 
 #Return the value of a Beta PDF at x=1
 dbeta(0.1,shape1=3.2,shape2=7.7)
 ```
 
-To do the same in `python` we need to load the `scipy` package, and then get
-the desired function from within it:
+In `python` the ${\rm Beta}$ distributions come within the `scipy` package:
 
 ```{python, eval=TRUE}
 #Load the library using the short name "stat"
@@ -1213,6 +1204,8 @@ import scipy
 #Return the value we want
 scipy.stats.beta.pdf(0.1,3.2,7.7)
 ```
+
+# A note about `python` syntax 
 
 In `python` the `.` indicates access to "attributes" of an object. We'll see 
 more about this later, but this is important to understand now. 
@@ -1222,12 +1215,7 @@ more about this later, but this is important to understand now.
 >     - Which contains a function called `beta` 
 >       - Which has a property `pdf` 
 
-Importantly, we can shortcut _some_ of this at the `import` stage. 
-For example, if 
-I know that I will only ever use the `scipy.stats` module and never need 
-anything else from `scipy`, then I can _just_ import the 
-module that I want: 
-
+Importantly, we can shortcut some of this at the `import` stage. 
 ```{python, eval=TRUE}
 #Import the stats module 
 import scipy.stats as stat
@@ -1243,18 +1231,17 @@ from scipy.stats import beta
 beta.pdf(0.1,3.2,7.7)
 ```
 
-If we want to see an explanation about the function `dbeta` in `R`, then we 
-can launch the help page for that function using the `help()` command, or just with 
+# Built-in Functions: `help()` 
+
+If we want to know more about a function in `R`, we 
+use the `help()` command, or type the function name with 
 a leading question mark:
 
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #Documentation for the Beta functions in R
 help(dbeta) # or ?dbeta 
 ```
-
-As we have noted previously, `R` has _very_ rigorous standards of
-documentation for all functions that are present on CRAN and in the base code,
-including:
+`R` has _very_ rigorous standards of documentation:
 
 > + Function description; 
 > + Function usage; 
@@ -1266,6 +1253,8 @@ including:
 > + Lists of related functions; and
 > + Examples. 
 
+# Built-in Functions: Examples  
+
 The last item is particularly useful, as examples for almost all functions in `R`
 can be run by just using the `example()` function:
 
@@ -1274,18 +1263,16 @@ can be run by just using the `example()` function:
 example(dbeta)
 ```
 
-Documentation for `python` functions can also be seen in a similar manner, if
-they exist, which they do for most mainstream functions in some form or
-another. As in `R` you use the `help()` function:
+# Built-in Functions: `help()`  
+
+Documentation for `python` functions can also be seen in a similar manner: 
 
 ``` {python, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #Documentation for the Beta functions in python
 help(stat.beta)
 ```
 
-Notice that the `python` documentation here is **enormous**. The reason for that 
-is because this documentation lists the use of every attribute contained within 
-the function `beta`, of which there is: 
+Notice that the `python` documentation here is **enormous**. It contains: 
 
 > - `fit`: Return MLEs for shape
 > - `cdf`: Cumulative distribution function of the given RV.
@@ -1314,22 +1301,6 @@ the function `beta`, of which there is:
 > - `__weakref__`: list of weak references to the object (if defined)
 > - `random_state`: Get or set the RandomState object for generating random variates.
 
-The reason that there are so many attributes that are required is because of 
-"object orientation", which is something that we will discuss later. Briefly, 
-the object `beta` contains most (all?) functions that one might want to use with 
-the beta function, such as the distribution mean, fits of the distribution, etc. 
-
-This is an example of where `R` and `python` have the same functionality in
-the base code (i.e. with the help functions), and where `python` requires the
-additional `scipy` package to perform functions available in base `R` (i.e. with
-the beta distributions). Note thought that this is not necessarily a
-limitation/criticism of either language, as loading an additional package is
-generally trivial in both languages.
-
-Put simply, `R` and `python` base functions differ mostly in the fact that
-most functions available within `numpy` and `scipy` are available within base
-`R`.
-
 <!--}}}--> 
 
 # Variable assignment <!--{{{-->
@@ -1337,6 +1308,7 @@ most functions available within `numpy` and `scipy` are available within base
 Variable assignment in `R` and `python` can be done in the standard way
 using `=`.
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1360,6 +1332,7 @@ print(b)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
 More traditionally the `R` assignment character is the "arrow": `<-`.
 That is, I can rewrite the `R` assignments above as: 
@@ -1371,11 +1344,11 @@ a<-10
 b<-a+4
 print(b)
 ```
-The arrow notation is mostly historical, and in practice there is little
-difference between the arrow notation and the equals notation. Some small
-differences: While assignment with the `=` is assumed to be right-to-left,
-assignment in the arrow notation follows the direction of the arrow... This
-means that it's possible to assign left-to-right:
+
+# Arrows in `R` 
+
+While assignment with the `=` is assumed to be right-to-left,
+assignment in the arrow notation follows the direction of the arrow...
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #right-to-left arrows
 rm('b') #get rid of the old "b"
@@ -1384,12 +1357,18 @@ exists('b') #Good, it's gone!
 a+4->b
 print(b)
 ```
-But of course, in practice you will never use this functionality. The arrow
-notation has **one common catastrophic failure**, which is the difference in
-behaviour between "`a< -3`" ('is $a$ less than minus $3$?') and "`a<-3`" ('assign $3$
-to $a$'). The main cause for this catastrophic failure is that "successful
+
+The arrow notation has **one common catastrophic failure**: 
+
+> - "`a< -3`" ('is $a$ less than minus $3$?'), vs
+> - "`a<-3`" ('assign $3$ to $a$'). 
+
+# Arrows in `R`
+
+The main cause for this catastrophic failure is that "successful
 assignment" evaluates to `TRUE`. See the below code for example:
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1421,31 +1400,18 @@ if (a< -3) {
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
-
-The main reason for the arrow's continued
-existence is that the `=` has a secondary function as "named keyword
-specification" in function calls, which we will discuss below.
-
-Generally, for new users to `R` (and especially those who frequently switch
-between `R` and python), using the `=` notation is probably preferable. In
-this course you will see that I primarily use the arrow notation, because I was
-taught `R` by picky `R`-purists during my Masters, and never broke the habit.
-**Full Disclosure:** this means that I _frequently_ have to rewrite my python
-assignments because I mistakenly fall into `R` notation. 
-
-$2/10$ would not recommend. 
-
-But beware that, of course, using the `=` does not save you from accidentally
-using the arrow as in the above example! 
+</center>
 
 <!--}}}--> 
 
 # Custom Functions <!--{{{-->
+<center>
 
 Functions in `R` and `python` are specified in similar ways, but with
 slightly different syntax. Lets construct a custom function that computes the
 root-mean-square of two vectors:
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1475,25 +1441,15 @@ rms(a=x,b=y)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
 <!--}}}--> 
 
 # Variable types <!--{{{-->
 
-`R` and `python` have subtly different variable types, which prior to the
-release of `python3` meant that the behaviour of `R` and `python` (when
-confronted with the same expression) could behave very differently. However,
-this is now less frequently the case. Nonetheless, understanding the different
-variable types is important.
+Both languages have various variable types:
 
-`python` has distinct data types for integers (`int`), real numbers (`float`),
-complex-numbers (`complex`), and strings (`str`). There are more, but for now
-let's focus on these. This is slightly simplified in `R`, where there is
-nominally no distinction between integers and real-numbers: all real-numbers are
-classes as the `numeric` type. Therefore, broadly speaking, you can consider
-`R` to have two variable types: `numeric` for real numbers and `character` for
-strings (again, there are others, but let's focus on these for now).
-
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1517,13 +1473,10 @@ a="3.1415" #str
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
-Prior to `python3` this had important consequences, due to the way in
-variables are dynamically "typecast" (that is, how they decide what 'type' a new
-variable will inherit during mathematics). In `python2` the operation "$14/10$"
-would result in $1$, because these are integers and the divisor used "integer
-floor division". This was updated in `python3` to produce the far more logical
-behaviour below:
+`python3` uses dynamic typecasting in division `/`, **which `python2` does not!**
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1547,16 +1500,13 @@ print(b/a)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
-Both `R` and `python` here have the same result, because `python3` defines
-`/` as a `float` operator, and dynamically typecasts the `integer`'s to
-`float`'s prior to computation. In `R` the need for this housekeeping is less
-obvious, because even integer numbers are `numeric` from the start, but formally
-a similar process takes place behind the scenes. This is another example of
-where the behaviour of `R` and `python` are converging.
+# Variable typecasting <!--{{{-->
 
-You can see this behaviour directly by looking at the `class()` (in `R`) or
+You can see what is happening directly by looking at the `class()` (in `R`) or
 `type()` (in `python`) of the variables:
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1578,6 +1528,8 @@ type(a); type(b); type(c)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
+
 Note that if we force `R` to treat the input variables as integers, we see the
 same dynamic typecasting:
 
@@ -1591,9 +1543,12 @@ class(a); class(b); class(c)
 ```
 <!--}}}-->
 
+# Variable typecasting <!--{{{-->
+
 So, in basically all practical respects, `python` has converged to the `R`
-behaviour in this regard. So much so that the formal comparisons now typecast as
-well:
+behaviour in this regard. 
+
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1613,16 +1568,14 @@ int(10) == float(10)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
+
 Which makes sense, because the value of $10$ is still the same whether you're
 counting discretely (`integer`s) or continuously (`numeric`/`float`).
 <!--}}}--> 
 
 # Data types <!--{{{-->
 
-Collections of variables can be made in different ways. These collections of
-variables are actually classed as different variable types (so should go in the
-previous section), but for ease-of-introduction we're making a distinction
-between "types of variables" and "types of collections of variables".
 In `R` and `python` there are many different ways to combine chunks of
 variables. We're going to focus on a subset of these within `R`: 
 
@@ -1641,13 +1594,12 @@ And on their `python` equivalents:
 
 # Vectors and np.arrays <!--{{{-->
 
-Collections of variables of a single type can be combined into vectors in both
-`R` and `python`. In `R`, the vector is a fundamental unit to the
+In `R`, the vector is a fundamental unit to the
 structure of the language, and as a result essentially all operations that you
 perform can be done in a vectorised fashion. In `python`, (the most widely
 used implementation of) vectors are implemented within the `numpy` package.
 
-Let's make a simple vector in `R` and `python`, and then look at its format:
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1669,14 +1621,9 @@ print(vec); type(vec)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
-In `R` we have used the concatenate command `c()` to construct our vector of
-integers. Note that, because the vector is a fundamental object in `R`, it
-simply retains the type `numeric`; however in `python` this form of variable
-has the new type `numpy.ndarray`. As you can guess from the name, this is a
-special $1$-dimensional case of the $n$-dimensional array we will discuss next. The
-implementation of `numpy.ndarray` is essentially the same as base vectors in
-`R`, which means that simple vector arithmetic is possible simply in both
-languages.
+</center>
+
+Vectors allow vector arithmetic:
 
 <table style="width: 90%">
     <colgroup>
@@ -1703,22 +1650,34 @@ b=np.linspace(100,30,num=12)
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
-Note that there are two important differences between these snippets. Firstly,
-here I've used the caret (`^`) exponentiation operator in `R`. In `python`
-_the caret signifies bitwise XOR, and has nothing to do with exponentiation_. 
-Fortunately Python3 will almost always error with a "type mismatch" error if you 
-use the carat incorrectly. 
-Note also that you can also exponentiate in `R` using the `python`/`C`/`fortran`
-double-star `**` notation as well. So if you're learning `R` for the first 
-time now, then you may want to opt for that notation as your go-to (similar to 
-using `=` instead of `<-`. 
 
+# Beware the carat in `python `!
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
        <col span="1" style="width: 45%;">
     </colgroup>
     <tbody> <tr>
+<td rblock> <!--{{{-->
+``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
+#Vector Arithmetic in R
+a=seq(0,100,length=12)
+b=seq(100,30,length=12)
+#now do some arbitrary arithmetic
+sum((a+b)/sqrt(a^2+b^2))
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
+``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
+#Vector Arithmetic in python
+a=np.linspace(0,100,num=12)
+b=np.linspace(100,30,num=12)
+#now do some arbitrary arithmetic
+((a+b)/np.sqrt(a**2+b**2)).sum()
+```
+</td> <!--}}}-->
+</tr><tr>
 <td rblock> <!--{{{-->
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #Double Star exponentiation in R
@@ -1733,26 +1692,13 @@ sum((a+b)/sqrt(a**2+b**2))
 </td> <!--}}}-->
 </tr></tbody></table>
 
-
-But if you frequently use caret exponentiation in `R` (as I do...) then this
-is possible gotcha when transferring code to `python`.
-
-Secondly, you'll see that in the `python` snippet the `sum()` command is tacked
-onto the end of the command, rather than wrapping the command (as in the `R`
-snippet). I didn't _have_ to write it this way, but did so to give you your
-first taste of the object-oriented syntax of most `python` code. We'll discuss
-this more a bit later.
 <!--}}}-->
 
 # Arrays and np.ndarrays <!--{{{-->
 
-In `python` the $1$D `np.array` is a special case of the `np.ndarray`, whereas in `R`
-vectors and arrays are different classes. Internally this is because vectors do
-not contain a "dimension" attribute (i.e. the do not carry dimension status
-because they are "vectors"; they must have only one dimension). Or more
-accurately, arrays and matrices in `R` are actually just vectors which contain
-an additional dimension attribute. We can of course create a $1$-dimensional array
-in `R`, and the distinction from the vector is simply the dimension attribute.
+> - In `python` the $1$D `np.array` is a special case of the `np.ndarray`
+> - In `R` vectors and arrays are different classes. 
+
 ``` {r, fig.height=4, fig.width=6, out.width='60%', eval=TRUE}  
 #Vectors vs Arrays in R
 a=seq(0,100,length=12)
@@ -1762,24 +1708,24 @@ str(a); str(b); identical(a,b)
 sum((a+b)/sqrt(a^2+b^2))
 ```
 
+# Matricies 
+
 When we make the step up to two-dimensional arrays in `R`, we find that there is
-another class: `matrix`. The matrix is the special case of the $2$D-array, and
-functionally is identical to a $2$D-array:
+another class: `matrix`: 
+
 ``` {r, fig.height=4, fig.width=6, out.width='60%', eval=TRUE}  
 #Vectors vs Arrays in R
 a=array(1:50,dim=c(10,5)) #2D array with dim 10x5
 b=matrix(1:50,nrow=10,ncol=5) #matrix with dim 10x5
 class(a); class(b); identical(a,b)
 ```
-The main reason for the distinction between matrices and arrays is because the
-$2$D matrix is ubiquitous in mathematics, and are natively supported by base
-`R`.  As a result there are _many_ functions that operate on matrices
-directly, but which are not designed for higher dimensional arrays. Having the
-separate `matrix` class makes handling compatibility in base `R` and other
-functions trivial. In `python` one can generate arrays with $2$ or more
-dimensions using a range of techniques, depending primarily on how you want
-these arrays to be initialised (i.e. with $0$s, $1$s, or with arbitrary
-numbers).
+
+The main reason for the distinction: matrices are _everywhere_ in mathematics, 
+and so _many_ functions operate on matrices
+directly, but are not designed for higher dimensional arrays. 
+
+In `python` one can generate arrays with $2$ or more
+dimensions using a range of techniques, depending on initialisation:
 
 ``` {python, fig.height=4, fig.width=6, out.width="60%", eval=TRUE}
 #Multidimensional arrays in python
@@ -1788,14 +1734,15 @@ b=np.zeros([10,5]) #filled with 0s
 c=np.ndarray([10,5]) #filled arbitrarily 
 ```
 
-To construct an multidimensional array from a predefined vector of numbers, then
-this is done best by creating a vector and "reshaping" it into the desired
-multi-dimensional array. However, we should note some different behaviour here in
-`R` and `python`. In `R`, we initialise an array by providing a "data" vector
+# Multi-dimensional Arrays 
+
+To construct an multidimensional array from a predefined vector of numbers, we 
+create a vector and "reshape" it into the desired
+multi-dimensional array. 
+
+> - In `R`, we initialise an array by providing a "data" vector
 to the array function. **Importantly**: the data vector is replicated until the
-desired array is filled. This means that arrays with repeated structure etc can
-be trivially generated; but note that arrays in `R` are always filled
-by-column.
+desired array is filled. 
 
 ``` {r, fig.height=4, fig.width=6, out.width='60%', eval=TRUE}  
 #multidimensional array in R
@@ -1804,14 +1751,15 @@ b=array(seq(0,1,len=10),dim=c(3,5,2))
 print(a); print(b)
 ```
 
-In `python`, we cannot reshape a vector into an array with more/fewer entries
+> - In `python`, we cannot reshape a vector into an array with more/fewer entries
 than the original vector (which makes sense, because we are "reshaping", not
 instantiating a new object):
 ``` {python, fig.height=4, fig.width=6, out.width="60%", eval=TRUE,error=TRUE}
 #multidimensional array with repition in python
 a=np.linspace(0,1,num=12).reshape([3,5,2]) #FAILS
 ```
-However we can create array with regular structure using the `concatenate()` or
+
+We can create array with regular structure using the `concatenate()` or
 `repeat()` functions in combination with `reshape()`.
 ``` {python, fig.height=4, fig.width=6, out.width="60%", eval=TRUE}
 #Variable repetion in array creation
@@ -1820,45 +1768,19 @@ a=np.concatenate((a,a,a)).reshape([3,5,2])
 b=np.linspace(0,1,num=10).repeat(3).reshape([3,5,2]) 
 print(a); np.all(a==r.b); np.all(b==r.b)
 ```
-Firstly we notice that the default plotting of arrays in `python` is different
-to that in `R`; whereas `R` splits by index at the highest level, `python`
-splits at the lowest. This is because in `python` follows the `C` convention
-of filling arrays by incrementing the last index most rapidly (which you can see
-in the print; the last index increments sequentially). This difference is much
-more than cosmetic; notice that neither of the arrays `a` or `b` are filled in
-the same manner as the `R` equivalent.
-
-Internally the `python` `concatenate` method produces behaviour most like `R`'s
-vector recycling, so we'll focus on getting this to match between `R` and
-`python`. If we assume that the discrepancy is caused by the `R`/`python`
-fill-order philosophy, then we can use reshape's `order=` option to try an
-alternative filling style.
-``` {python, fig.height=4, fig.width=6, out.width="60%", eval=TRUE}
-#Alternate reshape ordering in python
-a=np.linspace(0,1,num=10)
-a=np.concatenate((a,a,a)).reshape([3,5,2],order='F')
-np.all(a==r.b)
-```
-Bingo! Here we have specified the `order=` option to be `'F'` for
-'`Fortran`'-style for filling the array, where the first index iterates the
-fastest (rather than the last index, which is the default `C` functionality).
-This then produces a match between the languages. Of course, when working within
-`R` or `python` alone you just need to be internally consistent. But this
-difference might be important when switching between languages (or mixing them,
-as discussed later).
 
 <!--}}}-->
 
 # Lists and dictionaries <!--{{{-->
 
 `python` and `R` both have the functionality to specify complex structures of
-data called lists. In `R`, the `list()` is an extremely flexible data structure
+data called lists. 
+
+> - In `R`, the `list()` is an extremely flexible data structure
 that is generally used for storing highly complex combinations of data types.
-`python` has two implementations of list-like structures: the list (which is
-indexed by number and is defined using square brackets `[...]`) and the
-dictionary (which is indexed by name and is defined using curly braces `{...}`). 
-There are fundamental differences to how these are implemented under-the-hood in
-`python`, but for now we'll focus on their use.
+> - `python` has two implementations of list-like structures: 
+>    - the list: which is indexed by number and is defined using square brackets `[...]`
+>    - and the dictionary: which is indexed by name and is defined using curly braces `{...}`.
 
 Declaration of lists in `R` uses the `list()` function: 
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
@@ -1866,6 +1788,8 @@ Declaration of lists in `R` uses the `list()` function:
 mylist=list(a=a,b=b,vec=c(1,2,3,4,5,6),str="this is a string")
 str(mylist)
 ```
+
+# `python` lists and dictionaries <!--{{{-->
 
 In `python` we declare lists with square brackets `[...]` and 
 dictionaries with curly braces `{...}`:
@@ -1880,10 +1804,13 @@ mydict={"a":a,"b":b,
 print(mydict)
 ```
 
+# Lists and dictionaries 
+
 While the list and dictionary types in `python` must be referenced by number
 and name respectively, the `R` list can be accessed in both manners (i.e. they
 are ordered _and_ named, rather than one-or-the-other):
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -1904,27 +1831,11 @@ mylist['str']; mydict[3]; #These error
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
-Notice that the list in `R` is also accessible using attribute-like
-referencing (using `$`, we'll discuss more about this a bit later).
-
-Lists are useful due to their flexibility. You can make lists of lists of lists,
-filled with arbitrary data types and structures of arbitrary size.
-
-## The Python 'tuple' 
+# The Python 'tuple' 
 
 There is a special form of _uneditable_ list in `python` called the **tuple**.
-The tuple is important because of its frequent use in `return` statements, where
-a function can return multiple/many objects all at once, grouped together into
-an uneditable list: i.e. the tuple.
-
-Formally tuples are declared in `python` using parentheses `(...)`. However 
-tuples are important to understand because of the way that `python` interprets
-**any** unbracketed comma: as a tuple creation statement! This means that you
-can specify a set of variables, separated by commas, and this will be
-interpreted as being a tuple. As a result, if a function returns a tuple of
-objects, these objects can be "unpacked" on-the-fly as the function is
-evaluated:
 
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE,error=TRUE}
 #Tuples in python 
@@ -1939,6 +1850,7 @@ tup
 ```
 
 Once defined, a tuple cannot be modified: 
+
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE,error=TRUE}
 #Tuples cannot be edited
 tup[1]='modified'
@@ -1954,10 +1866,7 @@ mat, newstr, val = myFunction()
 print(newstr)
 ```
 
-Notice that `python` has interpreted the comma-separated list as being a tuple
-declaration, even without parentheses. This tuple is then matched to the tuple
-that was returned from the function, and is unpacked element-by-element. This
-unpacking is _unnamed_. That is, you need to know the position-order of the
+This unpacking is _unnamed_. You need to know the position-order of the
 values returned by the function and unpack it in the correct order, lest the
 following happen:
 
@@ -1967,34 +1876,28 @@ newstr, mat, val = myFunction()
 #Whoops
 print(newstr)
 ```
-
-Positional unpacking in this manner is fundamental to 'pythonic' code. Such
-positional unpacking is also possible within `R` using various extensions (such as
-the `zeallot` and `wrapr` packages), however `R` never prioritised such positional
-returns, opting instead for named returns. We'll see some examples of this later
-on.
-
 <!--}}}-->
 
 # Data frames and pandas data frames <!--{{{-->
 
 The final data type is a generalisation on the matrix/2D array, which allows for
-arbitrary variable types per column. In `R` the `data.frame` is a native data
-type, and the more advanced `data.table` type is available through the
-`data.table` package. In `python`, `DataFrame` is available through the pandas
-package, and is designed to very closely mimic the `data.frame`/`data.table`
-functionality within `R`.
+arbitrary variable types per column. 
 
-The utility of data frames is that they are a natural way for us to store
-catalogues of information. Additionally, data frames can be accessed in the same
-manner as _both_ list and array data, because they hold similarities to both
-types. This means that we can define a data frame with arbitrary variable types
-per column, and access these data in whichever way we find most suitable.
+> - In `R` the `data.frame` is a native data
+type, and the more advanced `data.table` type is available through the
+`data.table` package. 
+> - In `python`, `DataFrame` is available through the pandas
+package
+
+Data frames provide a natural way to store _catalogues_. 
+
+# Playing with data frames 
 
 Let's make use of one of `R`'s available datasets [(of which there are
 lots!)](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html),
 called "Hitters" and containing "Major League Baseball Data from the $1986$ and
 $1987$ seasons":
+
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
 #Data Frames in R
 df=get(data("Hitters",package='ISLR'))
@@ -2002,7 +1905,7 @@ df=get(data("Hitters",package='ISLR'))
 df=df[,1:4]
 print(head(df))
 ```
-And for simplicity we'll use the same `R` data frame and convert it to a
+We'll use the same `R` data frame and convert it to a
 pandas `data.frame` in `python`:
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
 #Data Frames in python
@@ -2011,10 +1914,14 @@ import pandas as pd
 df=pd.DataFrame(r.df)
 print(df.head())
 ```
+
+# Data frames and pandas data frames <!--{{{-->
+
 Note that the data frames here are named in both columns and rows, and so can be
 accessed by either name or index (this is not unique to data frames in `R`,
-though). :
+though):
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -2044,11 +1951,13 @@ print(df.HmRun[82])
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
 
-One of the strengths of data frames is the easy of subsetting/selecting data, as
-is a common task in lots of data analysis. For example, we can select the
-players with more than $30$ home runs using a logical statement:
+# Data frames and pandas data frames <!--{{{-->
 
+One of the strengths of data frames is the easy of subsetting/selecting data:
+
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -2067,10 +1976,11 @@ print(df[df$HmRun>30,])
 print(df.loc[df.HmRun>30])
 ```
 </td> <!--}}}-->
-</tr></tbody></table>
+</tr></tbody></table></center>
 
 or using indexing with the `R` `which()` or `python` `np.where()` functions:
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -2090,6 +2000,9 @@ print(df.iloc[np.where(df.HmRun>30)])
 ```
 </td> <!--}}}-->
 </tr></tbody></table>
+</center>
+
+# Data frames and pandas data frames
 
 This allows us to trivially select complex subsets of data for analysis. For
 example, we can look at the correlation between the rate of successful hits and
@@ -2117,68 +2030,14 @@ hiMean=df.RunRate.loc[df.HitRate>np.median(df.HitRate)].mean()
 loMean=df.RunRate.loc[df.HitRate<np.median(df.HitRate)].mean()  
 print(hiMean/loMean)
 ```
-
-As you can see, these operations are all pretty equivalent in `R` and
-`python`. `R` does have an ace in the hole, though, with the `data.table`
-package. Data tables are similar to data frames in many ways (in fact they are
-always jointly classed as `data.table` and `data.frame`), but are _much_ faster for
-doing operations. So fast, in fact, that in benchmarking with large datasets
-they frequently unbeaten in [_any
-language_](https://h2oai.github.io/db-benchmark/).  For example, let's use
-another dataset of airline arrivals into New York in $2013$, to compute the
-average arrival-time delay by carrier using `data.table` and `pandas` `data.frame`:
-
-<!--aggregate(flights$arr_delay, by=list(flights$carrier), mean, na.rm=TRUE)-->
-``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
-#Data Tables manipulation in R
-library(microbenchmark)
-library(data.table)
-df=get(data("flights",package='nycflights13'))
-#Make our data.table
-dt=as.data.table(df)
-print(dt)
-#Compute the mean departure and arrival delays by carrier
-print(dt[,.(arr=mean(arr_delay,na.rm=T),dep=mean(dep_delay,na.rm=T)),by=carrier])
-#Benchmark the computation 
-print(microbenchmark(
-  datatable=dt[,.(arr=mean(arr_delay,na.rm=T),dep=mean(dep_delay,na.rm=T)),by=carrier]
-))
-```
-And now in python: 
-``` {python, fig.height=4, fig.width=6, out.width='90%', eval=TRUE, error=TRUE} 
-import timeit
-#Data Frame manipulation in python
-df=pd.DataFrame(r.df)
-#Setup a timer
-time=np.zeros(100)
-#Do 100 computations in the benchmarking
-for i in range(100):
-  start = timeit.default_timer()
-  #Compute the mean of the arrival and departure delays by carrier
-  group=df.groupby('carrier',as_index=False,sort=False,
-    observed=True,dropna=False).agg({'arr_delay':'mean',
-                                     'dep_delay':'mean'})
-  stop = timeit.default_timer()
-  time[i]=(stop - start)*1E3 #milliseconds
-print('Pandas DataFrame (min, mean, max)\n', 
-       time.min(), time.mean(), time.max() )
-```
-This example is found to be true in wider benchmarking tests like those linked
-above, and is increasingly apparent with larger and larger datasets. So this is
-an example where `R`'s data-analysis focus leads to a measurable difference
-between the languages.
-
 <!--}}}-->
 
 <!--}}}-->
 
 # Indexing **(!!_IMPORTANT_!!)** <!--{{{-->
 
-We have already seen a few examples of where `R` and `python` differ, and
-many many ways in which they are similar. There is one difference between the
-languages, however, that is absolutely fundamental and _cannot_ be avoided. An
-important one (which the keen-eyed of you may have already noticed!) is to do
-with the indexing convention.
+There is one difference between `R` and `python` that is absolutely fundamental
+and _cannot_ be avoided. 
 
 > + `R` objects are "1-indexed"
 > + `python` objects are "0-indexed"
@@ -2187,6 +2046,7 @@ This means that the first element in an array (i.e. the element without any
 other elements in-front of it...) is the "$1^{\rm st}$" element in
 `R`, and the "$0^{\rm th}$" element in python:  
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -2211,38 +2071,40 @@ arr[arr.shape[0] - 1]
 </td> <!--}}}-->
 </tr></tbody></tbody></table>
 
-It is clear from above, this has some very obvious consequences if converting
-between `R` and `python` code.
-
-In practice it is useful to think of $1$-indexing as being a counting index
+You can think of $1$-indexing as being a counting index
 ("first element, second element,  third element, ..."), whereas $0$-indexing is an
 offset index ('zero elements away from first, one element away from first,
-two..."). Apart from simply changing the numbers that are needed to access the
-same entries in an array, the different choice of indexing has an influence over
-other behaviours too. For example, in `python`'s $0$-indexing, the $-1^{\rm th}$
-element can be interpreted as being "one element before first", which
-wraps-around and becomes the _last_ element:
+two..."). 
+
+The different choice of indexing affects negative indexing too: 
+
+<center>
+<table style="width: 90%">
+    <colgroup>
+       <col span="1" style="width: 45%;">
+       <col span="1" style="width: 45%;">
+    </colgroup>
+    <tbody> <tr>
+<td rblock> <!--{{{-->
+``` {r, fig.height=4, fig.width=6, out.width="90%", eval=TRUE, error=TRUE}
+#Zero and Negative indexing in R
+arr[0]; arr[c(0,1)]; arr[-1]; arr[c(-1,0)] 
+```
+</td> <!--}}}-->
+<td pythonblock> <!--{{{-->
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE, error=TRUE}
 #Negative indexing in python
 ind=np.array([0,1,2])
 arr[ind]; arr[ind-1]
 ```
-Conversely in `R` negative (and zero!) indices mean something quite different;
-they are element deletions.
-``` {r, fig.height=4, fig.width=6, out.width="90%", eval=TRUE, error=TRUE}
-#Zero and Negative indexing in R
-arr[0]; arr[c(0,1)]; arr[-1]; arr[c(-1,0)] 
-```
-A zero index in `R` literally means "no element", keeping consistent with the
-'counting' index philosophy. This means that zero indices are ignored when
-included with other non-zero indices. The negative indices remove the elements
-that are referenced. To avoid confusion with `python`-like indexing, `R`
-does not allow the mixture of negative (deletion) indices with positive
-(reference) indices.
+</td> <!--}}}-->
+</tr></tbody></tbody></table>
+</center>
 
 Finally, the indexing difference means that sequence construction differs
 between the languages (so to be consistent with the indexing):
 
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -2261,28 +2123,20 @@ seq(5)
 np.arange(5)
 ```
 </td> <!--}}}-->
-</tr></tbody></tbody></table>
+</tr></tbody></tbody></table></center>
 
 <!--}}}--> 
 
 # Object Orientated vs Functional Code <!--{{{-->
 
-As mentioned above, `R` and `python` differ somewhat in the type of
-programming to which they lend themselves. `R` is very much a functional
-programming language at heart, meaning that tasks are completed by running
-functions. Conversely, `python` is primarily geared towards object-oriented
-programming. That said, both `R` and `python` have the ability to be run in
-a functional or object-oriented fashion, but most code written in each language
-is geared one-way or the other.
-What this means in practice is that frequently the same code will look quite
-different in `R` and `python`. But if you understand the difference between
-functional and object-oriented styles of programming, it will make things
-clearer.
 To demonstrate the distinction between functional and object oriented
 programming, let's look at some simple matrix multiplication of eigenvectors and
-eigenvalues. In `R` we can do an eigen-decomposition using the `eigen()`
-function, and in `python` we use the `numpy.linalg.eig()` function:
+eigenvalues. 
 
+> - In `R` we can do an eigen-decomposition using the `eigen()` function
+> - In `python` we use the `numpy.linalg.eig()` function
+
+<center>
 <table style="width: 90%">
     <colgroup>
        <col span="1" style="width: 45%;">
@@ -2311,12 +2165,9 @@ eigVals, eigVecs = np.linalg.eig(mat)
 eigVecs.dot(np.diag(eigVals)).dot(eigVecs.T)
 ```
 </td> <!--}}}-->
-</tr></tbody></tbody></table>  
+</tr></tbody></tbody></table></center>  
 
-The different philosophies are most apparent in the dot products. In `R`, the
-external function `%*%`  operates on the different objects, whereas in
-`python` the objects themselves have attributes that are enacted and chained
-together. We can actually make the difference clearer on the `R` side by
+We can actually make the difference clearer on the `R` side by
 invoking the matrix multiplication function in a more 'traditional' fashion:
 
 ``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
@@ -2324,68 +2175,22 @@ invoking the matrix multiplication function in a more 'traditional' fashion:
 `%*%`(`%*%`(eig$vectors,diag(eig$values)),t(eig$vectors))
 ```  
 
-While we would generally never write this in normal day-to-day programming, it
-makes the functional philosophy clearer. Operations in `R` generally tend to
-invoke functions which wrap other functions. Conversely in `python`,
-operations tend to be focussed on the objects that we want to operate on
-themselves. However, it is worth noting that `python3.5` introduced a stand-alone
-functional-operator for matrix multiplication `@` that brings the `R` and
-`python` implementations back into line:
+Note that `python3.5` introduced a stand-alone functional-operator for matrix
+multiplication `@` that brings the `R` and `python` implementations back into
+line:
 
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
 #Using the functional @ operator in Python 3.5+:
 eigVecs @ np.diag(eigVals) @ eigVecs.T
 ```
-
-It's worth noting that object orientation can be considered applicable to
-modules/functions as well in `python`.  For example, the eigen-decomposition for
-non-symmetric matrices follows the rule: $A = V\lambda V^{-1}$, where $V^{-1}$
-denotes the inverse of $V$. In `R`, matrix inversion is computed using the
-`solve()` function. In `python`, matrix inversion is part of the `numpy` "linear
-algebra" subset of functions. These are accessible via `numpy` through its
-`linalg` attribute, much in the same way that `dot()` and `eig()` were
-accessible previously for our object `mat`:
-
-<table style="width: 90%">
-    <colgroup>
-       <col span="1" style="width: 45%;">
-       <col span="1" style="width: 45%;">
-    </colgroup>
-    <tbody> <tr>
-<td rblock> <!--{{{-->
-``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
-#Non-symmetric eigendecomposition in R
-mat<-matrix(c(1,3,2,4),nrow=2)
-#Calculate the eigenvalues and eigenvectors 
-eig<-eigen(mat)
-#Check the results: A - V.diag(lambda).V^-1 = 0 
-eig$vectors %*% diag(eig$values) %*% solve(eig$vectors)
-```
-</td> <!--}}}-->
-<td pythonblock> <!--{{{-->
-``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
-#Non-symmetric eigendecomposition in python 
-mat=np.array([1,3,2,4]).reshape(2,2)
-#Calculate the eigenvalues and eigenvectors 
-eigVals, eigVecs = np.linalg.eig(mat)
-#Check the results: A - V.diag(lambda).V^-1 = 0 
-eigVecs @ np.diag(eigVals) @ np.linalg.inv(eigVecs)
-```
-</td> <!--}}}-->
-</tr></tbody></tbody></table>  
-
 <!--}}}--> 
 
 # Object Oriented Programming and Classes <!--{{{-->
 
-In `python` programming in particular, you are guaranteed to run into object
-classes. These are fundamental to object oriented programming, because these
-form the bases of the objects themselves.
+In `python` programming in particular, you will definitely run into object
+"classes". 
 
-A class essentially describes a combination of variables ("properties") and
-methods that are linked to a particular object/task. Said in words this doesn't
-mean much, though, so it's easiest to understand classes using examples. In
-`python` we define a class in a similar manner to function definitions:
+In `python` we define a class in a similar manner to function definitions:
 
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
 #Class definition in python
@@ -2401,16 +2206,13 @@ print(person1)
 person1
 ```
 
-Here we created a class `Human` and used the class to create a variable
-`person1`. The class has properties `name`, `occupation`, `height`, and `age`, 
-and we've printed the name by of `person1` using the `name` attribute. But if we 
-print the whole person object we get a cryptic message showing the class and the 
-location of the object in memory. 
+# Object Oriented Programming and Classes
 
-The power of classes comes with the combination of attributes and methods. There
-are three main methods that every class should have: initialisation
-(`__init__`), print (`__str__`), and representation (`__repr__`). Let's continue
-with our `Human` class, but now add an initialisation method and a print method:
+The power of classes comes with the combination of attributes and methods. 
+There are three main methods that every class should have: 
+> - initialisation (`__init__`),
+> - print (`__str__`), and 
+> - representation (`__repr__`). 
 
 ``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
 #Class definition in python
@@ -2435,25 +2237,7 @@ print(person1)
 person1
 ```
 
-A few important things here. Firstly: you can see the occurances of `self` in the 
-code above. `self` is, probably unsurprisingly, the "self-reference" within the 
-class. That is: it tells the code that this function uses information _within_ this 
-object. The `self` variable is **everywhere** in `python` code, because the code is 
-designed to be object-oriented, and `self` describes "the current object". 
-
-Secondly, you can see that we added the "initialisation", and "printing"
-internal functions. `python` looks for these when doing certain things.
-
->  - `__init__` determines the behaviour when you create a new object with the class `Human`, which you 
-can see we have done on the third-last line above.
->  - `__str__` determines the behaviour when you call `print()` over the object, as you can 
-see above. `
->  - `__repr__` determines the printed behaviour when you return the class without `print()`-ing. It shows 
-a string-representation that is able to reproduce the current object. 
-
-Finally, you can see that our "initialisation" function allows us to generate
-arbitrary `Human` objects on-the-fly, initialised with the information that we
-want. 
+# Object Oriented Programming and Classes
 
 We can define additional arbitrary functions to the class, such as functions that 
 "grow" our `Human` object by $1$ or $n$ years: 
@@ -2498,13 +2282,13 @@ person1
 
 Note that the functions which act on self act in-place!
 
-## Object orientation in R
+# Object orientation in `R`
 
 There are actually 4 different ways to implement object-oriented programming in
-`R`, that are known as `S3`, `S4`, `RC`, and `R6`. We won't use "OOP" in `R`
-in this course, but it's worth demonstrating briefly how one performs the above
-class generation in `R` using the `R6` method (which is closest to pythons
-formalism).
+`R`, that are known as `S3`, `S4`, `RC`, and `R6`. 
+
+We won't use "OOP" in `R` in this course, but it's worth demonstrating briefly
+how one can do it: 
 
 ``` {r, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
 #Unlike S3, S4, and RC, R6 is currently not in base R.
@@ -2561,98 +2345,21 @@ dput(person1)
 
 <!--}}}--> 
 
-# Reading and Writing Data <!--{{{-->
-
-Reading and writing data will not be overly important in this course, however it
-is obviously an important part of understanding and using `R` and `python`
-on a day-to-day basis. Both `R` and `python` have the ability to read most standard
-formats in a fast way. Here we compile a sample of read/write functions in 
-each language, for reference. 
-
-In `R` the base code can read and write ascii files, albeit in a slow-ish
-manner. As such it is normally advantageous to use the `data.table` read/write 
-functions, which are _blazingly_ fast, for reading ascii data. Similarly in 
-`python`, pandas has a `read_csv` function that is `C` based and is reasonably 
-fast. 
-
-Let's generate some data and test the read speeds of a few various methods. 
-We'll generate $1$ million rows of data in $4$ columns containing integers, reals, 
-and strings. 
-``` {r, eval=TRUE}
-#Generate some fake data 
-rstring<-function(n) { paste0(sample(LETTERS, n, TRUE),collapse='') }
-cat<-data.frame(Index=sample(seq.int(1e4),size=1E6,replace=TRUE),
-                Val_1=runif(1E6),
-                Val_2=rnorm(1E6,sd=100),
-                strings=replicate(1E6,rstring(10), TRUE))
-head(cat)
-#Output the data with data.table
-library(data.table)
-fwrite(file='fakedata.csv',cat)
-```
-
-Now let's read the dateset with `R` and `python`: 
-
-<table style="width: 90%">
-    <colgroup>
-       <col span="1" style="width: 45%;">
-       <col span="1" style="width: 45%;">
-    </colgroup>
-    <tbody> <tr>
-<td rblock> <!--{{{-->
-``` {r, fig.height=4, fig.width=6, out.width='90%', eval=TRUE}  
-#ASCII File IO in R
-#Read the file with the default read.csv 
-system.time(cat<-read.csv("fakedata.csv"))
-#Read the file with data.table::fread
-system.time(cat<-fread("fakedata.csv"))
-```
-</td> <!--}}}-->
-<td pythonblock> <!--{{{-->
-``` {python, fig.height=4, fig.width=6, out.width="90%", eval=TRUE}
-#ASCII File IO in python
-def numpyrun(): 
-  #Read with the numpy GenFromTxt
-  start=timeit.default_timer()
-  cat=np.genfromtxt("fakedata.csv")
-  stop=timeit.default_timer()
-  return (stop-start)
-def pandasrun(): 
-  #Read with the pandas read_csv
-  start=timeit.default_timer()
-  cat=pd.read_csv("fakedata.csv")
-  stop=timeit.default_timer()
-  return (stop-start)
-
-print(numpyrun())
-print(pandasrun())
-```
-</td> <!--}}}-->
-</tr></tbody></tbody></table>
-
-There are also functions in both `R` and `python` for reading/writing binary
-data in standard science formats (e.g. FITS) and formats that are designed for
-rapid reading/writing in each language (e.g. RDS, pickle, feather, etc).
-
-<!--}}}--> 
-
 # Plotting my Data <!--{{{-->
 
 Both `R` and `python` have very sophisticated plotting capabilities. 
 
-In particular, `python`'s `matplotlib` is a widely used tool for producing
-figures. There are a large number of examples of how one produces figures with
-matplotlib available [online](https://matplotlib.org/stable/gallery/index.html).
+`python`'s `matplotlib` is a widely used tool for producing
+figures. 
+> - [with lots of examples online](https://matplotlib.org/stable/gallery/index.html).
 
-In `R` one can trivially plot lots of things using the base code, and base
-plots are frequently customised (behind the scenes) to make the results more
-useful. Additionally, there are multiple packages available that add
-functionality to the base plotting routines (such as `magicaxis`), or replace
-the base plotting entirely (such as `ggplot`).
+In `R` one can trivially plot lots of things using the base code. 
+> - Additional packages such as `magicaxis` and `ggplot` are extremely powerful
 
-As a demonstration, here is how we plotted the data+model+uncertainty figures
-from our section "Modern Science and the Requirement of Programming". Here is
-the base `R` plotting routine:
+# Plotting Data in `R` 
+
+This is the code to plot the data+model+uncertainty figures
+from earlier in `R`:
 
 ```{r echo=FALSE, fig.height=4, fig.width=6, out.width='80%'} 
 x=runif(1e3)
@@ -2697,6 +2404,8 @@ legend('topright',legend=c('Data','Best-fit Model','1-sigma uncertainty'),
        pch=c(1,NA,NA),lty=c(NA,1,2),col=c("black","red","red"),lwd=2,inset=c(0.05,0.05))
 ```  
 
+# Plotting Data in `python` 
+
 Here is our equivalent plot in `python` using `matplotlib`: 
 
 ```{python, echo=TRUE, fig.height=4, fig.width=8, out.width='90%'} 
@@ -2733,6 +2442,8 @@ Or image plotting a colour image with `magicaxis`:
 library(FITSio)
 example("magimageWCSRGB", run.dontrun = TRUE)
 ```  
+
+# Plotting data frames in `R` 
 
 Finally, here's an example of the default plot for data frames in R: 
 
