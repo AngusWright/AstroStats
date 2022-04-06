@@ -9,7 +9,7 @@ then
   echo "Error: calling syntax is ./knit.sh [section] [fmt]" 
   echo "       Possible choices:"
   echo "       -> section: {0,1a,1b,...,4c,4d}, [0..4], all"
-  echo "       -> fmt:     {html,slidy,pdf,github,all}"
+  echo "       -> fmt:     {html,slidy,ioslides,pdf,github,all}"
   exit 1 
 fi 
 
@@ -29,7 +29,7 @@ fi
 
 if [ "$fmt_list" == "all" ] 
 then 
-  fmt_list="html pdf slidy github"
+  fmt_list="html pdf slidy ioslides github"
 fi 
 
 for section in $section_list
@@ -91,6 +91,7 @@ do
     
     #}}}
     
+    pres=''
     #Check that the output format is valid {{{
     case $fmt in 
       html)
@@ -110,6 +111,11 @@ do
         echo "Output Format is ${fmt}"
         longfmt=${fmt}_presentation
         ;;
+      ioslides)
+        echo "Output Format is ${fmt}"
+        longfmt=slidy_presentation
+        pres='_pres'
+        ;;
       *) 
         echo "Bad Output Format: ${fmt}"
         exit 1
@@ -121,7 +127,7 @@ do
     echo "Knitting Section ${section} to ${longfmt}" 
     R --slave --no-save > render_${section}_${fmt}.log 2>&1 <<- END
 			library(rmarkdown); 
-			rmarkdown::render("IntroductionToStatistics_Section${section}.Rmd","${longfmt}" $args) 
+			rmarkdown::render("IntroductionToStatistics_Section${section}${pres}.Rmd","${longfmt}" $args) 
 		END
     #}}}
 
@@ -141,6 +147,9 @@ do
         ;;
       slidy)
         mv IntroductionToStatistics_Section${section}.html ../HTML_slides/IntroductionToStatistics_Section${section}_${fmt}.html
+        ;;
+      ioslides)
+        mv IntroductionToStatistics_Section${section}_pres.html ../HTML_ioslides/IntroductionToStatistics_Section${section}_${fmt}_pres.html
         ;;
       *) 
         echo "Bad Output Format: ${fmt}"
